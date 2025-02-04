@@ -128,7 +128,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     );
 
     this.package.setScript('prepare', 'husky');
-    this.package.setScript('awslint', '‚awslint');
+    this.package.setScript('awslint', 'awslint');
     this.package.setScript(
       'integ-test',
       'integ-runner --directory ./integ-tests --parallel-regions eu-west-1 --parallel-regions eu-west-2 --update-on-failed',

@@ -22,6 +22,7 @@ describe('configurations', () => {
   test('default all files written', () => {
     const project = new MvcCdkConstructLibrary(minimalMvcCdkConstructLibraryOptions);
     const snap = synthSnapshot(project);
+    // console.log(snap);
     expect(
       snap['.github/ISSUE_TEMPLATE/bug_report.md'].indexOf('## Bug Report'),
     ).not.toEqual(-1);
@@ -40,11 +41,7 @@ describe('configurations', () => {
     expect(
       snap['README.md'].indexOf('Unlock the Full Potential of Your AWS Cloud Infrastructure'),
     ).not.toEqual(-1);
-    // expect(
-    //   snap['package.json'].indexOf(`"prepare": "husky"`),
-    // ).not.toEqual(-1);
-    // expect(
-    //   snap['package.json'].indexOf(`"awslint": "awslint"`),
-    // ).not.toEqual(-1);
+    expect(snap['package.json'].scripts.prepare).toEqual('husky');
+    expect(snap['package.json'].scripts.awslint).toEqual('awslint');
   });
 });
