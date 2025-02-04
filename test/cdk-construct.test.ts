@@ -40,5 +40,11 @@ describe('configurations', () => {
     expect(
       snap['README.md'].indexOf('Unlock the Full Potential of Your AWS Cloud Infrastructure'),
     ).not.toEqual(-1);
+    // expect(
+    //   snap['package.json'].indexOf(`"prepare": "husky"`),
+    // ).not.toEqual(-1);
+    // expect(
+    //   snap['package.json'].indexOf(`"awslint": "awslint"`),
+    // ).not.toEqual(-1);
   });
 });

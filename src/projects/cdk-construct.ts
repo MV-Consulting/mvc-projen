@@ -94,16 +94,6 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
         dirs: ['src'],
         ignorePatterns: ['**/*-function.ts', 'examples/'],
       },
-      gitignore: ['tmp', '.codegpt'],
-      devDeps: [
-        '@aws-cdk/integ-runner@^2.177.0-alpha.0', // NOTE: keep in sync with cdkversion
-        '@aws-cdk/integ-tests-alpha@^2.177.0-alpha.0',
-        '@commitlint/cli',
-        '@commitlint/config-conventional',
-        '@types/aws-lambda',
-        'awslint',
-        'husky',
-      ],
       // experimentalIntegRunner: true,
       // manual integ test setup
       tsconfigDev: {
@@ -116,6 +106,25 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
       ...options,
       cdkVersion: '2.177.0', // Find the latest CDK version here: https://www.npmjs.com/package/aws-cdk-lib
     });
+
+    this.addGitIgnore('tmp');
+    this.addGitIgnore('.codegpt');
+    this.addDeps('cdk-nag');
+    this.addDevDeps(
+      '@aws-cdk/integ-runner@^2.177.0-alpha.0', // NOTE: keep in sync with cdkversion
+      '@aws-cdk/integ-tests-alpha@^2.177.0-alpha.0',
+      '@commitlint/cli',
+      '@commitlint/config-conventional',
+      'awslint',
+      'husky',
+    );
+
+    this.package.setScript('prepare', 'husky');
+    this.package.setScript('awslint', '‚awslint');
+    this.package.setScript(
+      'integ-test',
+      'integ-runner --directory ./integ-tests --parallel-regions eu-west-1 --parallel-regions eu-west-2 --update-on-failed',
+    );
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
       lines: [readFileSync(`${cwd()}/src/projects/files/github_bug_report.md`).toString()],
