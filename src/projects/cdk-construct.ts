@@ -1,9 +1,11 @@
-import { readFileSync } from 'fs';
+import * as fs from 'fs';
+import * as path from 'path';
 import { cwd } from 'process';
-import { awscdk, javascript, ReleasableCommits, TextFile } from 'projen';
+import { Component, javascript, ReleasableCommits, TextFile } from 'projen';
+import { AwsCdkConstructLibrary, AwsCdkConstructLibraryOptions } from 'projen/lib/awscdk';
 import { DependabotScheduleInterval } from 'projen/lib/github';
 
-export interface MvcCdkConstructLibraryOptions extends awscdk.AwsCdkConstructLibraryOptions {
+export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOptions {
   //
 }
 
@@ -12,7 +14,7 @@ export interface MvcCdkConstructLibraryOptions extends awscdk.AwsCdkConstructLib
  *
  * @pjid mvc-awscdk-construct
  */
-export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
+export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
   constructor(options: MvcCdkConstructLibraryOptions) {
     super({
@@ -100,15 +102,21 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
         compilerOptions: {},
         include: ['integ-tests/**/*.ts'],
       },
-      pullRequestTemplateContents: [readFileSync(`${cwd()}/src/projects/files/github_pull_request.md`).toString()],
+      pullRequestTemplateContents: [fs.readFileSync(`${cwd()}/src/projects/files/github_pull_request.md`).toString()],
       // NOTE: issue templates are not supported yet. See https://github.com/projen/projen/pull/3648
       // issueTemplates: {}
       ...options,
       cdkVersion: '2.177.0', // Find the latest CDK version here: https://www.npmjs.com/package/aws-cdk-lib
     });
 
-    this.addGitIgnore('tmp');
-    this.addGitIgnore('.codegpt');
+    // gitignore
+    const filesPatternToGitignore = [
+      'tmp',
+      '.codegpt',
+    ];
+    for (const file of filesPatternToGitignore) {
+      this.gitignore.exclude(file);
+    }
     this.addDeps('cdk-nag');
     this.addDevDeps(
       '@aws-cdk/integ-runner@^2.177.0-alpha.0', // NOTE: keep in sync with cdkversion
@@ -127,11 +135,11 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
     );
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
-      lines: [readFileSync(`${cwd()}/src/projects/files/github_bug_report.md`).toString()],
+      lines: [fs.readFileSync(`${cwd()}/src/projects/files/github_bug_report.md`).toString()],
     });
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/feature_request.md', {
-      lines: [readFileSync(`${cwd()}/src/projects/files/github_feature_request.md`).toString()],
+      lines: [fs.readFileSync(`${cwd()}/src/projects/files/github_feature_request.md`).toString()],
     });
 
     new TextFile(this, '.github/FUNDING.yaml', {
@@ -147,9 +155,63 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
     });
 
     new TextFile(this, 'README.md').addLine(
-      readFileSync(`${cwd()}/src/projects/files/github_readme_cta.md`).toString(),
+      fs.readFileSync(`${cwd()}/src/projects/files/github_readme_cta.md`).toString(),
     );
+
+    // write sample code to main.ts & to main.test.ts
+    if (options.sampleCode ?? true) {
+      new SampleCode(this, {});
+    }
+  }
+}
+
+interface SampleCodeOptions { }
+
+class SampleCode extends Component {
+  private readonly library: AwsCdkConstructLibrary;
+  private readonly options: SampleCodeOptions;
+
+  constructor(
+    library: AwsCdkConstructLibrary,
+    options: SampleCodeOptions,
+  ) {
+    super(library);
+    this.library = library;
+    this.options = options;
   }
 
+  public synthesize() {
+    const outdir = this.project.outdir;
+    const srcdir = path.join(outdir, this.library.srcdir);
 
+    const srcImports = new Array<string>();
+    // srcImports.push("import { TBD } from '@mavogel/TBD';");
+    srcImports.push("import { App, Stack, StackProps } from 'aws-cdk-lib';");
+    srcImports.push("import { Construct } from 'constructs';");
+
+    const srcCode = `${srcImports.join('\n')}
+  // TODO
+  `;
+
+    console.log(srcCode);
+    console.log(this.options);
+    fs.mkdirSync(srcdir, { recursive: true });
+    fs.writeFileSync(path.join(srcdir, 'appProject-TBD'), srcCode);
+
+    const testdir = path.join(outdir, this.library.testdir);
+    // const appEntrypointName = path.basename(
+    //   this.appProject.appEntrypoint,
+    //   '.ts',
+    // );
+    // const testCode = `
+    // test('Snapshot', () => {
+    //   expect(true).toBe(true);
+    // });`;
+
+    fs.mkdirSync(testdir, { recursive: true });
+    // fs.writeFileSync(
+    //   path.join(testdir, `${appEntrypointName}.test.ts`),
+    //   testCode,
+    // );
+  }
 }
