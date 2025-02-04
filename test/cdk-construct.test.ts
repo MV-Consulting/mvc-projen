@@ -4,7 +4,7 @@ import { MvcCdkConstructLibrary, MvcCdkConstructLibraryOptions } from '../src';
 const minimalMvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = {
   author: 'test',
   authorAddress: 'test@test.com',
-  cdkVersion: '2.1.0',
+  cdkVersion: '2.177.0',
   name: 'test-project',
   defaultReleaseBranch: 'main',
   repositoryUrl: 'https://github.com/MV-Consulting/test-project.git',

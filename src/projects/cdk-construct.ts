@@ -4,6 +4,7 @@ import { cwd } from 'process';
 import { Component, javascript, ReleasableCommits, TextFile } from 'projen';
 import { AwsCdkConstructLibrary, AwsCdkConstructLibraryOptions } from 'projen/lib/awscdk';
 import { DependabotScheduleInterval } from 'projen/lib/github';
+import { JobStep } from 'projen/lib/github/workflows-model';
 
 export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOptions {
   //
@@ -25,6 +26,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       projenVersion: '0.91.6', // Find the latest projen version here: https://www.npmjs.com/package/projen
       stability: 'experimental',
       releaseToNpm: true,
+      packageManager: javascript.NodePackageManager.NPM,
       npmAccess: javascript.NpmAccess.PUBLIC,
       autoApproveOptions: {
         allowedUsernames: [
@@ -105,8 +107,16 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       pullRequestTemplateContents: [fs.readFileSync(`${cwd()}/src/projects/files/github_pull_request.md`).toString()],
       // NOTE: issue templates are not supported yet. See https://github.com/projen/projen/pull/3648
       // issueTemplates: {}
+      readme: {
+        contents: [
+          '# TODO',
+          '',
+          fs.readFileSync(`${cwd()}/src/projects/files/github_readme_cta.md`).toString(),
+        ].join('\n'),
+      },
       ...options,
       cdkVersion: '2.177.0', // Find the latest CDK version here: https://www.npmjs.com/package/aws-cdk-lib
+
     });
 
     // gitignore
@@ -128,7 +138,33 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     );
 
     this.package.setScript('prepare', 'husky');
+    new TextFile(this, '.commitlintrc.js', {
+      lines: [
+        'module.exports = { extends: [\'@commitlint/config-conventional\'] };',
+      ],
+    });
+
     this.package.setScript('awslint', 'awslint');
+    // .github/workflows/build.yml
+    const buildWorkflow = this.github?.tryFindWorkflow('build');
+    if (!buildWorkflow) return;
+    const buildJob = buildWorkflow.getJob('build');
+    if (!buildJob || !('steps' in buildJob)) return;
+    // TODO: figure out why wrong types
+    const getBuildSteps = buildJob.steps as unknown as () => JobStep[];
+    const buildJobSteps = getBuildSteps();
+    buildWorkflow.updateJob('build', {
+      ...buildJob,
+      steps: [
+        ...buildJobSteps.slice(0, 4),
+        {
+          name: 'Run awslint',
+          run: 'npm run awslint',
+        },
+        ...buildJobSteps.slice(4),
+      ],
+    });
+
     this.package.setScript(
       'integ-test',
       'integ-runner --directory ./integ-tests --parallel-regions eu-west-1 --parallel-regions eu-west-2 --update-on-failed',
@@ -147,16 +183,6 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
         'github: mavogel',
       ],
     });
-
-    new TextFile(this, '.commitlintrc.js', {
-      lines: [
-        'module.exports = { extends: [\'@commitlint/config-conventional\'] };',
-      ],
-    });
-
-    new TextFile(this, 'README.md').addLine(
-      fs.readFileSync(`${cwd()}/src/projects/files/github_readme_cta.md`).toString(),
-    );
 
     // write sample code to main.ts & to main.test.ts
     if (options.sampleCode ?? true) {
@@ -183,6 +209,12 @@ class SampleCode extends Component {
   public synthesize() {
     const outdir = this.project.outdir;
     const srcdir = path.join(outdir, this.library.srcdir);
+    if (
+      fs.existsSync(srcdir) &&
+      fs.readdirSync(srcdir).filter((x) => x.endsWith('.ts'))
+    ) {
+      return;
+    }
 
     const srcImports = new Array<string>();
     // srcImports.push("import { TBD } from '@mavogel/TBD';");
