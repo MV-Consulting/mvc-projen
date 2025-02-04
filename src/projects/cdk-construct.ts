@@ -24,6 +24,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       copyrightPeriod: '2025',
       license: 'Apache-2.0',
       projenVersion: '0.91.6', // Find the latest projen version here: https://www.npmjs.com/package/projen
+      jsiiVersion: '~5.6.0',
       stability: 'experimental',
       releaseToNpm: true,
       packageManager: javascript.NodePackageManager.NPM,
@@ -34,7 +35,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
           'dependabot[bot]',
           'github-bot',
           'github-actions[bot]',
-          'mvc-projen[bot]',
+          'mvc-bot',
         ],
         /**
                                                  * The name of the secret that has the GitHub PAT for auto-approving PRs with permissions repo, workflow, write:packages
