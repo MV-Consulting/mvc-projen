@@ -135,6 +135,10 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
         'module.exports = { extends: [\'@commitlint/config-conventional\'] };',
       ],
     });
+
+    new TextFile(this, 'README.md').addLine(
+      readFileSync('src/projects/files/github_readme_cta.md').toString(),
+    );
   }
 
 

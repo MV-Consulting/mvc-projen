@@ -37,5 +37,8 @@ describe('configurations', () => {
     expect(
       snap['.commitlintrc.js'].indexOf('module.exports'),
     ).not.toEqual(-1);
+    expect(
+      snap['README.md'].indexOf('Unlock the Full Potential of Your AWS Cloud Infrastructure'),
+    ).not.toEqual(-1);
   });
 });
