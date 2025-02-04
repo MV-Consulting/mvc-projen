@@ -95,7 +95,7 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
       },
       gitignore: ['tmp', '.codegpt'],
       devDeps: [
-        '@aws-cdk/integ-runner@^2.177.0-alpha.0',
+        '@aws-cdk/integ-runner@^2.177.0-alpha.0', // NOTE: keep in sync with cdkversion
         '@aws-cdk/integ-tests-alpha@^2.177.0-alpha.0',
         '@commitlint/cli',
         '@commitlint/config-conventional',
@@ -113,6 +113,7 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
       // NOTE: issue templates are not supported yet. See https://github.com/projen/projen/pull/3648
       // issueTemplates: {}
       ...options,
+      cdkVersion: '2.177.0', // Find the latest CDK version here: https://www.npmjs.com/package/aws-cdk-lib
     });
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
@@ -126,6 +127,12 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
     new TextFile(this, '.github/FUNDING.yaml', {
       lines: [
         'github: mavogel',
+      ],
+    });
+
+    new TextFile(this, '.commitlintrc.js', {
+      lines: [
+        'module.exports = { extends: [\'@commitlint/config-conventional\'] };',
       ],
     });
   }

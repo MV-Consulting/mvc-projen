@@ -34,5 +34,8 @@ describe('configurations', () => {
     expect(
       snap['.github/FUNDING.yaml'].indexOf('github: mavogel'),
     ).not.toEqual(-1);
+    expect(
+      snap['.commitlintrc.js'].indexOf('module.exports'),
+    ).not.toEqual(-1);
   });
 });
