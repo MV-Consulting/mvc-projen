@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import { cwd } from 'process';
 import { awscdk, javascript, ReleasableCommits, TextFile } from 'projen';
 import { DependabotScheduleInterval } from 'projen/lib/github';
 
@@ -109,7 +110,7 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
         compilerOptions: {},
         include: ['integ-tests/**/*.ts'],
       },
-      pullRequestTemplateContents: [readFileSync('src/projects/files/github_pull_request.md').toString()],
+      pullRequestTemplateContents: [readFileSync(`${cwd()}/src/projects/files/github_pull_request.md`).toString()],
       // NOTE: issue templates are not supported yet. See https://github.com/projen/projen/pull/3648
       // issueTemplates: {}
       ...options,
@@ -117,11 +118,11 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
     });
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
-      lines: [readFileSync('src/projects/files/github_bug_report.md').toString()],
+      lines: [readFileSync(`${cwd()}/src/projects/files/github_bug_report.md`).toString()],
     });
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/feature_request.md', {
-      lines: [readFileSync('src/projects/files/github_feature_request.md').toString()],
+      lines: [readFileSync(`${cwd()}/src/projects/files/github_feature_request.md`).toString()],
     });
 
     new TextFile(this, '.github/FUNDING.yaml', {
@@ -137,7 +138,7 @@ export class MvcCdkConstructLibrary extends awscdk.AwsCdkConstructLibrary {
     });
 
     new TextFile(this, 'README.md').addLine(
-      readFileSync('src/projects/files/github_readme_cta.md').toString(),
+      readFileSync(`${cwd()}/src/projects/files/github_readme_cta.md`).toString(),
     );
   }
 
