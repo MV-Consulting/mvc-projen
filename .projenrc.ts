@@ -18,7 +18,14 @@ const project = new cdk.JsiiProject({
   eslintOptions: {
     prettier: false,
     dirs: ['src'],
-    ignorePatterns: ['**/*-function.ts', 'examples/'],
+    ignorePatterns: [
+      '**/*-function.ts',
+      'examples/',
+      'src/projects/files/**/*',
+    ],
   },
+  excludeTypescript: [
+    'src/projects/files/**/*',
+  ],
 });
 project.synth();

@@ -37,6 +37,7 @@
   "ignorePatterns": [
     "**/*-function.ts",
     "examples/",
+    "src/projects/files/**/*",
     "!.projenrc.ts",
     "!projenrc/**/*.ts"
   ],

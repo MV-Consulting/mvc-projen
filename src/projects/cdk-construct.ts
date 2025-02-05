@@ -216,6 +216,7 @@ class SampleCode extends Component {
   }
 
   public synthesize() {
+    console.log(this.options); // TODO
     const outdir = this.project.outdir;
     const srcdir = path.join(outdir, this.library.srcdir);
     if (
@@ -225,34 +226,38 @@ class SampleCode extends Component {
       return;
     }
 
-    const srcImports = new Array<string>();
-    // srcImports.push("import { TBD } from '@mavogel/TBD';");
-    srcImports.push("import { App, Stack, StackProps } from 'aws-cdk-lib';");
-    srcImports.push("import { Construct } from 'constructs';");
-
-    const srcCode = `${srcImports.join('\n')}
-  // TODO
-  `;
-
-    console.log(srcCode);
-    console.log(this.options);
     fs.mkdirSync(srcdir, { recursive: true });
-    fs.writeFileSync(path.join(srcdir, 'appProject-TBD'), srcCode);
+    fs.writeFileSync(path.join(srcdir, 'index.ts'), fs.readFileSync(`${cwd()}/src/projects/files/src_index.ts`).toString());
+    fs.writeFileSync(path.join(srcdir, 'placeholder.ts'), fs.readFileSync(`${cwd()}/src/projects/files/src_placeholder.ts`).toString());
 
     const testdir = path.join(outdir, this.library.testdir);
-    // const appEntrypointName = path.basename(
-    //   this.appProject.appEntrypoint,
-    //   '.ts',
-    // );
-    // const testCode = `
-    // test('Snapshot', () => {
-    //   expect(true).toBe(true);
-    // });`;
-
+    if (
+      fs.existsSync(testdir) &&
+      fs.readdirSync(testdir).filter((x) => x.endsWith('.ts'))
+    ) {
+      return;
+    }
     fs.mkdirSync(testdir, { recursive: true });
-    // fs.writeFileSync(
-    //   path.join(testdir, `${appEntrypointName}.test.ts`),
-    //   testCode,
-    // );
+    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${cwd()}/src/projects/files/src_index.test-xyz.ts`).toString());
+
+    const integTestdir = path.join(outdir, 'integ-tests');
+    if (
+      fs.existsSync(integTestdir) &&
+      fs.readdirSync(integTestdir).filter((x) => x.endsWith('.ts'))
+    ) {
+      return;
+    }
+    fs.mkdirSync(integTestdir, { recursive: true });
+    fs.writeFileSync(path.join(integTestdir, 'integ.placeholder.ts'), fs.readFileSync(`${cwd()}/src/projects/files/integ_integ.placeholder.ts`).toString());
+
+    const integTestFunctionsdir = path.join(outdir, integTestdir, 'functions');
+    if (
+      fs.existsSync(integTestFunctionsdir) &&
+      fs.readdirSync(integTestFunctionsdir).filter((x) => x.endsWith('.ts'))
+    ) {
+      return;
+    }
+    fs.mkdirSync(integTestFunctionsdir, { recursive: true });
+    fs.writeFileSync(path.join(integTestFunctionsdir, 'test-handler.ts'), fs.readFileSync(`${cwd()}/src/projects/files/integ_test-handler.ts`).toString());
   }
 }
