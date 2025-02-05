@@ -2,10 +2,17 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { cwd } from 'process';
 import { Component, javascript, ReleasableCommits, TextFile } from 'projen';
-import { AwsCdkConstructLibrary, AwsCdkConstructLibraryOptions } from 'projen/lib/awscdk';
+import { AwsCdkConstructLibrary, AwsCdkConstructLibraryOptions, LambdaRuntime } from 'projen/lib/awscdk';
 import { DependabotScheduleInterval } from 'projen/lib/github';
 import { JobStep } from 'projen/lib/github/workflows-model';
 
+// Set the minimum node version for AWS CDK and the GitHub actions workflow
+const nodeVersion = '20.x';
+const lambdaNodeVersion = LambdaRuntime.NODEJS_20_X;
+
+/**
+ * The options for the construct
+ */
 export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOptions {
   //
 }
@@ -23,12 +30,17 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       copyrightOwner: 'MV Consulting GmbH',
       copyrightPeriod: '2025',
       license: 'Apache-2.0',
-      projenVersion: '0.91.6', // Find the latest projen version here: https://www.npmjs.com/package/projen
-      jsiiVersion: '~5.6.0',
+      jsiiVersion: '~5.7.0',
+      minNodeVersion: nodeVersion,
+      workflowNodeVersion: nodeVersion,
       stability: 'experimental',
       releaseToNpm: true,
       packageManager: javascript.NodePackageManager.NPM,
       npmAccess: javascript.NpmAccess.PUBLIC,
+      lambdaOptions: {
+        runtime: lambdaNodeVersion,
+        awsSdkConnectionReuse: false, // doesn't exist in AWS SDK JS v3
+      },
       autoApproveOptions: {
         allowedUsernames: [
           'dependabot',
@@ -37,10 +49,8 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
           'github-actions[bot]',
           'mvc-bot',
         ],
-        /**
-                                                 * The name of the secret that has the GitHub PAT for auto-approving PRs with permissions repo, workflow, write:packages
-                                                 * Generate a new PAT (https://github.com/settings/tokens/new) and add it to your repo's secrets
-                                                 */
+        // The name of the secret that has the GitHub PAT for auto-approving PRs with permissions repo, workflow, write:packages
+        // Generate a new PAT (https://github.com/settings/tokens/new) and add it to your repo's secrets
         secret: 'PROJEN_GITHUB_TOKEN',
       },
       dependabot: true,
@@ -116,8 +126,6 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
         ].join('\n'),
       },
       ...options,
-      cdkVersion: '2.177.0', // Find the latest CDK version here: https://www.npmjs.com/package/aws-cdk-lib
-
     });
 
     // gitignore
@@ -130,8 +138,8 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     }
     this.addDeps('cdk-nag');
     this.addDevDeps(
-      '@aws-cdk/integ-runner@^2.177.0-alpha.0', // NOTE: keep in sync with cdkversion
-      '@aws-cdk/integ-tests-alpha@^2.177.0-alpha.0',
+      `@aws-cdk/integ-runner@^${this.cdkVersion}-alpha.0`, // NOTE: keep in sync with cdkversion
+      `@aws-cdk/integ-tests-alpha@^${this.cdkVersion}-alpha.0`,
       '@commitlint/cli',
       '@commitlint/config-conventional',
       'awslint',

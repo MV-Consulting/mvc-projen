@@ -7,6 +7,7 @@ const project = new cdk.JsiiProject({
   authorAddress: '8409778+mavogel@users.noreply.github.com',
   defaultReleaseBranch: 'main',
   jsiiReleaseVersion: '~5.7.0',
+  projenVersion: '0.91.7', // Find the latest projen version here: https://www.npmjs.com/package/projen
   name: 'mvc-projen',
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,

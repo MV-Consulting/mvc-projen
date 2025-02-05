@@ -1586,6 +1586,8 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ### MvcCdkConstructLibraryOptions <a name="MvcCdkConstructLibraryOptions" id="mvc-projen.MvcCdkConstructLibraryOptions"></a>
 
+The options for the construct.
+
 #### Initializer <a name="Initializer" id="mvc-projen.MvcCdkConstructLibraryOptions.Initializer"></a>
 
 ```typescript
