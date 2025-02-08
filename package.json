@@ -1,5 +1,5 @@
 {
-  "name": "mvc-projen",
+  "name": "@mavogel/mvc-projen",
   "description": "Base projen module for MV Consulting projects",
   "repository": {
     "type": "git",

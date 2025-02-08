@@ -11,6 +11,7 @@ const project = new cdk.JsiiProject({
   jsiiReleaseVersion: '~5.7.0',
   projenVersion: '0.91.8', // Find the latest projen version here: https://www.npmjs.com/package/projen
   name: 'mvc-projen',
+  packageName: '@mavogel/mvc-projen',
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
   repositoryUrl: 'https://github.com/MV-Consulting/mvc-projen',
