@@ -251,6 +251,11 @@ class SampleCode extends Component {
     fs.mkdirSync(srcdir, { recursive: true });
     fs.writeFileSync(path.join(srcdir, 'index.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_index.ts`).toString());
     fs.writeFileSync(path.join(srcdir, 'placeholder.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_placeholder.ts`).toString());
+    // crd with lambda generation
+    fs.mkdirSync(`${srcdir}/crd-example`, { recursive: true });
+    fs.writeFileSync(path.join(`${srcdir}/crd-example`, 'crd-example.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_crd-example.ts`).toString());
+    fs.writeFileSync(path.join(`${srcdir}/crd-example`, 'crd-example.lambda.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_crd-example.lambda.ts`).toString());
+
 
     const testdir = path.join(outdir, this.library.testdir);
     if (
@@ -263,7 +268,11 @@ class SampleCode extends Component {
     // remove ${testdir}/hello.test.ts file. On the other hand, we override index.ts
     fs.unlinkSync(`${testdir}/hello.test.ts`);
     fs.mkdirSync(testdir, { recursive: true });
-    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/test_index.test-xyz.ts`).toString());
+    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/test_index.test.ts`).toString());
+    // lambda tests with jest stubs
+    fs.mkdirSync(`${testdir}/crd-example`, { recursive: true });
+    fs.writeFileSync(path.join(`${testdir}/crd-example`, 'crd-example.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/test_crd-example.test.ts`).toString());
+
 
     const integTestdir = path.join(outdir, 'integ-tests');
     if (

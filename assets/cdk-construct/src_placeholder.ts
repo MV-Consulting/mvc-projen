@@ -2,6 +2,7 @@ import { Aspects, CfnOutput, IAspect, Tags } from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import { NagSuppressions } from 'cdk-nag';
 import { Construct, IConstruct } from 'constructs';
+import { CrdExample } from './crd-example/crd-example';
 
 /**
  * PlaceholderProps
@@ -65,6 +66,15 @@ export class Placeholder extends Construct {
       ],
       true,
     );
+
+    // crd example
+    // Have a custom resource to pass the secret data on? -> yes because not resolvable on compile time
+    const crdExample = CrdExample.new({
+      secretArn: 'dummy-secretArn',
+    })._bind(this);
+
+    const dummyPassword = crdExample.secretPasswordPlaintext;
+    console.log(dummyPassword);
 
     // outputs
     new CfnOutput(this, 'placeholder', {
