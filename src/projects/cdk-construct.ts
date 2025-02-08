@@ -17,9 +17,16 @@ export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOpt
   /**
    * Base directory for the assets
    *
-   * @default cwd()
+   * @default ${cwd()}/node_modules/mvc-projen/assets
    */
   readonly baseAssetsDirectory?: string;
+
+  /**
+   * The regions to run the integ tests in
+   *
+   * @default eu-west-1 and eu-west-2
+   */
+  readonly integTestRegions?: string[];
 }
 
 /**
@@ -58,6 +65,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
         ],
         // The name of the secret that has the GitHub PAT for auto-approving PRs with permissions repo, workflow, write:packages
         // Generate a new PAT (https://github.com/settings/tokens/new) and add it to your repo's secrets
+        // NOTE: comes from MV-Consulting Org
         secret: 'PROJEN_GITHUB_TOKEN',
       },
       dependabot: true,
@@ -127,11 +135,105 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       // issueTemplates: {}
       readme: {
         contents: [
-          '# TODO',
-          '',
+          `
+![Source](https://img.shields.io/github/stars/MV-Consulting/${options.name}?logo=github&label=GitHub%20Stars)
+[![Build Status](https://github.com/MV-Consulting/${options.name}/actions/workflows/build.yml/badge.svg)](https://github.com/MV-Consulting/${options.name}/actions/workflows/build.yml)
+[![ESLint Code Formatting](https://img.shields.io/badge/code_style-eslint-brightgreen.svg)](https://eslint.org)
+[![Latest release](https://img.shields.io/github/release/MV-Consulting/${options.name}.svg)](https://github.com/MV-Consulting/${options.name}/releases)
+![GitHub](https://img.shields.io/github/license/MV-Consulting/${options.name})
+[![npm](https://img.shields.io/npm/dt/@mavogel/${options.name}?label=npm&color=orange)](https://www.npmjs.com/package/@mavogel/${options.name})
+[![typescript](https://img.shields.io/badge/jsii-typescript-blueviolet.svg)](https://www.npmjs.com/package/@mavogel/${options.name})
+          `,
+          '\n',
+          `# ${options.name}`,
+          '\n',
+          'My awesome description...',
+          '\n',
+          `
+## Table of Contents
+
+- [Features](#features)
+- [Usage](#usage)
+- [Solution Design](#solution-design)
+- [Inspiration](#inspiration)
+          `,
+          '\n',
+          `
+## Features
+
+- ⚡ **Quick Setup**: TBD
+- 📏 **Best Practice Setup**: TBD
+- 🤹‍♂️ **Pre-installed packages**: TBD
+- 🏗️ **Extensibility**: TBD
+          `,
+          '\n',
+          `
+## Usage
+The following steps get you started:
+
+1. Create a new \`awscdk-app\` via
+\`\`\`bash
+npx projen new awscdk-app-ts --cdkVersion=2.177.0 --package-manager=npm
+\`\`\`
+3. Add \`@mavogel/${options.name}\` as a dependency to your project in the \`.projenrc.ts\` file
+4. Run \`npx projen\` to install it
+5. Add the following to the \`src/main.ts\` file:
+\`\`\`ts
+import { App, Stack, StackProps } from 'aws-cdk-lib';
+import * as ec2 from 'aws-cdk-lib/aws-ec2';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import { Construct } from 'constructs';
+import { Placeholder } from '@mavogel/${options.name}';
+
+export class MyStack extends Stack {
+  constructor(scope: Construct, id: string, props: StackProps = {}) {
+    super(scope, id, props);
+
+    new Placeholder(this, 'placeholder', {
+      // and more... 💡
+    });
+  }
+}
+
+const env = {
+  account: '123456789912',
+  region: 'eu-central-1',
+};
+
+const app = new App();
+new MyStack(app, 'placeholder', { env });
+app.synth();
+\`\`\`
+
+and deploy it
+\`\`\`bash
+npx projen build
+npx projen deploy
+\`\`\`
+
+with the output
+\`\`\`console
+TBD
+\`\`\`
+
+See the [examples](./examples) folder for more inspiration.
+          `,
+          '\n',
+          `
+## Solution Design
+
+<details>
+  <summary>... if you're curious about click here for the details</summary>
+
+![placeholder](docs/img/placeholder.drawio-min.png)
+
+</details>
+          `,
+          '\n',
           fs.readFileSync(`${baseAssetsDirectory}/common/github_readme_cta.md`).toString(),
         ].join('\n'),
       },
+      // NOTE: keep all the passed in options which can override the existing ones!
       ...options,
     });
 
@@ -186,7 +288,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
     this.package.setScript(
       'integ-test',
-      'integ-runner --directory ./integ-tests --parallel-regions eu-west-1 --parallel-regions eu-west-2 --update-on-failed',
+      `integ-runner --directory ./integ-tests ${options.integTestRegions?.map(region => `--parallel-regions ${region}`).join(' ')} --update-on-failed,`,
     );
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {

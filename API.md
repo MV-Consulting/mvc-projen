@@ -1781,6 +1781,7 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
 | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
 | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory">baseAssetsDirectory</a></code> | <code>string</code> | Base directory for the assets. |
+| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions">integTestRegions</a></code> | <code>string[]</code> | The regions to run the integ tests in. |
 
 ---
 
@@ -4388,9 +4389,22 @@ public readonly baseAssetsDirectory: string;
 ```
 
 - *Type:* string
-- *Default:* cwd()
+- *Default:* ${cwd()}/node_modules/mvc-projen/assets
 
 Base directory for the assets.
+
+---
+
+##### `integTestRegions`<sup>Optional</sup> <a name="integTestRegions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions"></a>
+
+```typescript
+public readonly integTestRegions: string[];
+```
+
+- *Type:* string[]
+- *Default:* eu-west-1 and eu-west-2
+
+The regions to run the integ tests in.
 
 ---
 
