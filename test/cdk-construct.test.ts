@@ -1,3 +1,4 @@
+import { cwd } from 'process';
 import { synthSnapshot } from 'projen/lib/util/synth';
 import { MvcCdkConstructLibrary, MvcCdkConstructLibraryOptions } from '../src';
 
@@ -8,6 +9,8 @@ const minimalMvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = {
   name: 'test-project',
   defaultReleaseBranch: 'main',
   repositoryUrl: 'https://github.com/MV-Consulting/test-project.git',
+  // for tests
+  baseAssetsDirectory: `${cwd()}/assets`,
 };
 
 describe('cdkVersion is >= 2.0.0', () => {

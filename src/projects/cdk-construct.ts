@@ -15,11 +15,11 @@ const lambdaNodeVersion = LambdaRuntime.NODEJS_20_X;
  */
 export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOptions {
   /**
-   * Base directory for the files
+   * Base directory for the assets
    *
    * @default cwd()
    */
-  readonly baseFilesDirectory?: string;
+  readonly baseAssetsDirectory?: string;
 }
 
 /**
@@ -30,7 +30,7 @@ export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOpt
 export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
   constructor(options: MvcCdkConstructLibraryOptions) {
-    const baseFilesDirectory = options.baseFilesDirectory ?? cwd();
+    const baseAssetsDirectory = options.baseAssetsDirectory ?? `${cwd()}/node_modules/mvc-projen/assets`;
 
     super({
       authorOrganization: true,
@@ -122,14 +122,14 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
         compilerOptions: {},
         include: ['integ-tests/**/*.ts'],
       },
-      pullRequestTemplateContents: [fs.readFileSync(`${baseFilesDirectory}/assets/common/github_pull_request.md`).toString()],
+      pullRequestTemplateContents: [fs.readFileSync(`${baseAssetsDirectory}/common/github_pull_request.md`).toString()],
       // NOTE: issue templates are not supported yet. See https://github.com/projen/projen/pull/3648
       // issueTemplates: {}
       readme: {
         contents: [
           '# TODO',
           '',
-          fs.readFileSync(`${baseFilesDirectory}/assets/common/github_readme_cta.md`).toString(),
+          fs.readFileSync(`${baseAssetsDirectory}/common/github_readme_cta.md`).toString(),
         ].join('\n'),
       },
       ...options,
@@ -187,11 +187,11 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     );
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
-      lines: [fs.readFileSync(`${baseFilesDirectory}/assets/common/github_bug_report.md`).toString()],
+      lines: [fs.readFileSync(`${baseAssetsDirectory}/common/github_bug_report.md`).toString()],
     });
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/feature_request.md', {
-      lines: [fs.readFileSync(`${baseFilesDirectory}/assets/common/github_feature_request.md`).toString()],
+      lines: [fs.readFileSync(`${baseAssetsDirectory}/common/github_feature_request.md`).toString()],
     });
 
     new TextFile(this, '.github/FUNDING.yaml', {
@@ -208,7 +208,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 }
 
 interface SampleCodeOptions {
-  readonly baseFilesDirectory?: string;
+  readonly baseAssetsDirectory?: string;
 }
 
 class SampleCode extends Component {
@@ -236,8 +236,8 @@ class SampleCode extends Component {
     }
 
     fs.mkdirSync(srcdir, { recursive: true });
-    fs.writeFileSync(path.join(srcdir, 'index.ts'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/src_index.ts`).toString());
-    fs.writeFileSync(path.join(srcdir, 'placeholder.ts'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/src_placeholder.ts`).toString());
+    fs.writeFileSync(path.join(srcdir, 'index.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_index.ts`).toString());
+    fs.writeFileSync(path.join(srcdir, 'placeholder.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_placeholder.ts`).toString());
 
     const testdir = path.join(outdir, this.library.testdir);
     if (
@@ -247,7 +247,7 @@ class SampleCode extends Component {
       return;
     }
     fs.mkdirSync(testdir, { recursive: true });
-    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/src_index.test-xyz.ts`).toString());
+    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_index.test-xyz.ts`).toString());
 
     const integTestdir = path.join(outdir, 'integ-tests');
     if (
@@ -257,7 +257,7 @@ class SampleCode extends Component {
       return;
     }
     fs.mkdirSync(integTestdir, { recursive: true });
-    fs.writeFileSync(path.join(integTestdir, 'integ.placeholder.ts'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/integ_integ.placeholder.ts`).toString());
+    fs.writeFileSync(path.join(integTestdir, 'integ.placeholder.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/integ_integ.placeholder.ts`).toString());
 
     const integTestFunctionsdir = path.join(outdir, integTestdir, 'functions');
     if (
@@ -267,7 +267,7 @@ class SampleCode extends Component {
       return;
     }
     fs.mkdirSync(integTestFunctionsdir, { recursive: true });
-    fs.writeFileSync(path.join(integTestFunctionsdir, 'test-handler.ts'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/integ_test-handler.ts`).toString());
+    fs.writeFileSync(path.join(integTestFunctionsdir, 'test-handler.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/integ_test-handler.ts`).toString());
 
     const docsdir = path.join(outdir, 'docs');
     if (
@@ -277,7 +277,7 @@ class SampleCode extends Component {
       return;
     }
     fs.mkdirSync(docsdir, { recursive: true });
-    fs.writeFileSync(path.join(docsdir, 'placeholder.drawio'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/docs_placeholder.drawio`).toString());
+    fs.writeFileSync(path.join(docsdir, 'placeholder.drawio'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/docs_placeholder.drawio`).toString());
 
     const examplesdir = path.join(outdir, 'examples', 'simple');
     if (
@@ -287,6 +287,6 @@ class SampleCode extends Component {
       return;
     }
     fs.mkdirSync(examplesdir, { recursive: true });
-    fs.writeFileSync(path.join(examplesdir, 'main.ts'), fs.readFileSync(`${this.options.baseFilesDirectory}/assets/cdk-construct/examples_simple_main.ts`).toString());
+    fs.writeFileSync(path.join(examplesdir, 'main.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/examples_simple_main.ts`).toString());
   }
 }

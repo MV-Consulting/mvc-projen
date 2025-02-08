@@ -1780,7 +1780,7 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaAutoDiscover">lambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in your source tree. If this is disabled, you either need to explicitly call `aws_lambda.Function.autoDiscover()` or define a `new aws_lambda.Function()` for each handler. |
 | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
 | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.baseFilesDirectory">baseFilesDirectory</a></code> | <code>string</code> | Base directory for the files. |
+| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory">baseAssetsDirectory</a></code> | <code>string</code> | Base directory for the assets. |
 
 ---
 
@@ -4381,16 +4381,16 @@ Common options for all AWS Lambda functions.
 
 ---
 
-##### `baseFilesDirectory`<sup>Optional</sup> <a name="baseFilesDirectory" id="mvc-projen.MvcCdkConstructLibraryOptions.property.baseFilesDirectory"></a>
+##### `baseAssetsDirectory`<sup>Optional</sup> <a name="baseAssetsDirectory" id="mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory"></a>
 
 ```typescript
-public readonly baseFilesDirectory: string;
+public readonly baseAssetsDirectory: string;
 ```
 
 - *Type:* string
 - *Default:* cwd()
 
-Base directory for the files.
+Base directory for the assets.
 
 ---
 
