@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { cwd } from 'process';
-import { Component, javascript, ReleasableCommits, TextFile } from 'projen';
+import { Component, javascript, ReleasableCommits, TextFile, YamlFile } from 'projen';
 import { AwsCdkConstructLibrary, AwsCdkConstructLibraryOptions, LambdaRuntime } from 'projen/lib/awscdk';
 import { DependabotScheduleInterval } from 'projen/lib/github';
 import { JobStep } from 'projen/lib/github/workflows-model';
@@ -160,6 +160,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       lines: [
         'module.exports = { extends: [\'@commitlint/config-conventional\'] };',
       ],
+      marker: true,
     });
 
     this.package.setScript('awslint', 'awslint');
@@ -196,10 +197,10 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       lines: [fs.readFileSync(`${baseAssetsDirectory}/common/github_feature_request.md`).toString()],
     });
 
-    new TextFile(this, '.github/FUNDING.yaml', {
-      lines: [
-        'github: mavogel',
-      ],
+    new YamlFile(this, '.github/FUNDING.yaml', {
+      obj: {
+        github: 'mavogel'
+      }
     });
 
     // write sample code to main.ts & to main.test.ts
