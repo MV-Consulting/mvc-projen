@@ -37,7 +37,8 @@ export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOpt
 export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
   constructor(options: MvcCdkConstructLibraryOptions) {
-    const baseAssetsDirectory = options.baseAssetsDirectory ?? `${cwd()}/node_modules/mvc-projen/assets`;
+    const baseAssetsDirectory = options.baseAssetsDirectory ?? `${cwd()}/node_modules/@mavogel/mvc-projen/assets`;
+    const integTestRegions = options.integTestRegions ?? ['eu-west-1', 'eu-west-2'];
 
     super({
       authorOrganization: true,
@@ -282,7 +283,7 @@ add tools or links which inspired you
 
     this.package.setScript(
       'integ-test',
-      `integ-runner --directory ./integ-tests ${options.integTestRegions?.map(region => `--parallel-regions ${region}`).join(' ')} --update-on-failed,`,
+      `integ-runner --directory ./integ-tests ${integTestRegions?.map(region => `--parallel-regions ${region}`).join(' ')} --update-on-failed,`,
     );
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
