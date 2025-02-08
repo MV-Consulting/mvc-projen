@@ -202,7 +202,9 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
     // write sample code to main.ts & to main.test.ts
     if (options.sampleCode ?? true) {
-      new SampleCode(this, {});
+      new SampleCode(this, {
+        baseAssetsDirectory,
+      });
     }
   }
 }
