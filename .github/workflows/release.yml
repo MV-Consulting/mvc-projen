@@ -121,4 +121,4 @@ jobs:
           NPM_REGISTRY: registry.npmjs.org
           NPM_CONFIG_PROVENANCE: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx -p publib@~5.7.0 publib-npm
+        run: npx -p publib@latest publib-npm
