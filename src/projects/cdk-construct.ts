@@ -199,8 +199,16 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
     new YamlFile(this, '.github/FUNDING.yaml', {
       obj: {
-        github: 'mavogel'
-      }
+        github: 'mavogel',
+      },
+    });
+
+    new TextFile(this, 'CONTRIBUTING.md', {
+      lines: [fs.readFileSync(`${baseAssetsDirectory}/common/contributing.md`).toString()],
+    });
+
+    new TextFile(this, '.prettierrc', {
+      lines: [fs.readFileSync(`${baseAssetsDirectory}/common/prettierrc`).toString()],
     });
 
     // write sample code to main.ts & to main.test.ts
