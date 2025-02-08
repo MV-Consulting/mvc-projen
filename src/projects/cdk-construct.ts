@@ -145,8 +145,8 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     }
     this.addDeps('cdk-nag');
     this.addDevDeps(
-      `@aws-cdk/integ-runner@^${this.cdkVersion}-alpha.0`, // NOTE: keep in sync with cdkversion
-      `@aws-cdk/integ-tests-alpha@^${this.cdkVersion}-alpha.0`,
+      `@aws-cdk/integ-runner@${this.cdkVersion}-alpha.0`, // NOTE: keep in sync with cdkversion
+      `@aws-cdk/integ-tests-alpha@${this.cdkVersion}-alpha.0`,
       '@commitlint/cli',
       '@commitlint/config-conventional',
       'awslint',
