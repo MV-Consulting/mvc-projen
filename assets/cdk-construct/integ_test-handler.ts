@@ -11,7 +11,7 @@ export const handler = async (event: any) => {
     }
     // No logs due to error 'Response object is too long'
     // https://github.com/aws/aws-cdk/issues/24490
-    // log({ message: 'Fetching document', url })
+    // log({ message: 'my message', message })
 
     // Do logic here...
     return 'OK';
