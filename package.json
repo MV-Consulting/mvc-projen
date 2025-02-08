@@ -1,8 +1,9 @@
 {
-  "name": "mvc-projen",
+  "name": "@mavogel/mvc-projen",
+  "description": "Base projen module for MV Consulting projects",
   "repository": {
     "type": "git",
-    "url": "https://github.com/8409778+mavogel/mvc-projen.git"
+    "url": "https://github.com/MV-Consulting/mvc-projen"
   },
   "scripts": {
     "build": "npx projen build",
@@ -18,15 +19,14 @@
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
     "post-compile": "npx projen post-compile",
-    "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
-    "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
-    "projen": "npx projen"
+    "projen": "npx projen",
+    "prepare": "husky"
   },
   "author": {
     "name": "Manuel Vogel",
@@ -34,9 +34,11 @@
     "organization": false
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.1",
+    "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "commit-and-tag-version": "^12",
@@ -44,18 +46,34 @@
     "eslint": "^9",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-import": "^2.31.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-junit": "^16",
-    "jsii": "~5.7.0",
+    "jsii": "~5.6.0",
     "jsii-diff": "^1.106.0",
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.106.0",
-    "jsii-rosetta": "~5.7.0",
-    "projen": "^0.91.7",
+    "jsii-rosetta": "~5.6.0",
+    "projen": "0.91.8",
     "ts-jest": "^29.2.5",
-    "ts-node": "^10.9.2",
+    "ts-node": "^9",
     "typescript": "^5.7.3"
   },
+  "peerDependencies": {
+    "constructs": "^10.4.2",
+    "projen": "0.91.8"
+  },
+  "dependencies": {
+    "constructs": "^10.4.2",
+    "projen": "0.91.8"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "construct",
+    "server",
+    "vscode"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "publishConfig": {

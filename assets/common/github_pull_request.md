@@ -1,4 +1,3 @@
-
 **Please check if the PR fulfills these requirements**
 - [ ] The commit message describes your change
 - [ ] Tests for the changes have been added if possible (for bug fixes / features)
@@ -18,6 +17,6 @@
 
 **Environment**
 - `node --version`:
-- `npx projen --version`:
-- version of the jsii lib: `x.x.x`
+- `npx cdk --version`:
+- version of the construct: `x.x.x`
   
