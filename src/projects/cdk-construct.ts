@@ -38,7 +38,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
   constructor(options: MvcCdkConstructLibraryOptions) {
     const baseAssetsDirectory = options.baseAssetsDirectory ?? `${cwd()}/node_modules/@mavogel/mvc-projen/assets`;
-    const integTestRegions = options.integTestRegions ?? ['eu-west-1', 'eu-west-2']
+    const integTestRegions = options.integTestRegions ?? ['eu-west-1', 'eu-west-2'];
 
     super({
       authorOrganization: true,
