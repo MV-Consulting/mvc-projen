@@ -27,5 +27,6 @@ const project = new cdk.JsiiProject({
   excludeTypescript: [
     'src/projects/files/**/*',
   ],
+
 });
 project.synth();
