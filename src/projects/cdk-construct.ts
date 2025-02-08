@@ -143,14 +143,16 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     for (const file of filesPatternToGitignore) {
       this.gitignore.exclude(file);
     }
-    this.addDeps('cdk-nag');
+    this.addDeps(
+      'cdk-nag@^2.35.0',
+    );
     this.addDevDeps(
       `@aws-cdk/integ-runner@${this.cdkVersion}-alpha.0`, // NOTE: keep in sync with cdkversion
       `@aws-cdk/integ-tests-alpha@${this.cdkVersion}-alpha.0`,
-      '@commitlint/cli',
-      '@commitlint/config-conventional',
-      'awslint',
-      'husky',
+      '@commitlint/cli@^19.6.1',
+      '@commitlint/config-conventional@^19.6.0',
+      'awslint@^2.72.1',
+      'husky@^9.1.7',
     );
 
     this.package.setScript('prepare', 'husky');
@@ -227,7 +229,6 @@ class SampleCode extends Component {
   }
 
   public synthesize() {
-    console.log(this.options); // TODO
     const outdir = this.project.outdir;
     const srcdir = path.join(outdir, this.library.srcdir);
     if (
@@ -250,6 +251,8 @@ class SampleCode extends Component {
     ) {
       return;
     }
+    // remove ${testdir}/hello.test.ts file. On the other hand, we override index.ts
+    fs.unlinkSync(`${testdir}/hello.test.ts`);
     fs.mkdirSync(testdir, { recursive: true });
     fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/test_index.test-xyz.ts`).toString());
 
@@ -263,7 +266,7 @@ class SampleCode extends Component {
     fs.mkdirSync(integTestdir, { recursive: true });
     fs.writeFileSync(path.join(integTestdir, 'integ.placeholder.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/integ_integ.placeholder.ts`).toString());
 
-    const integTestFunctionsdir = path.join(outdir, integTestdir, 'functions');
+    const integTestFunctionsdir = path.join(integTestdir, 'functions');
     if (
       fs.existsSync(integTestFunctionsdir) &&
       fs.readdirSync(integTestFunctionsdir).filter((x) => x.endsWith('.ts'))
