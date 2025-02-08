@@ -259,5 +259,25 @@ class SampleCode extends Component {
     }
     fs.mkdirSync(integTestFunctionsdir, { recursive: true });
     fs.writeFileSync(path.join(integTestFunctionsdir, 'test-handler.ts'), fs.readFileSync(`${cwd()}/src/projects/files/integ_test-handler.ts`).toString());
+
+    const docsdir = path.join(outdir, 'docs');
+    if (
+      fs.existsSync(docsdir) &&
+      fs.readdirSync(docsdir).filter((x) => x.endsWith('.drawio'))
+    ) {
+      return;
+    }
+    fs.mkdirSync(docsdir, { recursive: true });
+    fs.writeFileSync(path.join(docsdir, 'placeholder.drawio'), fs.readFileSync(`${cwd()}/src/projects/files/docs_placeholder.drawio`).toString());
+
+    const examplesdir = path.join(outdir, 'examples', 'simple');
+    if (
+      fs.existsSync(examplesdir) &&
+      fs.readdirSync(examplesdir).filter((x) => x.endsWith('.drawio'))
+    ) {
+      return;
+    }
+    fs.mkdirSync(examplesdir, { recursive: true });
+    fs.writeFileSync(path.join(examplesdir, 'main.ts'), fs.readFileSync(`${cwd()}/src/projects/files/examples_simple_main.ts`).toString());
   }
 }
