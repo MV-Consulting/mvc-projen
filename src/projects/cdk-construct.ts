@@ -144,11 +144,8 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 [![npm](https://img.shields.io/npm/dt/@mavogel/${options.name}?label=npm&color=orange)](https://www.npmjs.com/package/@mavogel/${options.name})
 [![typescript](https://img.shields.io/badge/jsii-typescript-blueviolet.svg)](https://www.npmjs.com/package/@mavogel/${options.name})
           `,
-          '\n',
           `# ${options.name}`,
-          '\n',
           'My awesome description...',
-          '\n',
           `
 ## Table of Contents
 
@@ -156,18 +153,14 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 - [Usage](#usage)
 - [Solution Design](#solution-design)
 - [Inspiration](#inspiration)
-          `,
-          '\n',
-          `
+
 ## Features
 
 - ⚡ **Quick Setup**: TBD
 - 📏 **Best Practice Setup**: TBD
 - 🤹‍♂️ **Pre-installed packages**: TBD
 - 🏗️ **Extensibility**: TBD
-          `,
-          '\n',
-          `
+
 ## Usage
 The following steps get you started:
 
@@ -217,9 +210,7 @@ TBD
 \`\`\`
 
 See the [examples](./examples) folder for more inspiration.
-          `,
-          '\n',
-          `
+
 ## Solution Design
 
 <details>
@@ -228,8 +219,11 @@ See the [examples](./examples) folder for more inspiration.
 ![placeholder](docs/img/placeholder.drawio-min.png)
 
 </details>
+
+## Inspiration
+
+add tools or links which inspired you
           `,
-          '\n',
           fs.readFileSync(`${baseAssetsDirectory}/common/github_readme_cta.md`).toString(),
         ].join('\n'),
       },
