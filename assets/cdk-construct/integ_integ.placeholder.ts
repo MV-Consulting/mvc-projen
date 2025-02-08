@@ -48,7 +48,7 @@ const loginHandler = new NodejsFunction(stackUnderTest, 'test-handler', {
 
 /**
  * Assertion:
- * Should find the vscode server login page
+ * Should find the server login page
  */
 const sendTestLoginAssertion = integ.assertions
   .invokeFunction({
