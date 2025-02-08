@@ -21,12 +21,7 @@ const project = new cdk.JsiiProject({
     ignorePatterns: [
       '**/*-function.ts',
       'examples/',
-      'src/projects/files/**/*',
     ],
   },
-  excludeTypescript: [
-    'src/projects/files/**/*',
-  ],
-
 });
 project.synth();

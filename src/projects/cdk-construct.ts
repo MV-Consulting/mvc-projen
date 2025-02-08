@@ -232,7 +232,8 @@ class SampleCode extends Component {
     const srcdir = path.join(outdir, this.library.srcdir);
     if (
       fs.existsSync(srcdir) &&
-      fs.readdirSync(srcdir).filter((x) => x.endsWith('.ts'))
+      fs.readdirSync(srcdir).filter((x) => x.endsWith('.ts')) &&
+      !fs.readFileSync(`${srcdir}/index.ts`).toString().includes('export class Hello') // Note: from parent
     ) {
       return;
     }
@@ -244,12 +245,13 @@ class SampleCode extends Component {
     const testdir = path.join(outdir, this.library.testdir);
     if (
       fs.existsSync(testdir) &&
-      fs.readdirSync(testdir).filter((x) => x.endsWith('.ts'))
+      fs.readdirSync(testdir).filter((x) => x.endsWith('.ts')) &&
+      !fs.existsSync(`${testdir}/hello.test.ts`) // Note: from parent
     ) {
       return;
     }
     fs.mkdirSync(testdir, { recursive: true });
-    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/src_index.test-xyz.ts`).toString());
+    fs.writeFileSync(path.join(testdir, 'index.test.ts'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/test_index.test-xyz.ts`).toString());
 
     const integTestdir = path.join(outdir, 'integ-tests');
     if (
@@ -279,7 +281,7 @@ class SampleCode extends Component {
       return;
     }
     fs.mkdirSync(docsdir, { recursive: true });
-    fs.writeFileSync(path.join(docsdir, 'placeholder.drawio'), fs.readFileSync(`${this.options.baseAssetsDirectory}/cdk-construct/docs_placeholder.drawio`).toString());
+    fs.writeFileSync(path.join(docsdir, 'placeholder.drawio'), fs.readFileSync(`${this.options.baseAssetsDirectory}/common/docs_placeholder.drawio`).toString());
 
     const examplesdir = path.join(outdir, 'examples', 'simple');
     if (
