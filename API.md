@@ -2,27 +2,27 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### MvcCdkConstructLibrary <a name="MvcCdkConstructLibrary" id="mvc-projen.MvcCdkConstructLibrary"></a>
+### MvcCdkConstructLibrary <a name="MvcCdkConstructLibrary" id="@mavogel/mvc-projen.MvcCdkConstructLibrary"></a>
 
 TypeScript library.
 
-#### Initializers <a name="Initializers" id="mvc-projen.MvcCdkConstructLibrary.Initializer"></a>
+#### Initializers <a name="Initializers" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.Initializer"></a>
 
 ```typescript
-import { MvcCdkConstructLibrary } from 'mvc-projen'
+import { MvcCdkConstructLibrary } from '@mavogel/mvc-projen'
 
 new MvcCdkConstructLibrary(options: MvcCdkConstructLibraryOptions)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.Initializer.parameter.options">options</a></code> | <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions">MvcCdkConstructLibraryOptions</a></code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.Initializer.parameter.options">options</a></code> | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions">MvcCdkConstructLibraryOptions</a></code> | *No description.* |
 
 ---
 
-##### `options`<sup>Required</sup> <a name="options" id="mvc-projen.MvcCdkConstructLibrary.Initializer.parameter.options"></a>
+##### `options`<sup>Required</sup> <a name="options" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.Initializer.parameter.options"></a>
 
-- *Type:* <a href="#mvc-projen.MvcCdkConstructLibraryOptions">MvcCdkConstructLibraryOptions</a>
+- *Type:* <a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions">MvcCdkConstructLibraryOptions</a>
 
 ---
 
@@ -30,42 +30,42 @@ new MvcCdkConstructLibrary(options: MvcCdkConstructLibraryOptions)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
 
 ---
 
-##### `toString` <a name="toString" id="mvc-projen.MvcCdkConstructLibrary.toString"></a>
+##### `toString` <a name="toString" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.toString"></a>
 
 ```typescript
 public toString(): string
@@ -73,7 +73,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup"></a>
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup"></a>
 
 ```typescript
 public addExcludeFromCleanup(globs: ...string[]): void
@@ -84,7 +84,7 @@ Exclude the matching files from pre-synth cleanup.
 Can be used when, for example, some
 source files include the projen marker and we don't want them to be erased during synth.
 
-###### `globs`<sup>Required</sup> <a name="globs" id="mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup.parameter.globs"></a>
+###### `globs`<sup>Required</sup> <a name="globs" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup.parameter.globs"></a>
 
 - *Type:* ...string[]
 
@@ -92,7 +92,7 @@ The glob patterns to match.
 
 ---
 
-##### `addGitIgnore` <a name="addGitIgnore" id="mvc-projen.MvcCdkConstructLibrary.addGitIgnore"></a>
+##### `addGitIgnore` <a name="addGitIgnore" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addGitIgnore"></a>
 
 ```typescript
 public addGitIgnore(pattern: string): void
@@ -100,7 +100,7 @@ public addGitIgnore(pattern: string): void
 
 Adds a .gitignore pattern.
 
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mvc-projen.MvcCdkConstructLibrary.addGitIgnore.parameter.pattern"></a>
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addGitIgnore.parameter.pattern"></a>
 
 - *Type:* string
 
@@ -108,7 +108,7 @@ The glob pattern to ignore.
 
 ---
 
-##### `addPackageIgnore` <a name="addPackageIgnore" id="mvc-projen.MvcCdkConstructLibrary.addPackageIgnore"></a>
+##### `addPackageIgnore` <a name="addPackageIgnore" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addPackageIgnore"></a>
 
 ```typescript
 public addPackageIgnore(pattern: string): void
@@ -116,7 +116,7 @@ public addPackageIgnore(pattern: string): void
 
 Adds patterns to be ignored by npm.
 
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mvc-projen.MvcCdkConstructLibrary.addPackageIgnore.parameter.pattern"></a>
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addPackageIgnore.parameter.pattern"></a>
 
 - *Type:* string
 
@@ -124,7 +124,7 @@ The pattern to ignore.
 
 ---
 
-##### `addTask` <a name="addTask" id="mvc-projen.MvcCdkConstructLibrary.addTask"></a>
+##### `addTask` <a name="addTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTask"></a>
 
 ```typescript
 public addTask(name: string, props?: TaskOptions): Task
@@ -135,7 +135,7 @@ Adds a new task to this project.
 This will fail if the project already has
 a task with this name.
 
-###### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibrary.addTask.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTask.parameter.name"></a>
 
 - *Type:* string
 
@@ -143,7 +143,7 @@ The task name to add.
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="props" id="mvc-projen.MvcCdkConstructLibrary.addTask.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTask.parameter.props"></a>
 
 - *Type:* projen.TaskOptions
 
@@ -151,7 +151,7 @@ Task properties.
 
 ---
 
-##### ~~`addTip`~~ <a name="addTip" id="mvc-projen.MvcCdkConstructLibrary.addTip"></a>
+##### ~~`addTip`~~ <a name="addTip" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTip"></a>
 
 ```typescript
 public addTip(message: string): void
@@ -159,7 +159,7 @@ public addTip(message: string): void
 
 Prints a "tip" message during synthesis.
 
-###### `message`<sup>Required</sup> <a name="message" id="mvc-projen.MvcCdkConstructLibrary.addTip.parameter.message"></a>
+###### `message`<sup>Required</sup> <a name="message" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTip.parameter.message"></a>
 
 - *Type:* string
 
@@ -167,7 +167,7 @@ The message.
 
 ---
 
-##### `annotateGenerated` <a name="annotateGenerated" id="mvc-projen.MvcCdkConstructLibrary.annotateGenerated"></a>
+##### `annotateGenerated` <a name="annotateGenerated" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.annotateGenerated"></a>
 
 ```typescript
 public annotateGenerated(glob: string): void
@@ -181,7 +181,7 @@ repository statistics and language breakdown.
 
 > [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
 
-###### `glob`<sup>Required</sup> <a name="glob" id="mvc-projen.MvcCdkConstructLibrary.annotateGenerated.parameter.glob"></a>
+###### `glob`<sup>Required</sup> <a name="glob" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.annotateGenerated.parameter.glob"></a>
 
 - *Type:* string
 
@@ -189,7 +189,7 @@ the glob pattern to match (could be a file path).
 
 ---
 
-##### `postSynthesize` <a name="postSynthesize" id="mvc-projen.MvcCdkConstructLibrary.postSynthesize"></a>
+##### `postSynthesize` <a name="postSynthesize" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.postSynthesize"></a>
 
 ```typescript
 public postSynthesize(): void
@@ -199,7 +199,7 @@ Called after all components are synthesized.
 
 Order is *not* guaranteed.
 
-##### `preSynthesize` <a name="preSynthesize" id="mvc-projen.MvcCdkConstructLibrary.preSynthesize"></a>
+##### `preSynthesize` <a name="preSynthesize" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.preSynthesize"></a>
 
 ```typescript
 public preSynthesize(): void
@@ -207,7 +207,7 @@ public preSynthesize(): void
 
 Called before all components are synthesized.
 
-##### `removeTask` <a name="removeTask" id="mvc-projen.MvcCdkConstructLibrary.removeTask"></a>
+##### `removeTask` <a name="removeTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.removeTask"></a>
 
 ```typescript
 public removeTask(name: string): Task
@@ -215,7 +215,7 @@ public removeTask(name: string): Task
 
 Removes a task from a project.
 
-###### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibrary.removeTask.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.removeTask.parameter.name"></a>
 
 - *Type:* string
 
@@ -223,7 +223,7 @@ The name of the task to remove.
 
 ---
 
-##### `runTaskCommand` <a name="runTaskCommand" id="mvc-projen.MvcCdkConstructLibrary.runTaskCommand"></a>
+##### `runTaskCommand` <a name="runTaskCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.runTaskCommand"></a>
 
 ```typescript
 public runTaskCommand(task: Task): string
@@ -234,7 +234,7 @@ Returns the shell command to execute in order to run a task.
 This will
 typically be `npx projen TASK`.
 
-###### `task`<sup>Required</sup> <a name="task" id="mvc-projen.MvcCdkConstructLibrary.runTaskCommand.parameter.task"></a>
+###### `task`<sup>Required</sup> <a name="task" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.runTaskCommand.parameter.task"></a>
 
 - *Type:* projen.Task
 
@@ -242,7 +242,7 @@ The task for which the command is required.
 
 ---
 
-##### `synth` <a name="synth" id="mvc-projen.MvcCdkConstructLibrary.synth"></a>
+##### `synth` <a name="synth" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.synth"></a>
 
 ```typescript
 public synth(): void
@@ -257,7 +257,7 @@ Synthesize all project files into `outdir`.
 5. Call "postSynthesize()" for all components of this project
 6. Call "this.postSynthesize()"
 
-##### `tryFindFile` <a name="tryFindFile" id="mvc-projen.MvcCdkConstructLibrary.tryFindFile"></a>
+##### `tryFindFile` <a name="tryFindFile" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindFile"></a>
 
 ```typescript
 public tryFindFile(filePath: string): FileBase
@@ -265,7 +265,7 @@ public tryFindFile(filePath: string): FileBase
 
 Finds a file at the specified relative path within this project and all its subprojects.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mvc-projen.MvcCdkConstructLibrary.tryFindFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -276,7 +276,7 @@ from the root of _this_ project.
 
 ---
 
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mvc-projen.MvcCdkConstructLibrary.tryFindJsonFile"></a>
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindJsonFile"></a>
 
 ```typescript
 public tryFindJsonFile(filePath: string): JsonFile
@@ -284,7 +284,7 @@ public tryFindJsonFile(filePath: string): JsonFile
 
 Finds a json file by name.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mvc-projen.MvcCdkConstructLibrary.tryFindJsonFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindJsonFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -292,7 +292,7 @@ The file path.
 
 ---
 
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mvc-projen.MvcCdkConstructLibrary.tryFindObjectFile"></a>
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindObjectFile"></a>
 
 ```typescript
 public tryFindObjectFile(filePath: string): ObjectFile
@@ -300,7 +300,7 @@ public tryFindObjectFile(filePath: string): ObjectFile
 
 Finds an object file (like JsonFile, YamlFile, etc.) by name.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mvc-projen.MvcCdkConstructLibrary.tryFindObjectFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryFindObjectFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -308,7 +308,7 @@ The file path.
 
 ---
 
-##### `tryRemoveFile` <a name="tryRemoveFile" id="mvc-projen.MvcCdkConstructLibrary.tryRemoveFile"></a>
+##### `tryRemoveFile` <a name="tryRemoveFile" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryRemoveFile"></a>
 
 ```typescript
 public tryRemoveFile(filePath: string): FileBase
@@ -316,7 +316,7 @@ public tryRemoveFile(filePath: string): FileBase
 
 Finds a file at the specified relative path within this project and removes it.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mvc-projen.MvcCdkConstructLibrary.tryRemoveFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.tryRemoveFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -327,19 +327,19 @@ resolved from the root of _this_ project.
 
 ---
 
-##### `addBins` <a name="addBins" id="mvc-projen.MvcCdkConstructLibrary.addBins"></a>
+##### `addBins` <a name="addBins" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addBins"></a>
 
 ```typescript
 public addBins(bins: {[ key: string ]: string}): void
 ```
 
-###### `bins`<sup>Required</sup> <a name="bins" id="mvc-projen.MvcCdkConstructLibrary.addBins.parameter.bins"></a>
+###### `bins`<sup>Required</sup> <a name="bins" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addBins.parameter.bins"></a>
 
 - *Type:* {[ key: string ]: string}
 
 ---
 
-##### `addBundledDeps` <a name="addBundledDeps" id="mvc-projen.MvcCdkConstructLibrary.addBundledDeps"></a>
+##### `addBundledDeps` <a name="addBundledDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addBundledDeps"></a>
 
 ```typescript
 public addBundledDeps(deps: ...string[]): void
@@ -350,7 +350,7 @@ Defines bundled dependencies.
 Bundled dependencies will be added as normal dependencies as well as to the
 `bundledDependencies` section of your `package.json`.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.addBundledDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addBundledDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -364,7 +364,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mvc-projen.MvcCdkConstructLibrary.addCompileCommand"></a>
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addCompileCommand"></a>
 
 ```typescript
 public addCompileCommand(commands: ...string[]): void
@@ -372,13 +372,13 @@ public addCompileCommand(commands: ...string[]): void
 
 DEPRECATED.
 
-###### `commands`<sup>Required</sup> <a name="commands" id="mvc-projen.MvcCdkConstructLibrary.addCompileCommand.parameter.commands"></a>
+###### `commands`<sup>Required</sup> <a name="commands" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addCompileCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
 
 ---
 
-##### `addDeps` <a name="addDeps" id="mvc-projen.MvcCdkConstructLibrary.addDeps"></a>
+##### `addDeps` <a name="addDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addDeps"></a>
 
 ```typescript
 public addDeps(deps: ...string[]): void
@@ -386,7 +386,7 @@ public addDeps(deps: ...string[]): void
 
 Defines normal dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.addDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -400,7 +400,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### `addDevDeps` <a name="addDevDeps" id="mvc-projen.MvcCdkConstructLibrary.addDevDeps"></a>
+##### `addDevDeps` <a name="addDevDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addDevDeps"></a>
 
 ```typescript
 public addDevDeps(deps: ...string[]): void
@@ -408,7 +408,7 @@ public addDevDeps(deps: ...string[]): void
 
 Defines development/test dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.addDevDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addDevDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -422,7 +422,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### `addFields` <a name="addFields" id="mvc-projen.MvcCdkConstructLibrary.addFields"></a>
+##### `addFields` <a name="addFields" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addFields"></a>
 
 ```typescript
 public addFields(fields: {[ key: string ]: any}): void
@@ -430,7 +430,7 @@ public addFields(fields: {[ key: string ]: any}): void
 
 Directly set fields in `package.json`.
 
-###### `fields`<sup>Required</sup> <a name="fields" id="mvc-projen.MvcCdkConstructLibrary.addFields.parameter.fields"></a>
+###### `fields`<sup>Required</sup> <a name="fields" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addFields.parameter.fields"></a>
 
 - *Type:* {[ key: string ]: any}
 
@@ -438,7 +438,7 @@ The fields to set.
 
 ---
 
-##### `addKeywords` <a name="addKeywords" id="mvc-projen.MvcCdkConstructLibrary.addKeywords"></a>
+##### `addKeywords` <a name="addKeywords" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addKeywords"></a>
 
 ```typescript
 public addKeywords(keywords: ...string[]): void
@@ -446,7 +446,7 @@ public addKeywords(keywords: ...string[]): void
 
 Adds keywords to package.json (deduplicated).
 
-###### `keywords`<sup>Required</sup> <a name="keywords" id="mvc-projen.MvcCdkConstructLibrary.addKeywords.parameter.keywords"></a>
+###### `keywords`<sup>Required</sup> <a name="keywords" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addKeywords.parameter.keywords"></a>
 
 - *Type:* ...string[]
 
@@ -454,7 +454,7 @@ The keywords to add.
 
 ---
 
-##### `addPeerDeps` <a name="addPeerDeps" id="mvc-projen.MvcCdkConstructLibrary.addPeerDeps"></a>
+##### `addPeerDeps` <a name="addPeerDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addPeerDeps"></a>
 
 ```typescript
 public addPeerDeps(deps: ...string[]): void
@@ -466,7 +466,7 @@ When adding peer dependencies, a devDependency will also be added on the
 pinned version of the declared peer. This will ensure that you are testing
 your code against the minimum version required from your consumers.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.addPeerDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addPeerDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -480,7 +480,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### `addScripts` <a name="addScripts" id="mvc-projen.MvcCdkConstructLibrary.addScripts"></a>
+##### `addScripts` <a name="addScripts" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addScripts"></a>
 
 ```typescript
 public addScripts(scripts: {[ key: string ]: string}): void
@@ -488,7 +488,7 @@ public addScripts(scripts: {[ key: string ]: string}): void
 
 Replaces the contents of multiple npm package.json scripts.
 
-###### `scripts`<sup>Required</sup> <a name="scripts" id="mvc-projen.MvcCdkConstructLibrary.addScripts.parameter.scripts"></a>
+###### `scripts`<sup>Required</sup> <a name="scripts" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addScripts.parameter.scripts"></a>
 
 - *Type:* {[ key: string ]: string}
 
@@ -496,7 +496,7 @@ The scripts to set.
 
 ---
 
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mvc-projen.MvcCdkConstructLibrary.addTestCommand"></a>
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTestCommand"></a>
 
 ```typescript
 public addTestCommand(commands: ...string[]): void
@@ -504,13 +504,13 @@ public addTestCommand(commands: ...string[]): void
 
 DEPRECATED.
 
-###### `commands`<sup>Required</sup> <a name="commands" id="mvc-projen.MvcCdkConstructLibrary.addTestCommand.parameter.commands"></a>
+###### `commands`<sup>Required</sup> <a name="commands" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
 
 ---
 
-##### ~~`hasScript`~~ <a name="hasScript" id="mvc-projen.MvcCdkConstructLibrary.hasScript"></a>
+##### ~~`hasScript`~~ <a name="hasScript" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.hasScript"></a>
 
 ```typescript
 public hasScript(name: string): boolean
@@ -518,7 +518,7 @@ public hasScript(name: string): boolean
 
 Indicates if a script by the name name is defined.
 
-###### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibrary.hasScript.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.hasScript.parameter.name"></a>
 
 - *Type:* string
 
@@ -526,7 +526,7 @@ The name of the script.
 
 ---
 
-##### `removeScript` <a name="removeScript" id="mvc-projen.MvcCdkConstructLibrary.removeScript"></a>
+##### `removeScript` <a name="removeScript" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.removeScript"></a>
 
 ```typescript
 public removeScript(name: string): void
@@ -534,7 +534,7 @@ public removeScript(name: string): void
 
 Removes the npm script (always successful).
 
-###### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibrary.removeScript.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.removeScript.parameter.name"></a>
 
 - *Type:* string
 
@@ -542,7 +542,7 @@ The name of the script.
 
 ---
 
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mvc-projen.MvcCdkConstructLibrary.renderWorkflowSetup"></a>
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.renderWorkflowSetup"></a>
 
 ```typescript
 public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
@@ -550,7 +550,7 @@ public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
 
 Returns the set of workflow steps which should be executed to bootstrap a workflow.
 
-###### `options`<sup>Optional</sup> <a name="options" id="mvc-projen.MvcCdkConstructLibrary.renderWorkflowSetup.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.renderWorkflowSetup.parameter.options"></a>
 
 - *Type:* projen.javascript.RenderWorkflowSetupOptions
 
@@ -558,7 +558,7 @@ Options.
 
 ---
 
-##### `setScript` <a name="setScript" id="mvc-projen.MvcCdkConstructLibrary.setScript"></a>
+##### `setScript` <a name="setScript" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.setScript"></a>
 
 ```typescript
 public setScript(name: string, command: string): void
@@ -566,7 +566,7 @@ public setScript(name: string, command: string): void
 
 Replaces the contents of an npm package.json script.
 
-###### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibrary.setScript.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.setScript.parameter.name"></a>
 
 - *Type:* string
 
@@ -574,7 +574,7 @@ The script name.
 
 ---
 
-###### `command`<sup>Required</sup> <a name="command" id="mvc-projen.MvcCdkConstructLibrary.setScript.parameter.command"></a>
+###### `command`<sup>Required</sup> <a name="command" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.setScript.parameter.command"></a>
 
 - *Type:* string
 
@@ -582,7 +582,7 @@ The command to execute.
 
 ---
 
-##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="mvc-projen.MvcCdkConstructLibrary.addCdkDependencies"></a>
+##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addCdkDependencies"></a>
 
 ```typescript
 public addCdkDependencies(deps: ...string[]): void
@@ -592,7 +592,7 @@ Adds dependencies to AWS CDK modules.
 
 Since this is a library project, dependencies will be added as peer dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.addCdkDependencies.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addCdkDependencies.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -600,7 +600,7 @@ names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
 ---
 
-##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="mvc-projen.MvcCdkConstructLibrary.addCdkTestDependencies"></a>
+##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addCdkTestDependencies"></a>
 
 ```typescript
 public addCdkTestDependencies(deps: ...string[]): void
@@ -608,7 +608,7 @@ public addCdkTestDependencies(deps: ...string[]): void
 
 Adds AWS CDK modules as dev dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.addCdkTestDependencies.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addCdkTestDependencies.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -620,16 +620,16 @@ names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.isProject">isProject</a></code> | Test whether the given construct is a project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.of">of</a></code> | Find the closest ancestor project for given construct. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.of">of</a></code> | Find the closest ancestor project for given construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="mvc-projen.MvcCdkConstructLibrary.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.isConstruct"></a>
 
 ```typescript
-import { MvcCdkConstructLibrary } from 'mvc-projen'
+import { MvcCdkConstructLibrary } from '@mavogel/mvc-projen'
 
 MvcCdkConstructLibrary.isConstruct(x: any)
 ```
@@ -650,7 +650,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="mvc-projen.MvcCdkConstructLibrary.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -658,26 +658,26 @@ Any object.
 
 ---
 
-##### `isProject` <a name="isProject" id="mvc-projen.MvcCdkConstructLibrary.isProject"></a>
+##### `isProject` <a name="isProject" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.isProject"></a>
 
 ```typescript
-import { MvcCdkConstructLibrary } from 'mvc-projen'
+import { MvcCdkConstructLibrary } from '@mavogel/mvc-projen'
 
 MvcCdkConstructLibrary.isProject(x: any)
 ```
 
 Test whether the given construct is a project.
 
-###### `x`<sup>Required</sup> <a name="x" id="mvc-projen.MvcCdkConstructLibrary.isProject.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.isProject.parameter.x"></a>
 
 - *Type:* any
 
 ---
 
-##### `of` <a name="of" id="mvc-projen.MvcCdkConstructLibrary.of"></a>
+##### `of` <a name="of" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.of"></a>
 
 ```typescript
-import { MvcCdkConstructLibrary } from 'mvc-projen'
+import { MvcCdkConstructLibrary } from '@mavogel/mvc-projen'
 
 MvcCdkConstructLibrary.of(construct: IConstruct)
 ```
@@ -686,7 +686,7 @@ Find the closest ancestor project for given construct.
 
 When given a project, this it the project itself.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="mvc-projen.MvcCdkConstructLibrary.of.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.of.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -696,75 +696,75 @@ When given a project, this it the project itself.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version supported by this package. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.version">version</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version supported by this package. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.version">version</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="mvc-projen.MvcCdkConstructLibrary.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -776,7 +776,7 @@ The tree node.
 
 ---
 
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mvc-projen.MvcCdkConstructLibrary.property.buildTask"></a>
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.buildTask"></a>
 
 ```typescript
 public readonly buildTask: Task;
@@ -786,7 +786,7 @@ public readonly buildTask: Task;
 
 ---
 
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mvc-projen.MvcCdkConstructLibrary.property.commitGenerated"></a>
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.commitGenerated"></a>
 
 ```typescript
 public readonly commitGenerated: boolean;
@@ -798,7 +798,7 @@ Whether to commit the managed files by default.
 
 ---
 
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mvc-projen.MvcCdkConstructLibrary.property.compileTask"></a>
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.compileTask"></a>
 
 ```typescript
 public readonly compileTask: Task;
@@ -808,7 +808,7 @@ public readonly compileTask: Task;
 
 ---
 
-##### `components`<sup>Required</sup> <a name="components" id="mvc-projen.MvcCdkConstructLibrary.property.components"></a>
+##### `components`<sup>Required</sup> <a name="components" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.components"></a>
 
 ```typescript
 public readonly components: Component[];
@@ -820,7 +820,7 @@ Returns all the components within this project.
 
 ---
 
-##### `deps`<sup>Required</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibrary.property.deps"></a>
+##### `deps`<sup>Required</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.deps"></a>
 
 ```typescript
 public readonly deps: Dependencies;
@@ -832,7 +832,7 @@ Project dependencies.
 
 ---
 
-##### `ejected`<sup>Required</sup> <a name="ejected" id="mvc-projen.MvcCdkConstructLibrary.property.ejected"></a>
+##### `ejected`<sup>Required</sup> <a name="ejected" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.ejected"></a>
 
 ```typescript
 public readonly ejected: boolean;
@@ -844,7 +844,7 @@ Whether or not the project is being ejected.
 
 ---
 
-##### `files`<sup>Required</sup> <a name="files" id="mvc-projen.MvcCdkConstructLibrary.property.files"></a>
+##### `files`<sup>Required</sup> <a name="files" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.files"></a>
 
 ```typescript
 public readonly files: FileBase[];
@@ -856,7 +856,7 @@ All files in this project.
 
 ---
 
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mvc-projen.MvcCdkConstructLibrary.property.gitattributes"></a>
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.gitattributes"></a>
 
 ```typescript
 public readonly gitattributes: GitAttributesFile;
@@ -868,7 +868,7 @@ The .gitattributes file for this repository.
 
 ---
 
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mvc-projen.MvcCdkConstructLibrary.property.gitignore"></a>
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.gitignore"></a>
 
 ```typescript
 public readonly gitignore: IgnoreFile;
@@ -880,7 +880,7 @@ public readonly gitignore: IgnoreFile;
 
 ---
 
-##### `logger`<sup>Required</sup> <a name="logger" id="mvc-projen.MvcCdkConstructLibrary.property.logger"></a>
+##### `logger`<sup>Required</sup> <a name="logger" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.logger"></a>
 
 ```typescript
 public readonly logger: Logger;
@@ -892,7 +892,7 @@ Logging utilities.
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibrary.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -904,7 +904,7 @@ Project name.
 
 ---
 
-##### `outdir`<sup>Required</sup> <a name="outdir" id="mvc-projen.MvcCdkConstructLibrary.property.outdir"></a>
+##### `outdir`<sup>Required</sup> <a name="outdir" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.outdir"></a>
 
 ```typescript
 public readonly outdir: string;
@@ -916,7 +916,7 @@ Absolute output directory of this project.
 
 ---
 
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mvc-projen.MvcCdkConstructLibrary.property.packageTask"></a>
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.packageTask"></a>
 
 ```typescript
 public readonly packageTask: Task;
@@ -926,7 +926,7 @@ public readonly packageTask: Task;
 
 ---
 
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mvc-projen.MvcCdkConstructLibrary.property.postCompileTask"></a>
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.postCompileTask"></a>
 
 ```typescript
 public readonly postCompileTask: Task;
@@ -936,7 +936,7 @@ public readonly postCompileTask: Task;
 
 ---
 
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mvc-projen.MvcCdkConstructLibrary.property.preCompileTask"></a>
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.preCompileTask"></a>
 
 ```typescript
 public readonly preCompileTask: Task;
@@ -946,7 +946,7 @@ public readonly preCompileTask: Task;
 
 ---
 
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mvc-projen.MvcCdkConstructLibrary.property.projectBuild"></a>
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.projectBuild"></a>
 
 ```typescript
 public readonly projectBuild: ProjectBuild;
@@ -958,7 +958,7 @@ Manages the build process of the project.
 
 ---
 
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mvc-projen.MvcCdkConstructLibrary.property.projenCommand"></a>
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.projenCommand"></a>
 
 ```typescript
 public readonly projenCommand: string;
@@ -970,7 +970,7 @@ The command to use in order to run the projen CLI.
 
 ---
 
-##### `root`<sup>Required</sup> <a name="root" id="mvc-projen.MvcCdkConstructLibrary.property.root"></a>
+##### `root`<sup>Required</sup> <a name="root" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.root"></a>
 
 ```typescript
 public readonly root: Project;
@@ -982,7 +982,7 @@ The root project.
 
 ---
 
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mvc-projen.MvcCdkConstructLibrary.property.subprojects"></a>
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.subprojects"></a>
 
 ```typescript
 public readonly subprojects: Project[];
@@ -994,7 +994,7 @@ Returns all the subprojects within this project.
 
 ---
 
-##### `tasks`<sup>Required</sup> <a name="tasks" id="mvc-projen.MvcCdkConstructLibrary.property.tasks"></a>
+##### `tasks`<sup>Required</sup> <a name="tasks" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tasks"></a>
 
 ```typescript
 public readonly tasks: Tasks;
@@ -1006,7 +1006,7 @@ Project tasks.
 
 ---
 
-##### `testTask`<sup>Required</sup> <a name="testTask" id="mvc-projen.MvcCdkConstructLibrary.property.testTask"></a>
+##### `testTask`<sup>Required</sup> <a name="testTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.testTask"></a>
 
 ```typescript
 public readonly testTask: Task;
@@ -1016,7 +1016,7 @@ public readonly testTask: Task;
 
 ---
 
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mvc-projen.MvcCdkConstructLibrary.property.defaultTask"></a>
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.defaultTask"></a>
 
 ```typescript
 public readonly defaultTask: Task;
@@ -1031,7 +1031,7 @@ the project is being ejected.
 
 ---
 
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="mvc-projen.MvcCdkConstructLibrary.property.initProject"></a>
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.initProject"></a>
 
 ```typescript
 public readonly initProject: InitProject;
@@ -1047,7 +1047,7 @@ FQN of the project type.
 
 ---
 
-##### `parent`<sup>Optional</sup> <a name="parent" id="mvc-projen.MvcCdkConstructLibrary.property.parent"></a>
+##### `parent`<sup>Optional</sup> <a name="parent" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.parent"></a>
 
 ```typescript
 public readonly parent: Project;
@@ -1061,7 +1061,7 @@ If undefined, this is the root project.
 
 ---
 
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mvc-projen.MvcCdkConstructLibrary.property.projectType"></a>
+##### `projectType`<sup>Required</sup> <a name="projectType" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.projectType"></a>
 
 ```typescript
 public readonly projectType: ProjectType;
@@ -1071,7 +1071,7 @@ public readonly projectType: ProjectType;
 
 ---
 
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mvc-projen.MvcCdkConstructLibrary.property.autoApprove"></a>
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.autoApprove"></a>
 
 ```typescript
 public readonly autoApprove: AutoApprove;
@@ -1083,7 +1083,7 @@ Auto approve set up for this project.
 
 ---
 
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mvc-projen.MvcCdkConstructLibrary.property.devContainer"></a>
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.devContainer"></a>
 
 ```typescript
 public readonly devContainer: DevContainer;
@@ -1097,7 +1097,7 @@ This will be `undefined` if devContainer boolean is false
 
 ---
 
-##### `github`<sup>Optional</sup> <a name="github" id="mvc-projen.MvcCdkConstructLibrary.property.github"></a>
+##### `github`<sup>Optional</sup> <a name="github" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.github"></a>
 
 ```typescript
 public readonly github: GitHub;
@@ -1111,7 +1111,7 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mvc-projen.MvcCdkConstructLibrary.property.gitpod"></a>
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.gitpod"></a>
 
 ```typescript
 public readonly gitpod: Gitpod;
@@ -1125,7 +1125,7 @@ This will be `undefined` if gitpod boolean is false
 
 ---
 
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="mvc-projen.MvcCdkConstructLibrary.property.vscode"></a>
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.vscode"></a>
 
 ```typescript
 public readonly vscode: VsCode;
@@ -1139,7 +1139,7 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mvc-projen.MvcCdkConstructLibrary.property.allowLibraryDependencies"></a>
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.allowLibraryDependencies"></a>
 
 - *Deprecated:* use `package.allowLibraryDependencies`
 
@@ -1151,7 +1151,7 @@ public readonly allowLibraryDependencies: boolean;
 
 ---
 
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mvc-projen.MvcCdkConstructLibrary.property.artifactsDirectory"></a>
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.artifactsDirectory"></a>
 
 ```typescript
 public readonly artifactsDirectory: string;
@@ -1167,7 +1167,7 @@ tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
 
 ---
 
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mvc-projen.MvcCdkConstructLibrary.property.artifactsJavascriptDirectory"></a>
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.artifactsJavascriptDirectory"></a>
 
 ```typescript
 public readonly artifactsJavascriptDirectory: string;
@@ -1179,7 +1179,7 @@ The location of the npm tarball after build (`${artifactsDirectory}/js`).
 
 ---
 
-##### `bundler`<sup>Required</sup> <a name="bundler" id="mvc-projen.MvcCdkConstructLibrary.property.bundler"></a>
+##### `bundler`<sup>Required</sup> <a name="bundler" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.bundler"></a>
 
 ```typescript
 public readonly bundler: Bundler;
@@ -1189,7 +1189,7 @@ public readonly bundler: Bundler;
 
 ---
 
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mvc-projen.MvcCdkConstructLibrary.property.entrypoint"></a>
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.entrypoint"></a>
 
 - *Deprecated:* use `package.entrypoint`
 
@@ -1201,7 +1201,7 @@ public readonly entrypoint: string;
 
 ---
 
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mvc-projen.MvcCdkConstructLibrary.property.manifest"></a>
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.manifest"></a>
 
 - *Deprecated:* use `package.addField(x, y)`
 
@@ -1213,7 +1213,7 @@ public readonly manifest: any;
 
 ---
 
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mvc-projen.MvcCdkConstructLibrary.property.npmrc"></a>
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.npmrc"></a>
 
 ```typescript
 public readonly npmrc: NpmConfig;
@@ -1225,7 +1225,7 @@ The .npmrc file.
 
 ---
 
-##### `package`<sup>Required</sup> <a name="package" id="mvc-projen.MvcCdkConstructLibrary.property.package"></a>
+##### `package`<sup>Required</sup> <a name="package" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.package"></a>
 
 ```typescript
 public readonly package: NodePackage;
@@ -1237,7 +1237,7 @@ API for managing the node package.
 
 ---
 
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mvc-projen.MvcCdkConstructLibrary.property.packageManager"></a>
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.packageManager"></a>
 
 - *Deprecated:* use `package.packageManager`
 
@@ -1251,7 +1251,7 @@ The package manager to use.
 
 ---
 
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mvc-projen.MvcCdkConstructLibrary.property.runScriptCommand"></a>
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.runScriptCommand"></a>
 
 ```typescript
 public readonly runScriptCommand: string;
@@ -1263,7 +1263,7 @@ The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the p
 
 ---
 
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mvc-projen.MvcCdkConstructLibrary.property.autoMerge"></a>
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.autoMerge"></a>
 
 ```typescript
 public readonly autoMerge: AutoMerge;
@@ -1275,7 +1275,7 @@ Component that sets up mergify for merging approved pull requests.
 
 ---
 
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mvc-projen.MvcCdkConstructLibrary.property.buildWorkflow"></a>
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.buildWorkflow"></a>
 
 ```typescript
 public readonly buildWorkflow: BuildWorkflow;
@@ -1289,7 +1289,7 @@ The PR build GitHub workflow.
 
 ---
 
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mvc-projen.MvcCdkConstructLibrary.property.buildWorkflowJobId"></a>
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.buildWorkflowJobId"></a>
 
 ```typescript
 public readonly buildWorkflowJobId: string;
@@ -1301,7 +1301,7 @@ The job ID of the build workflow.
 
 ---
 
-##### `jest`<sup>Optional</sup> <a name="jest" id="mvc-projen.MvcCdkConstructLibrary.property.jest"></a>
+##### `jest`<sup>Optional</sup> <a name="jest" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.jest"></a>
 
 ```typescript
 public readonly jest: Jest;
@@ -1313,7 +1313,7 @@ The Jest configuration (if enabled).
 
 ---
 
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mvc-projen.MvcCdkConstructLibrary.property.maxNodeVersion"></a>
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.maxNodeVersion"></a>
 
 ```typescript
 public readonly maxNodeVersion: string;
@@ -1327,7 +1327,7 @@ The value indicates the package is incompatible with newer versions.
 
 ---
 
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mvc-projen.MvcCdkConstructLibrary.property.minNodeVersion"></a>
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.minNodeVersion"></a>
 
 ```typescript
 public readonly minNodeVersion: string;
@@ -1341,7 +1341,7 @@ This value indicates the package is incompatible with older versions.
 
 ---
 
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mvc-projen.MvcCdkConstructLibrary.property.npmignore"></a>
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.npmignore"></a>
 
 ```typescript
 public readonly npmignore: IgnoreFile;
@@ -1353,7 +1353,7 @@ The .npmignore file.
 
 ---
 
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="mvc-projen.MvcCdkConstructLibrary.property.prettier"></a>
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.prettier"></a>
 
 ```typescript
 public readonly prettier: Prettier;
@@ -1363,7 +1363,7 @@ public readonly prettier: Prettier;
 
 ---
 
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mvc-projen.MvcCdkConstructLibrary.property.publisher"></a>
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.publisher"></a>
 
 - *Deprecated:* use `release.publisher`.
 
@@ -1380,7 +1380,7 @@ release workflow.
 
 ---
 
-##### `release`<sup>Optional</sup> <a name="release" id="mvc-projen.MvcCdkConstructLibrary.property.release"></a>
+##### `release`<sup>Optional</sup> <a name="release" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.release"></a>
 
 ```typescript
 public readonly release: Release;
@@ -1392,7 +1392,7 @@ Release management.
 
 ---
 
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mvc-projen.MvcCdkConstructLibrary.property.upgradeWorkflow"></a>
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.upgradeWorkflow"></a>
 
 ```typescript
 public readonly upgradeWorkflow: UpgradeDependencies;
@@ -1404,7 +1404,7 @@ The upgrade workflow.
 
 ---
 
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mvc-projen.MvcCdkConstructLibrary.property.docsDirectory"></a>
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.docsDirectory"></a>
 
 ```typescript
 public readonly docsDirectory: string;
@@ -1414,7 +1414,7 @@ public readonly docsDirectory: string;
 
 ---
 
-##### `libdir`<sup>Required</sup> <a name="libdir" id="mvc-projen.MvcCdkConstructLibrary.property.libdir"></a>
+##### `libdir`<sup>Required</sup> <a name="libdir" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.libdir"></a>
 
 ```typescript
 public readonly libdir: string;
@@ -1426,7 +1426,7 @@ The directory in which compiled .js files reside.
 
 ---
 
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mvc-projen.MvcCdkConstructLibrary.property.srcdir"></a>
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.srcdir"></a>
 
 ```typescript
 public readonly srcdir: string;
@@ -1438,7 +1438,7 @@ The directory in which the .ts sources reside.
 
 ---
 
-##### `testdir`<sup>Required</sup> <a name="testdir" id="mvc-projen.MvcCdkConstructLibrary.property.testdir"></a>
+##### `testdir`<sup>Required</sup> <a name="testdir" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.testdir"></a>
 
 ```typescript
 public readonly testdir: string;
@@ -1450,7 +1450,7 @@ The directory in which tests reside.
 
 ---
 
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mvc-projen.MvcCdkConstructLibrary.property.tsconfigDev"></a>
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tsconfigDev"></a>
 
 ```typescript
 public readonly tsconfigDev: TypescriptConfig;
@@ -1462,7 +1462,7 @@ A typescript configuration file which covers all files (sources, tests, projen).
 
 ---
 
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mvc-projen.MvcCdkConstructLibrary.property.watchTask"></a>
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.watchTask"></a>
 
 ```typescript
 public readonly watchTask: Task;
@@ -1474,7 +1474,7 @@ The "watch" task.
 
 ---
 
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="mvc-projen.MvcCdkConstructLibrary.property.docgen"></a>
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.docgen"></a>
 
 ```typescript
 public readonly docgen: boolean;
@@ -1484,7 +1484,7 @@ public readonly docgen: boolean;
 
 ---
 
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="mvc-projen.MvcCdkConstructLibrary.property.eslint"></a>
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.eslint"></a>
 
 ```typescript
 public readonly eslint: Eslint;
@@ -1494,7 +1494,7 @@ public readonly eslint: Eslint;
 
 ---
 
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mvc-projen.MvcCdkConstructLibrary.property.tsconfig"></a>
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tsconfig"></a>
 
 ```typescript
 public readonly tsconfig: TypescriptConfig;
@@ -1504,7 +1504,7 @@ public readonly tsconfig: TypescriptConfig;
 
 ---
 
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mvc-projen.MvcCdkConstructLibrary.property.tsconfigEslint"></a>
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.tsconfigEslint"></a>
 
 ```typescript
 public readonly tsconfigEslint: TypescriptConfig;
@@ -1514,7 +1514,7 @@ public readonly tsconfigEslint: TypescriptConfig;
 
 ---
 
-##### `cdkDeps`<sup>Required</sup> <a name="cdkDeps" id="mvc-projen.MvcCdkConstructLibrary.property.cdkDeps"></a>
+##### `cdkDeps`<sup>Required</sup> <a name="cdkDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.cdkDeps"></a>
 
 ```typescript
 public readonly cdkDeps: AwsCdkDeps;
@@ -1524,7 +1524,7 @@ public readonly cdkDeps: AwsCdkDeps;
 
 ---
 
-##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="mvc-projen.MvcCdkConstructLibrary.property.cdkVersion"></a>
+##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.cdkVersion"></a>
 
 ```typescript
 public readonly cdkVersion: string;
@@ -1536,7 +1536,7 @@ The target CDK version for this library.
 
 ---
 
-##### ~~`version`~~<sup>Required</sup> <a name="version" id="mvc-projen.MvcCdkConstructLibrary.property.version"></a>
+##### ~~`version`~~<sup>Required</sup> <a name="version" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.version"></a>
 
 - *Deprecated:* use `cdkVersion`
 
@@ -1552,12 +1552,12 @@ public readonly version: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TASK"></a>
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TASK"></a>
 
 ```typescript
 public readonly DEFAULT_TASK: string;
@@ -1572,7 +1572,7 @@ this task should synthesize the project files.
 
 ---
 
-##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
 
 ```typescript
 public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
@@ -1584,14 +1584,14 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### MvcCdkConstructLibraryOptions <a name="MvcCdkConstructLibraryOptions" id="mvc-projen.MvcCdkConstructLibraryOptions"></a>
+### MvcCdkConstructLibraryOptions <a name="MvcCdkConstructLibraryOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions"></a>
 
 The options for the construct.
 
-#### Initializer <a name="Initializer" id="mvc-projen.MvcCdkConstructLibraryOptions.Initializer"></a>
+#### Initializer <a name="Initializer" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.Initializer"></a>
 
 ```typescript
-import { MvcCdkConstructLibraryOptions } from 'mvc-projen'
+import { MvcCdkConstructLibraryOptions } from '@mavogel/mvc-projen'
 
 const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 ```
@@ -1600,192 +1600,192 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.devContainer">devContainer</a></code> | <code>boolean</code> | Add a VSCode development environment (used for GitHub Codespaces). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.gitpod">gitpod</a></code> | <code>boolean</code> | Add a Gitpod development environment. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.mergify">mergify</a></code> | <code>boolean</code> | Whether mergify should be enabled on this repository or not. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.mergifyOptions">mergifyOptions</a></code> | <code>projen.github.MergifyOptions</code> | Options for mergify. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | Which type of project this is (library/app). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenTokenSecret">projenTokenSecret</a></code> | <code>string</code> | The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.staleOptions">staleOptions</a></code> | <code>projen.github.StaleOptions</code> | Auto-close stale issues and pull requests. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Build dependencies for this module. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.homepage">homepage</a></code> | <code>string</code> | Package's Homepage / Website. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. Most projects should not use this option. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. Most projects should not use this option. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.pnpmVersion">pnpmVersion</a></code> | <code>string</code> | The version of PNPM to use if using PNPM as a package manager. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bumpPackage">bumpPackage</a></code> | <code>string</code> | The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiReleaseVersion">jsiiReleaseVersion</a></code> | <code>string</code> | Version requirement of `publib` which is used to publish modules to npm. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.postBuildSteps">postBuildSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Steps to execute after build as part of the release workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. Useful if you are releasing on multiple branches with overlapping version numbers. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v4 A secret is required for private repos. Configured with `@codeCovTokenSecret`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use tasks and github workflows to handle dependency upgrades. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgradeOptions">depsUpgradeOptions</a></code> | <code>projen.javascript.UpgradeDependenciesOptions</code> | Options for `UpgradeDependencies`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.jest">jest</a></code> | <code>boolean</code> | Setup jest unit tests. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.jestOptions">jestOptions</a></code> | <code>projen.javascript.JestOptions</code> | Jest options. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmignore">npmignore</a></code> | <code>string[]</code> | Additional entries to .npmignore. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.prettier">prettier</a></code> | <code>boolean</code> | Setup prettier. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.prettierOptions">prettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | Prettier options. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJs">projenrcJs</a></code> | <code>boolean</code> | Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable .projenrc.js generation. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfig">disableTsconfig</a></code> | <code>boolean</code> | Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.json is generated by the jsii compiler). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfigDev">disableTsconfigDev</a></code> | <code>boolean</code> | Do not generate a `tsconfig.dev.json` file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.docgen">docgen</a></code> | <code>boolean</code> | Docgen by Typedoc. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | Docs directory. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.eslint">eslint</a></code> | <code>boolean</code> | Setup eslint. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.eslintOptions">eslintOptions</a></code> | <code>projen.javascript.EslintOptions</code> | Eslint options. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.libdir">libdir</a></code> | <code>string</code> | Typescript  artifacts output directory. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.sampleCode">sampleCode</a></code> | <code>boolean</code> | Generate one-time sample in `src/` and `test/` if there are no files there. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.testdir">testdir</a></code> | <code>string</code> | Jest tests directory. Tests files should be named `xxx.test.ts`. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.compatIgnore">compatIgnore</a></code> | <code>string</code> | Name of the ignore file for API compatibility tests. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.compressAssembly">compressAssembly</a></code> | <code>boolean</code> | Emit a compressed version of the assembly. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.docgenFilePath">docgenFilePath</a></code> | <code>string</code> | File path for generated docs. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.dotnet">dotnet</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.excludeTypescript">excludeTypescript</a></code> | <code>string[]</code> | Accepts a list of glob patterns. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiVersion">jsiiVersion</a></code> | <code>string</code> | Version of the jsii compiler to use. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.publishToGo">publishToGo</a></code> | <code>projen.cdk.JsiiGoTarget</code> | Publish Go bindings to a git repository. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.publishToMaven">publishToMaven</a></code> | <code>projen.cdk.JsiiJavaTarget</code> | Publish to maven. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.publishToNuget">publishToNuget</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | Publish to NuGet. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.publishToPypi">publishToPypi</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | Publish to pypi. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.python">python</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | Minimum version of the AWS CDK to depend on. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssert">cdkAssert</a></code> | <code>boolean</code> | Warning: NodeJS only. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssertions">cdkAssertions</a></code> | <code>boolean</code> | Install the assertions library? |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkCliVersion">cdkCliVersion</a></code> | <code>string</code> | Version range of the AWS CDK CLI to depend on. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependencies">cdkDependencies</a></code> | <code>string[]</code> | Which AWS CDKv1 modules this project requires. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependenciesAsDeps">cdkDependenciesAsDeps</a></code> | <code>boolean</code> | If this is enabled (default), all modules declared in `cdkDependencies` will be also added as normal `dependencies` (as well as `peerDependencies`). |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkTestDependencies">cdkTestDependencies</a></code> | <code>string[]</code> | AWS CDK modules required for testing. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersionPinning">cdkVersionPinning</a></code> | <code>boolean</code> | Use pinned version instead of caret version for CDK. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.edgeLambdaAutoDiscover">edgeLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.integrationTestAutoDiscover">integrationTestAutoDiscover</a></code> | <code>boolean</code> | Automatically discovers and creates integration tests for each `.integ.ts` file under your test directory. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaAutoDiscover">lambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in your source tree. If this is disabled, you either need to explicitly call `aws_lambda.Function.autoDiscover()` or define a `new aws_lambda.Function()` for each handler. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory">baseAssetsDirectory</a></code> | <code>string</code> | Base directory for the assets. |
-| <code><a href="#mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions">integTestRegions</a></code> | <code>string[]</code> | The regions to run the integ tests in. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devContainer">devContainer</a></code> | <code>boolean</code> | Add a VSCode development environment (used for GitHub Codespaces). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitpod">gitpod</a></code> | <code>boolean</code> | Add a Gitpod development environment. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.mergify">mergify</a></code> | <code>boolean</code> | Whether mergify should be enabled on this repository or not. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.mergifyOptions">mergifyOptions</a></code> | <code>projen.github.MergifyOptions</code> | Options for mergify. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | Which type of project this is (library/app). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenTokenSecret">projenTokenSecret</a></code> | <code>string</code> | The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.staleOptions">staleOptions</a></code> | <code>projen.github.StaleOptions</code> | Auto-close stale issues and pull requests. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Build dependencies for this module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.homepage">homepage</a></code> | <code>string</code> | Package's Homepage / Website. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. Most projects should not use this option. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. Most projects should not use this option. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.pnpmVersion">pnpmVersion</a></code> | <code>string</code> | The version of PNPM to use if using PNPM as a package manager. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bumpPackage">bumpPackage</a></code> | <code>string</code> | The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiReleaseVersion">jsiiReleaseVersion</a></code> | <code>string</code> | Version requirement of `publib` which is used to publish modules to npm. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.postBuildSteps">postBuildSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Steps to execute after build as part of the release workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. Useful if you are releasing on multiple branches with overlapping version numbers. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v4 A secret is required for private repos. Configured with `@codeCovTokenSecret`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use tasks and github workflows to handle dependency upgrades. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgradeOptions">depsUpgradeOptions</a></code> | <code>projen.javascript.UpgradeDependenciesOptions</code> | Options for `UpgradeDependencies`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jest">jest</a></code> | <code>boolean</code> | Setup jest unit tests. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jestOptions">jestOptions</a></code> | <code>projen.javascript.JestOptions</code> | Jest options. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmignore">npmignore</a></code> | <code>string[]</code> | Additional entries to .npmignore. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.prettier">prettier</a></code> | <code>boolean</code> | Setup prettier. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.prettierOptions">prettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | Prettier options. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJs">projenrcJs</a></code> | <code>boolean</code> | Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable .projenrc.js generation. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfig">disableTsconfig</a></code> | <code>boolean</code> | Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.json is generated by the jsii compiler). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfigDev">disableTsconfigDev</a></code> | <code>boolean</code> | Do not generate a `tsconfig.dev.json` file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.docgen">docgen</a></code> | <code>boolean</code> | Docgen by Typedoc. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | Docs directory. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.eslint">eslint</a></code> | <code>boolean</code> | Setup eslint. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.eslintOptions">eslintOptions</a></code> | <code>projen.javascript.EslintOptions</code> | Eslint options. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.libdir">libdir</a></code> | <code>string</code> | Typescript  artifacts output directory. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.sampleCode">sampleCode</a></code> | <code>boolean</code> | Generate one-time sample in `src/` and `test/` if there are no files there. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.testdir">testdir</a></code> | <code>string</code> | Jest tests directory. Tests files should be named `xxx.test.ts`. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.compatIgnore">compatIgnore</a></code> | <code>string</code> | Name of the ignore file for API compatibility tests. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.compressAssembly">compressAssembly</a></code> | <code>boolean</code> | Emit a compressed version of the assembly. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.docgenFilePath">docgenFilePath</a></code> | <code>string</code> | File path for generated docs. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.dotnet">dotnet</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.excludeTypescript">excludeTypescript</a></code> | <code>string[]</code> | Accepts a list of glob patterns. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiVersion">jsiiVersion</a></code> | <code>string</code> | Version of the jsii compiler to use. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToGo">publishToGo</a></code> | <code>projen.cdk.JsiiGoTarget</code> | Publish Go bindings to a git repository. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToMaven">publishToMaven</a></code> | <code>projen.cdk.JsiiJavaTarget</code> | Publish to maven. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToNuget">publishToNuget</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | Publish to NuGet. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToPypi">publishToPypi</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | Publish to pypi. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.python">python</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | Minimum version of the AWS CDK to depend on. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssert">cdkAssert</a></code> | <code>boolean</code> | Warning: NodeJS only. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssertions">cdkAssertions</a></code> | <code>boolean</code> | Install the assertions library? |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkCliVersion">cdkCliVersion</a></code> | <code>string</code> | Version range of the AWS CDK CLI to depend on. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependencies">cdkDependencies</a></code> | <code>string[]</code> | Which AWS CDKv1 modules this project requires. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependenciesAsDeps">cdkDependenciesAsDeps</a></code> | <code>boolean</code> | If this is enabled (default), all modules declared in `cdkDependencies` will be also added as normal `dependencies` (as well as `peerDependencies`). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkTestDependencies">cdkTestDependencies</a></code> | <code>string[]</code> | AWS CDK modules required for testing. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersionPinning">cdkVersionPinning</a></code> | <code>boolean</code> | Use pinned version instead of caret version for CDK. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.edgeLambdaAutoDiscover">edgeLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.integrationTestAutoDiscover">integrationTestAutoDiscover</a></code> | <code>boolean</code> | Automatically discovers and creates integration tests for each `.integ.ts` file under your test directory. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaAutoDiscover">lambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in your source tree. If this is disabled, you either need to explicitly call `aws_lambda.Function.autoDiscover()` or define a `new aws_lambda.Function()` for each handler. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory">baseAssetsDirectory</a></code> | <code>string</code> | Base directory for the assets. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions">integTestRegions</a></code> | <code>string[]</code> | The regions to run the integ tests in. |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="mvc-projen.MvcCdkConstructLibraryOptions.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -1798,7 +1798,7 @@ This is the name of your project.
 
 ---
 
-##### `commitGenerated`<sup>Optional</sup> <a name="commitGenerated" id="mvc-projen.MvcCdkConstructLibraryOptions.property.commitGenerated"></a>
+##### `commitGenerated`<sup>Optional</sup> <a name="commitGenerated" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.commitGenerated"></a>
 
 ```typescript
 public readonly commitGenerated: boolean;
@@ -1811,7 +1811,7 @@ Whether to commit the managed files by default.
 
 ---
 
-##### `gitIgnoreOptions`<sup>Optional</sup> <a name="gitIgnoreOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.gitIgnoreOptions"></a>
+##### `gitIgnoreOptions`<sup>Optional</sup> <a name="gitIgnoreOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitIgnoreOptions"></a>
 
 ```typescript
 public readonly gitIgnoreOptions: IgnoreFileOptions;
@@ -1823,7 +1823,7 @@ Configuration options for .gitignore file.
 
 ---
 
-##### `gitOptions`<sup>Optional</sup> <a name="gitOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.gitOptions"></a>
+##### `gitOptions`<sup>Optional</sup> <a name="gitOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitOptions"></a>
 
 ```typescript
 public readonly gitOptions: GitOptions;
@@ -1835,7 +1835,7 @@ Configuration options for git.
 
 ---
 
-##### `logging`<sup>Optional</sup> <a name="logging" id="mvc-projen.MvcCdkConstructLibraryOptions.property.logging"></a>
+##### `logging`<sup>Optional</sup> <a name="logging" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.logging"></a>
 
 ```typescript
 public readonly logging: LoggerOptions;
@@ -1848,7 +1848,7 @@ Configure logging options such as verbosity.
 
 ---
 
-##### `outdir`<sup>Optional</sup> <a name="outdir" id="mvc-projen.MvcCdkConstructLibraryOptions.property.outdir"></a>
+##### `outdir`<sup>Optional</sup> <a name="outdir" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.outdir"></a>
 
 ```typescript
 public readonly outdir: string;
@@ -1867,7 +1867,7 @@ subprojects.
 
 ---
 
-##### `parent`<sup>Optional</sup> <a name="parent" id="mvc-projen.MvcCdkConstructLibraryOptions.property.parent"></a>
+##### `parent`<sup>Optional</sup> <a name="parent" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.parent"></a>
 
 ```typescript
 public readonly parent: Project;
@@ -1879,7 +1879,7 @@ The parent project, if this project is part of a bigger project.
 
 ---
 
-##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenCommand"></a>
+##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenCommand"></a>
 
 ```typescript
 public readonly projenCommand: string;
@@ -1894,7 +1894,7 @@ Can be used to customize in special environments.
 
 ---
 
-##### `projenrcJson`<sup>Optional</sup> <a name="projenrcJson" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJson"></a>
+##### `projenrcJson`<sup>Optional</sup> <a name="projenrcJson" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJson"></a>
 
 ```typescript
 public readonly projenrcJson: boolean;
@@ -1907,7 +1907,7 @@ Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .pr
 
 ---
 
-##### `projenrcJsonOptions`<sup>Optional</sup> <a name="projenrcJsonOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsonOptions"></a>
+##### `projenrcJsonOptions`<sup>Optional</sup> <a name="projenrcJsonOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsonOptions"></a>
 
 ```typescript
 public readonly projenrcJsonOptions: ProjenrcJsonOptions;
@@ -1920,7 +1920,7 @@ Options for .projenrc.json.
 
 ---
 
-##### `renovatebot`<sup>Optional</sup> <a name="renovatebot" id="mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebot"></a>
+##### `renovatebot`<sup>Optional</sup> <a name="renovatebot" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebot"></a>
 
 ```typescript
 public readonly renovatebot: boolean;
@@ -1933,7 +1933,7 @@ Use renovatebot to handle dependency upgrades.
 
 ---
 
-##### `renovatebotOptions`<sup>Optional</sup> <a name="renovatebotOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebotOptions"></a>
+##### `renovatebotOptions`<sup>Optional</sup> <a name="renovatebotOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.renovatebotOptions"></a>
 
 ```typescript
 public readonly renovatebotOptions: RenovatebotOptions;
@@ -1946,7 +1946,7 @@ Options for renovatebot.
 
 ---
 
-##### `autoApproveOptions`<sup>Optional</sup> <a name="autoApproveOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveOptions"></a>
+##### `autoApproveOptions`<sup>Optional</sup> <a name="autoApproveOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveOptions"></a>
 
 ```typescript
 public readonly autoApproveOptions: AutoApproveOptions;
@@ -1959,7 +1959,7 @@ Enable and configure the 'auto approve' workflow.
 
 ---
 
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mvc-projen.MvcCdkConstructLibraryOptions.property.autoMerge"></a>
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoMerge"></a>
 
 ```typescript
 public readonly autoMerge: boolean;
@@ -1975,7 +1975,7 @@ is set to false.
 
 ---
 
-##### `autoMergeOptions`<sup>Optional</sup> <a name="autoMergeOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.autoMergeOptions"></a>
+##### `autoMergeOptions`<sup>Optional</sup> <a name="autoMergeOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoMergeOptions"></a>
 
 ```typescript
 public readonly autoMergeOptions: AutoMergeOptions;
@@ -1991,7 +1991,7 @@ Has no effect if
 
 ---
 
-##### `clobber`<sup>Optional</sup> <a name="clobber" id="mvc-projen.MvcCdkConstructLibraryOptions.property.clobber"></a>
+##### `clobber`<sup>Optional</sup> <a name="clobber" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.clobber"></a>
 
 ```typescript
 public readonly clobber: boolean;
@@ -2004,7 +2004,7 @@ Add a `clobber` task which resets the repo to origin.
 
 ---
 
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mvc-projen.MvcCdkConstructLibraryOptions.property.devContainer"></a>
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devContainer"></a>
 
 ```typescript
 public readonly devContainer: boolean;
@@ -2017,7 +2017,7 @@ Add a VSCode development environment (used for GitHub Codespaces).
 
 ---
 
-##### `github`<sup>Optional</sup> <a name="github" id="mvc-projen.MvcCdkConstructLibraryOptions.property.github"></a>
+##### `github`<sup>Optional</sup> <a name="github" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.github"></a>
 
 ```typescript
 public readonly github: boolean;
@@ -2032,7 +2032,7 @@ Enabled by default for root projects. Disabled for non-root projects.
 
 ---
 
-##### `githubOptions`<sup>Optional</sup> <a name="githubOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.githubOptions"></a>
+##### `githubOptions`<sup>Optional</sup> <a name="githubOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.githubOptions"></a>
 
 ```typescript
 public readonly githubOptions: GitHubOptions;
@@ -2045,7 +2045,7 @@ Options for GitHub integration.
 
 ---
 
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mvc-projen.MvcCdkConstructLibraryOptions.property.gitpod"></a>
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitpod"></a>
 
 ```typescript
 public readonly gitpod: boolean;
@@ -2058,7 +2058,7 @@ Add a Gitpod development environment.
 
 ---
 
-##### ~~`mergify`~~<sup>Optional</sup> <a name="mergify" id="mvc-projen.MvcCdkConstructLibraryOptions.property.mergify"></a>
+##### ~~`mergify`~~<sup>Optional</sup> <a name="mergify" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.mergify"></a>
 
 - *Deprecated:* use `githubOptions.mergify` instead
 
@@ -2073,7 +2073,7 @@ Whether mergify should be enabled on this repository or not.
 
 ---
 
-##### ~~`mergifyOptions`~~<sup>Optional</sup> <a name="mergifyOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.mergifyOptions"></a>
+##### ~~`mergifyOptions`~~<sup>Optional</sup> <a name="mergifyOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.mergifyOptions"></a>
 
 - *Deprecated:* use `githubOptions.mergifyOptions` instead
 
@@ -2088,7 +2088,7 @@ Options for mergify.
 
 ---
 
-##### ~~`projectType`~~<sup>Optional</sup> <a name="projectType" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projectType"></a>
+##### ~~`projectType`~~<sup>Optional</sup> <a name="projectType" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projectType"></a>
 
 - *Deprecated:* no longer supported at the base project level
 
@@ -2103,7 +2103,7 @@ Which type of project this is (library/app).
 
 ---
 
-##### `projenCredentials`<sup>Optional</sup> <a name="projenCredentials" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenCredentials"></a>
+##### `projenCredentials`<sup>Optional</sup> <a name="projenCredentials" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenCredentials"></a>
 
 ```typescript
 public readonly projenCredentials: GithubCredentials;
@@ -2116,7 +2116,7 @@ Choose a method of providing GitHub API access for projen workflows.
 
 ---
 
-##### ~~`projenTokenSecret`~~<sup>Optional</sup> <a name="projenTokenSecret" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenTokenSecret"></a>
+##### ~~`projenTokenSecret`~~<sup>Optional</sup> <a name="projenTokenSecret" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenTokenSecret"></a>
 
 - *Deprecated:* use `projenCredentials`
 
@@ -2134,7 +2134,7 @@ and `packages` scope.
 
 ---
 
-##### `readme`<sup>Optional</sup> <a name="readme" id="mvc-projen.MvcCdkConstructLibraryOptions.property.readme"></a>
+##### `readme`<sup>Optional</sup> <a name="readme" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.readme"></a>
 
 ```typescript
 public readonly readme: SampleReadmeProps;
@@ -2154,7 +2154,7 @@ The README setup.
 ```
 
 
-##### `stale`<sup>Optional</sup> <a name="stale" id="mvc-projen.MvcCdkConstructLibraryOptions.property.stale"></a>
+##### `stale`<sup>Optional</sup> <a name="stale" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.stale"></a>
 
 ```typescript
 public readonly stale: boolean;
@@ -2169,7 +2169,7 @@ See `staleOptions` for options.
 
 ---
 
-##### `staleOptions`<sup>Optional</sup> <a name="staleOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.staleOptions"></a>
+##### `staleOptions`<sup>Optional</sup> <a name="staleOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.staleOptions"></a>
 
 ```typescript
 public readonly staleOptions: StaleOptions;
@@ -2184,7 +2184,7 @@ To disable set `stale` to `false`.
 
 ---
 
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="mvc-projen.MvcCdkConstructLibraryOptions.property.vscode"></a>
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.vscode"></a>
 
 ```typescript
 public readonly vscode: boolean;
@@ -2199,7 +2199,7 @@ Enabled by default for root projects. Disabled for non-root projects.
 
 ---
 
-##### `allowLibraryDependencies`<sup>Optional</sup> <a name="allowLibraryDependencies" id="mvc-projen.MvcCdkConstructLibraryOptions.property.allowLibraryDependencies"></a>
+##### `allowLibraryDependencies`<sup>Optional</sup> <a name="allowLibraryDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.allowLibraryDependencies"></a>
 
 ```typescript
 public readonly allowLibraryDependencies: boolean;
@@ -2215,7 +2215,7 @@ for specifying these.
 
 ---
 
-##### `authorEmail`<sup>Optional</sup> <a name="authorEmail" id="mvc-projen.MvcCdkConstructLibraryOptions.property.authorEmail"></a>
+##### `authorEmail`<sup>Optional</sup> <a name="authorEmail" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorEmail"></a>
 
 ```typescript
 public readonly authorEmail: string;
@@ -2227,7 +2227,7 @@ Author's e-mail.
 
 ---
 
-##### `authorName`<sup>Optional</sup> <a name="authorName" id="mvc-projen.MvcCdkConstructLibraryOptions.property.authorName"></a>
+##### `authorName`<sup>Optional</sup> <a name="authorName" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorName"></a>
 
 ```typescript
 public readonly authorName: string;
@@ -2239,7 +2239,7 @@ Author's name.
 
 ---
 
-##### `authorOrganization`<sup>Optional</sup> <a name="authorOrganization" id="mvc-projen.MvcCdkConstructLibraryOptions.property.authorOrganization"></a>
+##### `authorOrganization`<sup>Optional</sup> <a name="authorOrganization" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorOrganization"></a>
 
 ```typescript
 public readonly authorOrganization: boolean;
@@ -2251,7 +2251,7 @@ Is the author an organization.
 
 ---
 
-##### `authorUrl`<sup>Optional</sup> <a name="authorUrl" id="mvc-projen.MvcCdkConstructLibraryOptions.property.authorUrl"></a>
+##### `authorUrl`<sup>Optional</sup> <a name="authorUrl" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorUrl"></a>
 
 ```typescript
 public readonly authorUrl: string;
@@ -2263,7 +2263,7 @@ Author's URL / Website.
 
 ---
 
-##### `autoDetectBin`<sup>Optional</sup> <a name="autoDetectBin" id="mvc-projen.MvcCdkConstructLibraryOptions.property.autoDetectBin"></a>
+##### `autoDetectBin`<sup>Optional</sup> <a name="autoDetectBin" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoDetectBin"></a>
 
 ```typescript
 public readonly autoDetectBin: boolean;
@@ -2276,7 +2276,7 @@ Automatically add all executables under the `bin` directory to your `package.jso
 
 ---
 
-##### `bin`<sup>Optional</sup> <a name="bin" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bin"></a>
+##### `bin`<sup>Optional</sup> <a name="bin" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bin"></a>
 
 ```typescript
 public readonly bin: {[ key: string ]: string};
@@ -2292,7 +2292,7 @@ executable file under `bin` will automatically be added to this section.
 
 ---
 
-##### `bugsEmail`<sup>Optional</sup> <a name="bugsEmail" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bugsEmail"></a>
+##### `bugsEmail`<sup>Optional</sup> <a name="bugsEmail" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bugsEmail"></a>
 
 ```typescript
 public readonly bugsEmail: string;
@@ -2304,7 +2304,7 @@ The email address to which issues should be reported.
 
 ---
 
-##### `bugsUrl`<sup>Optional</sup> <a name="bugsUrl" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bugsUrl"></a>
+##### `bugsUrl`<sup>Optional</sup> <a name="bugsUrl" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bugsUrl"></a>
 
 ```typescript
 public readonly bugsUrl: string;
@@ -2316,7 +2316,7 @@ The url to your project's issue tracker.
 
 ---
 
-##### `bundledDeps`<sup>Optional</sup> <a name="bundledDeps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bundledDeps"></a>
+##### `bundledDeps`<sup>Optional</sup> <a name="bundledDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bundledDeps"></a>
 
 ```typescript
 public readonly bundledDeps: string[];
@@ -2339,7 +2339,7 @@ this will be what you `package.json` will eventually include.
 
 ---
 
-##### `bunVersion`<sup>Optional</sup> <a name="bunVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bunVersion"></a>
+##### `bunVersion`<sup>Optional</sup> <a name="bunVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bunVersion"></a>
 
 ```typescript
 public readonly bunVersion: string;
@@ -2352,7 +2352,7 @@ The version of Bun to use if using Bun as a package manager.
 
 ---
 
-##### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.codeArtifactOptions"></a>
+##### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeArtifactOptions"></a>
 
 ```typescript
 public readonly codeArtifactOptions: CodeArtifactOptions;
@@ -2367,7 +2367,7 @@ This is required if publishing packages to, or installing scoped packages from A
 
 ---
 
-##### `deps`<sup>Optional</sup> <a name="deps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.deps"></a>
+##### `deps`<sup>Optional</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.deps"></a>
 
 ```typescript
 public readonly deps: string[];
@@ -2394,7 +2394,7 @@ this will be what you `package.json` will eventually include.
 ```
 
 
-##### `description`<sup>Optional</sup> <a name="description" id="mvc-projen.MvcCdkConstructLibraryOptions.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -2409,7 +2409,7 @@ See https://classic.yarnpkg.com/en/docs/package-json/#toc-description
 
 ---
 
-##### `devDeps`<sup>Optional</sup> <a name="devDeps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.devDeps"></a>
+##### `devDeps`<sup>Optional</sup> <a name="devDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devDeps"></a>
 
 ```typescript
 public readonly devDeps: string[];
@@ -2440,7 +2440,7 @@ this will be what you `package.json` will eventually include.
 ```
 
 
-##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="mvc-projen.MvcCdkConstructLibraryOptions.property.entrypoint"></a>
+##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.entrypoint"></a>
 
 ```typescript
 public readonly entrypoint: string;
@@ -2455,7 +2455,7 @@ Set to an empty string to not include `main` in your package.json
 
 ---
 
-##### `homepage`<sup>Optional</sup> <a name="homepage" id="mvc-projen.MvcCdkConstructLibraryOptions.property.homepage"></a>
+##### `homepage`<sup>Optional</sup> <a name="homepage" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.homepage"></a>
 
 ```typescript
 public readonly homepage: string;
@@ -2467,7 +2467,7 @@ Package's Homepage / Website.
 
 ---
 
-##### `keywords`<sup>Optional</sup> <a name="keywords" id="mvc-projen.MvcCdkConstructLibraryOptions.property.keywords"></a>
+##### `keywords`<sup>Optional</sup> <a name="keywords" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.keywords"></a>
 
 ```typescript
 public readonly keywords: string[];
@@ -2479,7 +2479,7 @@ Keywords to include in `package.json`.
 
 ---
 
-##### `license`<sup>Optional</sup> <a name="license" id="mvc-projen.MvcCdkConstructLibraryOptions.property.license"></a>
+##### `license`<sup>Optional</sup> <a name="license" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.license"></a>
 
 ```typescript
 public readonly license: string;
@@ -2495,7 +2495,7 @@ Use the `licensed` option if you want to no license to be specified.
 
 ---
 
-##### `licensed`<sup>Optional</sup> <a name="licensed" id="mvc-projen.MvcCdkConstructLibraryOptions.property.licensed"></a>
+##### `licensed`<sup>Optional</sup> <a name="licensed" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.licensed"></a>
 
 ```typescript
 public readonly licensed: boolean;
@@ -2508,7 +2508,7 @@ Indicates if a license should be added.
 
 ---
 
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.maxNodeVersion"></a>
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.maxNodeVersion"></a>
 
 ```typescript
 public readonly maxNodeVersion: string;
@@ -2527,7 +2527,7 @@ Consider this option only if your package is known to not function with newer ve
 
 ---
 
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.minNodeVersion"></a>
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.minNodeVersion"></a>
 
 ```typescript
 public readonly minNodeVersion: string;
@@ -2550,7 +2550,7 @@ To change the node version of your CI/CD workflows, use `workflowNodeVersion`.
 
 ---
 
-##### `npmAccess`<sup>Optional</sup> <a name="npmAccess" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmAccess"></a>
+##### `npmAccess`<sup>Optional</sup> <a name="npmAccess" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmAccess"></a>
 
 ```typescript
 public readonly npmAccess: NpmAccess;
@@ -2563,7 +2563,7 @@ Access level of the npm package.
 
 ---
 
-##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmProvenance"></a>
+##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmProvenance"></a>
 
 ```typescript
 public readonly npmProvenance: boolean;
@@ -2584,7 +2584,7 @@ which is using npm internally and supports provenance statements independently o
 
 ---
 
-##### ~~`npmRegistry`~~<sup>Optional</sup> <a name="npmRegistry" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistry"></a>
+##### ~~`npmRegistry`~~<sup>Optional</sup> <a name="npmRegistry" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistry"></a>
 
 - *Deprecated:* use `npmRegistryUrl` instead
 
@@ -2600,7 +2600,7 @@ Cannot be set together with `npmRegistryUrl`.
 
 ---
 
-##### `npmRegistryUrl`<sup>Optional</sup> <a name="npmRegistryUrl" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistryUrl"></a>
+##### `npmRegistryUrl`<sup>Optional</sup> <a name="npmRegistryUrl" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmRegistryUrl"></a>
 
 ```typescript
 public readonly npmRegistryUrl: string;
@@ -2615,7 +2615,7 @@ Must be a URL (e.g. start with "https://" or "http://")
 
 ---
 
-##### `npmTokenSecret`<sup>Optional</sup> <a name="npmTokenSecret" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmTokenSecret"></a>
+##### `npmTokenSecret`<sup>Optional</sup> <a name="npmTokenSecret" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmTokenSecret"></a>
 
 ```typescript
 public readonly npmTokenSecret: string;
@@ -2628,7 +2628,7 @@ GitHub secret which contains the NPM token to use when publishing packages.
 
 ---
 
-##### `packageManager`<sup>Optional</sup> <a name="packageManager" id="mvc-projen.MvcCdkConstructLibraryOptions.property.packageManager"></a>
+##### `packageManager`<sup>Optional</sup> <a name="packageManager" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.packageManager"></a>
 
 ```typescript
 public readonly packageManager: NodePackageManager;
@@ -2641,7 +2641,7 @@ The Node Package Manager used to execute scripts.
 
 ---
 
-##### `packageName`<sup>Optional</sup> <a name="packageName" id="mvc-projen.MvcCdkConstructLibraryOptions.property.packageName"></a>
+##### `packageName`<sup>Optional</sup> <a name="packageName" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.packageName"></a>
 
 ```typescript
 public readonly packageName: string;
@@ -2654,7 +2654,7 @@ The "name" in package.json.
 
 ---
 
-##### `peerDependencyOptions`<sup>Optional</sup> <a name="peerDependencyOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.peerDependencyOptions"></a>
+##### `peerDependencyOptions`<sup>Optional</sup> <a name="peerDependencyOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.peerDependencyOptions"></a>
 
 ```typescript
 public readonly peerDependencyOptions: PeerDependencyOptions;
@@ -2666,7 +2666,7 @@ Options for `peerDeps`.
 
 ---
 
-##### `peerDeps`<sup>Optional</sup> <a name="peerDeps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.peerDeps"></a>
+##### `peerDeps`<sup>Optional</sup> <a name="peerDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.peerDeps"></a>
 
 ```typescript
 public readonly peerDeps: string[];
@@ -2693,7 +2693,7 @@ test your module against the lowest peer version required.
 
 ---
 
-##### `pnpmVersion`<sup>Optional</sup> <a name="pnpmVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.pnpmVersion"></a>
+##### `pnpmVersion`<sup>Optional</sup> <a name="pnpmVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.pnpmVersion"></a>
 
 ```typescript
 public readonly pnpmVersion: string;
@@ -2706,7 +2706,7 @@ The version of PNPM to use if using PNPM as a package manager.
 
 ---
 
-##### `repository`<sup>Optional</sup> <a name="repository" id="mvc-projen.MvcCdkConstructLibraryOptions.property.repository"></a>
+##### `repository`<sup>Optional</sup> <a name="repository" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.repository"></a>
 
 ```typescript
 public readonly repository: string;
@@ -2720,7 +2720,7 @@ See https://classic.yarnpkg.com/en/docs/package-json/#toc-repository
 
 ---
 
-##### `repositoryDirectory`<sup>Optional</sup> <a name="repositoryDirectory" id="mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryDirectory"></a>
+##### `repositoryDirectory`<sup>Optional</sup> <a name="repositoryDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryDirectory"></a>
 
 ```typescript
 public readonly repositoryDirectory: string;
@@ -2732,7 +2732,7 @@ If the package.json for your package is not in the root directory (for example i
 
 ---
 
-##### `scopedPackagesOptions`<sup>Optional</sup> <a name="scopedPackagesOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.scopedPackagesOptions"></a>
+##### `scopedPackagesOptions`<sup>Optional</sup> <a name="scopedPackagesOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.scopedPackagesOptions"></a>
 
 ```typescript
 public readonly scopedPackagesOptions: ScopedPackagesOptions[];
@@ -2745,7 +2745,7 @@ Options for privately hosted scoped packages.
 
 ---
 
-##### ~~`scripts`~~<sup>Optional</sup> <a name="scripts" id="mvc-projen.MvcCdkConstructLibraryOptions.property.scripts"></a>
+##### ~~`scripts`~~<sup>Optional</sup> <a name="scripts" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.scripts"></a>
 
 - *Deprecated:* use `project.addTask()` or `package.setScript()`
 
@@ -2764,7 +2764,7 @@ Also adds the script as a task.
 
 ---
 
-##### `stability`<sup>Optional</sup> <a name="stability" id="mvc-projen.MvcCdkConstructLibraryOptions.property.stability"></a>
+##### `stability`<sup>Optional</sup> <a name="stability" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.stability"></a>
 
 ```typescript
 public readonly stability: string;
@@ -2776,7 +2776,7 @@ Package's Stability.
 
 ---
 
-##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.yarnBerryOptions"></a>
+##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.yarnBerryOptions"></a>
 
 ```typescript
 public readonly yarnBerryOptions: YarnBerryOptions;
@@ -2789,7 +2789,7 @@ Options for Yarn Berry.
 
 ---
 
-##### `bumpPackage`<sup>Optional</sup> <a name="bumpPackage" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bumpPackage"></a>
+##### `bumpPackage`<sup>Optional</sup> <a name="bumpPackage" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bumpPackage"></a>
 
 ```typescript
 public readonly bumpPackage: string;
@@ -2804,7 +2804,7 @@ This can be any compatible package version, including the deprecated `standard-v
 
 ---
 
-##### `jsiiReleaseVersion`<sup>Optional</sup> <a name="jsiiReleaseVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiReleaseVersion"></a>
+##### `jsiiReleaseVersion`<sup>Optional</sup> <a name="jsiiReleaseVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiReleaseVersion"></a>
 
 ```typescript
 public readonly jsiiReleaseVersion: string;
@@ -2817,7 +2817,7 @@ Version requirement of `publib` which is used to publish modules to npm.
 
 ---
 
-##### `majorVersion`<sup>Optional</sup> <a name="majorVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.majorVersion"></a>
+##### `majorVersion`<sup>Optional</sup> <a name="majorVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.majorVersion"></a>
 
 ```typescript
 public readonly majorVersion: number;
@@ -2833,7 +2833,7 @@ If not specified, we bump the global latest version.
 
 ---
 
-##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.minMajorVersion"></a>
+##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.minMajorVersion"></a>
 
 ```typescript
 public readonly minMajorVersion: number;
@@ -2851,7 +2851,7 @@ Can not be set together with `majorVersion`.
 
 ---
 
-##### `nextVersionCommand`<sup>Optional</sup> <a name="nextVersionCommand" id="mvc-projen.MvcCdkConstructLibraryOptions.property.nextVersionCommand"></a>
+##### `nextVersionCommand`<sup>Optional</sup> <a name="nextVersionCommand" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.nextVersionCommand"></a>
 
 ```typescript
 public readonly nextVersionCommand: string;
@@ -2882,7 +2882,7 @@ script can be used to achieve the effects of `minMajorVersion`.
 
 ---
 
-##### `npmDistTag`<sup>Optional</sup> <a name="npmDistTag" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmDistTag"></a>
+##### `npmDistTag`<sup>Optional</sup> <a name="npmDistTag" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmDistTag"></a>
 
 ```typescript
 public readonly npmDistTag: string;
@@ -2898,7 +2898,7 @@ for each branch.
 
 ---
 
-##### `postBuildSteps`<sup>Optional</sup> <a name="postBuildSteps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.postBuildSteps"></a>
+##### `postBuildSteps`<sup>Optional</sup> <a name="postBuildSteps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.postBuildSteps"></a>
 
 ```typescript
 public readonly postBuildSteps: JobStep[];
@@ -2911,7 +2911,7 @@ Steps to execute after build as part of the release workflow.
 
 ---
 
-##### `prerelease`<sup>Optional</sup> <a name="prerelease" id="mvc-projen.MvcCdkConstructLibraryOptions.property.prerelease"></a>
+##### `prerelease`<sup>Optional</sup> <a name="prerelease" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.prerelease"></a>
 
 ```typescript
 public readonly prerelease: string;
@@ -2924,7 +2924,7 @@ Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pr
 
 ---
 
-##### `publishDryRun`<sup>Optional</sup> <a name="publishDryRun" id="mvc-projen.MvcCdkConstructLibraryOptions.property.publishDryRun"></a>
+##### `publishDryRun`<sup>Optional</sup> <a name="publishDryRun" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishDryRun"></a>
 
 ```typescript
 public readonly publishDryRun: boolean;
@@ -2937,7 +2937,7 @@ Instead of actually publishing to package managers, just print the publishing co
 
 ---
 
-##### `publishTasks`<sup>Optional</sup> <a name="publishTasks" id="mvc-projen.MvcCdkConstructLibraryOptions.property.publishTasks"></a>
+##### `publishTasks`<sup>Optional</sup> <a name="publishTasks" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishTasks"></a>
 
 ```typescript
 public readonly publishTasks: boolean;
@@ -2953,7 +2953,7 @@ in order to create a publishing task for each publishing activity.
 
 ---
 
-##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releasableCommits"></a>
+##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releasableCommits"></a>
 
 ```typescript
 public readonly releasableCommits: ReleasableCommits;
@@ -2966,7 +2966,7 @@ Find commits that should be considered releasable Used to decide if a release is
 
 ---
 
-##### `releaseBranches`<sup>Optional</sup> <a name="releaseBranches" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseBranches"></a>
+##### `releaseBranches`<sup>Optional</sup> <a name="releaseBranches" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseBranches"></a>
 
 ```typescript
 public readonly releaseBranches: {[ key: string ]: BranchOptions};
@@ -2986,7 +2986,7 @@ be provided for the default branch.
 
 ---
 
-##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseEveryCommit"></a>
+##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseEveryCommit"></a>
 
 - *Deprecated:* Use `releaseTrigger: ReleaseTrigger.continuous()` instead
 
@@ -3001,7 +3001,7 @@ Automatically release new versions every commit to one of branches in `releaseBr
 
 ---
 
-##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssue"></a>
+##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssue"></a>
 
 ```typescript
 public readonly releaseFailureIssue: boolean;
@@ -3014,7 +3014,7 @@ Create a github issue on every failed publishing task.
 
 ---
 
-##### `releaseFailureIssueLabel`<sup>Optional</sup> <a name="releaseFailureIssueLabel" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssueLabel"></a>
+##### `releaseFailureIssueLabel`<sup>Optional</sup> <a name="releaseFailureIssueLabel" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseFailureIssueLabel"></a>
 
 ```typescript
 public readonly releaseFailureIssueLabel: string;
@@ -3029,7 +3029,7 @@ Only applies if `releaseFailureIssue` is true.
 
 ---
 
-##### ~~`releaseSchedule`~~<sup>Optional</sup> <a name="releaseSchedule" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseSchedule"></a>
+##### ~~`releaseSchedule`~~<sup>Optional</sup> <a name="releaseSchedule" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseSchedule"></a>
 
 - *Deprecated:* Use `releaseTrigger: ReleaseTrigger.scheduled()` instead
 
@@ -3044,7 +3044,7 @@ CRON schedule to trigger new releases.
 
 ---
 
-##### `releaseTagPrefix`<sup>Optional</sup> <a name="releaseTagPrefix" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTagPrefix"></a>
+##### `releaseTagPrefix`<sup>Optional</sup> <a name="releaseTagPrefix" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTagPrefix"></a>
 
 ```typescript
 public readonly releaseTagPrefix: string;
@@ -3062,7 +3062,7 @@ with the new prefix.
 
 ---
 
-##### `releaseTrigger`<sup>Optional</sup> <a name="releaseTrigger" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTrigger"></a>
+##### `releaseTrigger`<sup>Optional</sup> <a name="releaseTrigger" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseTrigger"></a>
 
 ```typescript
 public readonly releaseTrigger: ReleaseTrigger;
@@ -3075,7 +3075,7 @@ The release trigger to use.
 
 ---
 
-##### `releaseWorkflowName`<sup>Optional</sup> <a name="releaseWorkflowName" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowName"></a>
+##### `releaseWorkflowName`<sup>Optional</sup> <a name="releaseWorkflowName" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowName"></a>
 
 ```typescript
 public readonly releaseWorkflowName: string;
@@ -3088,7 +3088,7 @@ The name of the default release workflow.
 
 ---
 
-##### `releaseWorkflowSetupSteps`<sup>Optional</sup> <a name="releaseWorkflowSetupSteps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowSetupSteps"></a>
+##### `releaseWorkflowSetupSteps`<sup>Optional</sup> <a name="releaseWorkflowSetupSteps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflowSetupSteps"></a>
 
 ```typescript
 public readonly releaseWorkflowSetupSteps: JobStep[];
@@ -3100,7 +3100,7 @@ A set of workflow steps to execute in order to setup the workflow container.
 
 ---
 
-##### `versionrcOptions`<sup>Optional</sup> <a name="versionrcOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.versionrcOptions"></a>
+##### `versionrcOptions`<sup>Optional</sup> <a name="versionrcOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.versionrcOptions"></a>
 
 ```typescript
 public readonly versionrcOptions: {[ key: string ]: any};
@@ -3115,7 +3115,7 @@ Given values either append to default configuration or overwrite values in it.
 
 ---
 
-##### `workflowContainerImage`<sup>Optional</sup> <a name="workflowContainerImage" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowContainerImage"></a>
+##### `workflowContainerImage`<sup>Optional</sup> <a name="workflowContainerImage" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowContainerImage"></a>
 
 ```typescript
 public readonly workflowContainerImage: string;
@@ -3128,7 +3128,7 @@ Container image to use for GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOn"></a>
+##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOn"></a>
 
 ```typescript
 public readonly workflowRunsOn: string[];
@@ -3141,7 +3141,7 @@ Github Runner selection labels.
 
 ---
 
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOnGroup"></a>
+##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOnGroup"></a>
 
 ```typescript
 public readonly workflowRunsOnGroup: GroupRunnerOptions;
@@ -3153,7 +3153,7 @@ Github Runner Group selection options.
 
 ---
 
-##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="mvc-projen.MvcCdkConstructLibraryOptions.property.defaultReleaseBranch"></a>
+##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.defaultReleaseBranch"></a>
 
 ```typescript
 public readonly defaultReleaseBranch: string;
@@ -3166,7 +3166,7 @@ The name of the main release branch.
 
 ---
 
-##### `artifactsDirectory`<sup>Optional</sup> <a name="artifactsDirectory" id="mvc-projen.MvcCdkConstructLibraryOptions.property.artifactsDirectory"></a>
+##### `artifactsDirectory`<sup>Optional</sup> <a name="artifactsDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.artifactsDirectory"></a>
 
 ```typescript
 public readonly artifactsDirectory: string;
@@ -3179,7 +3179,7 @@ A directory which will contain build artifacts.
 
 ---
 
-##### `autoApproveUpgrades`<sup>Optional</sup> <a name="autoApproveUpgrades" id="mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades"></a>
+##### `autoApproveUpgrades`<sup>Optional</sup> <a name="autoApproveUpgrades" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades"></a>
 
 ```typescript
 public readonly autoApproveUpgrades: boolean;
@@ -3194,7 +3194,7 @@ Throw if set to true but `autoApproveOptions` are not defined.
 
 ---
 
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflow"></a>
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflow"></a>
 
 ```typescript
 public readonly buildWorkflow: boolean;
@@ -3207,7 +3207,7 @@ Define a GitHub workflow for building PRs.
 
 ---
 
-##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowOptions"></a>
+##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowOptions"></a>
 
 ```typescript
 public readonly buildWorkflowOptions: BuildWorkflowOptions;
@@ -3219,7 +3219,7 @@ Options for PR build workflow.
 
 ---
 
-##### ~~`buildWorkflowTriggers`~~<sup>Optional</sup> <a name="buildWorkflowTriggers" id="mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowTriggers"></a>
+##### ~~`buildWorkflowTriggers`~~<sup>Optional</sup> <a name="buildWorkflowTriggers" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflowTriggers"></a>
 
 - *Deprecated:* - Use `buildWorkflowOptions.workflowTriggers`
 
@@ -3234,7 +3234,7 @@ Build workflow triggers.
 
 ---
 
-##### `bundlerOptions`<sup>Optional</sup> <a name="bundlerOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.bundlerOptions"></a>
+##### `bundlerOptions`<sup>Optional</sup> <a name="bundlerOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bundlerOptions"></a>
 
 ```typescript
 public readonly bundlerOptions: BundlerOptions;
@@ -3246,7 +3246,7 @@ Options for `Bundler`.
 
 ---
 
-##### `checkLicenses`<sup>Optional</sup> <a name="checkLicenses" id="mvc-projen.MvcCdkConstructLibraryOptions.property.checkLicenses"></a>
+##### `checkLicenses`<sup>Optional</sup> <a name="checkLicenses" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.checkLicenses"></a>
 
 ```typescript
 public readonly checkLicenses: LicenseCheckerOptions;
@@ -3261,7 +3261,7 @@ This setting will cause the build to fail, if any prohibited or not allowed lice
 
 ---
 
-##### `codeCov`<sup>Optional</sup> <a name="codeCov" id="mvc-projen.MvcCdkConstructLibraryOptions.property.codeCov"></a>
+##### `codeCov`<sup>Optional</sup> <a name="codeCov" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeCov"></a>
 
 ```typescript
 public readonly codeCov: boolean;
@@ -3274,7 +3274,7 @@ Define a GitHub workflow step for sending code coverage metrics to https://codec
 
 ---
 
-##### `codeCovTokenSecret`<sup>Optional</sup> <a name="codeCovTokenSecret" id="mvc-projen.MvcCdkConstructLibraryOptions.property.codeCovTokenSecret"></a>
+##### `codeCovTokenSecret`<sup>Optional</sup> <a name="codeCovTokenSecret" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeCovTokenSecret"></a>
 
 ```typescript
 public readonly codeCovTokenSecret: string;
@@ -3287,7 +3287,7 @@ Define the secret name for a specified https://codecov.io/ token A secret is req
 
 ---
 
-##### `copyrightOwner`<sup>Optional</sup> <a name="copyrightOwner" id="mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightOwner"></a>
+##### `copyrightOwner`<sup>Optional</sup> <a name="copyrightOwner" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightOwner"></a>
 
 ```typescript
 public readonly copyrightOwner: string;
@@ -3300,7 +3300,7 @@ License copyright owner.
 
 ---
 
-##### `copyrightPeriod`<sup>Optional</sup> <a name="copyrightPeriod" id="mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightPeriod"></a>
+##### `copyrightPeriod`<sup>Optional</sup> <a name="copyrightPeriod" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.copyrightPeriod"></a>
 
 ```typescript
 public readonly copyrightPeriod: string;
@@ -3313,7 +3313,7 @@ The copyright years to put in the LICENSE file.
 
 ---
 
-##### `dependabot`<sup>Optional</sup> <a name="dependabot" id="mvc-projen.MvcCdkConstructLibraryOptions.property.dependabot"></a>
+##### `dependabot`<sup>Optional</sup> <a name="dependabot" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.dependabot"></a>
 
 ```typescript
 public readonly dependabot: boolean;
@@ -3328,7 +3328,7 @@ Cannot be used in conjunction with `depsUpgrade`.
 
 ---
 
-##### `dependabotOptions`<sup>Optional</sup> <a name="dependabotOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.dependabotOptions"></a>
+##### `dependabotOptions`<sup>Optional</sup> <a name="dependabotOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.dependabotOptions"></a>
 
 ```typescript
 public readonly dependabotOptions: DependabotOptions;
@@ -3341,7 +3341,7 @@ Options for dependabot.
 
 ---
 
-##### `depsUpgrade`<sup>Optional</sup> <a name="depsUpgrade" id="mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgrade"></a>
+##### `depsUpgrade`<sup>Optional</sup> <a name="depsUpgrade" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgrade"></a>
 
 ```typescript
 public readonly depsUpgrade: boolean;
@@ -3356,7 +3356,7 @@ Cannot be used in conjunction with `dependabot`.
 
 ---
 
-##### `depsUpgradeOptions`<sup>Optional</sup> <a name="depsUpgradeOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgradeOptions"></a>
+##### `depsUpgradeOptions`<sup>Optional</sup> <a name="depsUpgradeOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.depsUpgradeOptions"></a>
 
 ```typescript
 public readonly depsUpgradeOptions: UpgradeDependenciesOptions;
@@ -3369,7 +3369,7 @@ Options for `UpgradeDependencies`.
 
 ---
 
-##### `gitignore`<sup>Optional</sup> <a name="gitignore" id="mvc-projen.MvcCdkConstructLibraryOptions.property.gitignore"></a>
+##### `gitignore`<sup>Optional</sup> <a name="gitignore" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.gitignore"></a>
 
 ```typescript
 public readonly gitignore: string[];
@@ -3381,7 +3381,7 @@ Additional entries to .gitignore.
 
 ---
 
-##### `jest`<sup>Optional</sup> <a name="jest" id="mvc-projen.MvcCdkConstructLibraryOptions.property.jest"></a>
+##### `jest`<sup>Optional</sup> <a name="jest" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jest"></a>
 
 ```typescript
 public readonly jest: boolean;
@@ -3394,7 +3394,7 @@ Setup jest unit tests.
 
 ---
 
-##### `jestOptions`<sup>Optional</sup> <a name="jestOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.jestOptions"></a>
+##### `jestOptions`<sup>Optional</sup> <a name="jestOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jestOptions"></a>
 
 ```typescript
 public readonly jestOptions: JestOptions;
@@ -3407,7 +3407,7 @@ Jest options.
 
 ---
 
-##### ~~`mutableBuild`~~<sup>Optional</sup> <a name="mutableBuild" id="mvc-projen.MvcCdkConstructLibraryOptions.property.mutableBuild"></a>
+##### ~~`mutableBuild`~~<sup>Optional</sup> <a name="mutableBuild" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.mutableBuild"></a>
 
 - *Deprecated:* - Use `buildWorkflowOptions.mutableBuild`
 
@@ -3428,7 +3428,7 @@ Implies that PR builds do not have anti-tamper checks.
 
 ---
 
-##### ~~`npmignore`~~<sup>Optional</sup> <a name="npmignore" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmignore"></a>
+##### ~~`npmignore`~~<sup>Optional</sup> <a name="npmignore" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmignore"></a>
 
 - *Deprecated:* - use `project.addPackageIgnore`
 
@@ -3442,7 +3442,7 @@ Additional entries to .npmignore.
 
 ---
 
-##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmignoreEnabled"></a>
+##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmignoreEnabled"></a>
 
 ```typescript
 public readonly npmignoreEnabled: boolean;
@@ -3455,7 +3455,7 @@ Defines an .npmignore file. Normally this is only needed for libraries that are 
 
 ---
 
-##### `npmIgnoreOptions`<sup>Optional</sup> <a name="npmIgnoreOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.npmIgnoreOptions"></a>
+##### `npmIgnoreOptions`<sup>Optional</sup> <a name="npmIgnoreOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.npmIgnoreOptions"></a>
 
 ```typescript
 public readonly npmIgnoreOptions: IgnoreFileOptions;
@@ -3467,7 +3467,7 @@ Configuration options for .npmignore file.
 
 ---
 
-##### `package`<sup>Optional</sup> <a name="package" id="mvc-projen.MvcCdkConstructLibraryOptions.property.package"></a>
+##### `package`<sup>Optional</sup> <a name="package" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.package"></a>
 
 ```typescript
 public readonly package: boolean;
@@ -3480,7 +3480,7 @@ Defines a `package` task that will produce an npm tarball under the artifacts di
 
 ---
 
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="mvc-projen.MvcCdkConstructLibraryOptions.property.prettier"></a>
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.prettier"></a>
 
 ```typescript
 public readonly prettier: boolean;
@@ -3493,7 +3493,7 @@ Setup prettier.
 
 ---
 
-##### `prettierOptions`<sup>Optional</sup> <a name="prettierOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.prettierOptions"></a>
+##### `prettierOptions`<sup>Optional</sup> <a name="prettierOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.prettierOptions"></a>
 
 ```typescript
 public readonly prettierOptions: PrettierOptions;
@@ -3506,7 +3506,7 @@ Prettier options.
 
 ---
 
-##### `projenDevDependency`<sup>Optional</sup> <a name="projenDevDependency" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenDevDependency"></a>
+##### `projenDevDependency`<sup>Optional</sup> <a name="projenDevDependency" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenDevDependency"></a>
 
 ```typescript
 public readonly projenDevDependency: boolean;
@@ -3519,7 +3519,7 @@ Indicates of "projen" should be installed as a devDependency.
 
 ---
 
-##### `projenrcJs`<sup>Optional</sup> <a name="projenrcJs" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJs"></a>
+##### `projenrcJs`<sup>Optional</sup> <a name="projenrcJs" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJs"></a>
 
 ```typescript
 public readonly projenrcJs: boolean;
@@ -3532,7 +3532,7 @@ Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable
 
 ---
 
-##### `projenrcJsOptions`<sup>Optional</sup> <a name="projenrcJsOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsOptions"></a>
+##### `projenrcJsOptions`<sup>Optional</sup> <a name="projenrcJsOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsOptions"></a>
 
 ```typescript
 public readonly projenrcJsOptions: ProjenrcOptions;
@@ -3545,7 +3545,7 @@ Options for .projenrc.js.
 
 ---
 
-##### `projenVersion`<sup>Optional</sup> <a name="projenVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenVersion"></a>
+##### `projenVersion`<sup>Optional</sup> <a name="projenVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenVersion"></a>
 
 ```typescript
 public readonly projenVersion: string;
@@ -3558,7 +3558,7 @@ Version of projen to install.
 
 ---
 
-##### `pullRequestTemplate`<sup>Optional</sup> <a name="pullRequestTemplate" id="mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplate"></a>
+##### `pullRequestTemplate`<sup>Optional</sup> <a name="pullRequestTemplate" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplate"></a>
 
 ```typescript
 public readonly pullRequestTemplate: boolean;
@@ -3571,7 +3571,7 @@ Include a GitHub pull request template.
 
 ---
 
-##### `pullRequestTemplateContents`<sup>Optional</sup> <a name="pullRequestTemplateContents" id="mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplateContents"></a>
+##### `pullRequestTemplateContents`<sup>Optional</sup> <a name="pullRequestTemplateContents" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.pullRequestTemplateContents"></a>
 
 ```typescript
 public readonly pullRequestTemplateContents: string[];
@@ -3584,7 +3584,7 @@ The contents of the pull request template.
 
 ---
 
-##### `release`<sup>Optional</sup> <a name="release" id="mvc-projen.MvcCdkConstructLibraryOptions.property.release"></a>
+##### `release`<sup>Optional</sup> <a name="release" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.release"></a>
 
 ```typescript
 public readonly release: boolean;
@@ -3597,7 +3597,7 @@ Add release management to this project.
 
 ---
 
-##### `releaseToNpm`<sup>Optional</sup> <a name="releaseToNpm" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseToNpm"></a>
+##### `releaseToNpm`<sup>Optional</sup> <a name="releaseToNpm" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseToNpm"></a>
 
 ```typescript
 public readonly releaseToNpm: boolean;
@@ -3610,7 +3610,7 @@ Automatically release to npm when new versions are introduced.
 
 ---
 
-##### ~~`releaseWorkflow`~~<sup>Optional</sup> <a name="releaseWorkflow" id="mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflow"></a>
+##### ~~`releaseWorkflow`~~<sup>Optional</sup> <a name="releaseWorkflow" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.releaseWorkflow"></a>
 
 - *Deprecated:* see `release`.
 
@@ -3625,7 +3625,7 @@ DEPRECATED: renamed to `release`.
 
 ---
 
-##### `workflowBootstrapSteps`<sup>Optional</sup> <a name="workflowBootstrapSteps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowBootstrapSteps"></a>
+##### `workflowBootstrapSteps`<sup>Optional</sup> <a name="workflowBootstrapSteps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowBootstrapSteps"></a>
 
 ```typescript
 public readonly workflowBootstrapSteps: JobStep[];
@@ -3638,7 +3638,7 @@ Workflow steps to use in order to bootstrap this repo.
 
 ---
 
-##### `workflowGitIdentity`<sup>Optional</sup> <a name="workflowGitIdentity" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowGitIdentity"></a>
+##### `workflowGitIdentity`<sup>Optional</sup> <a name="workflowGitIdentity" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowGitIdentity"></a>
 
 ```typescript
 public readonly workflowGitIdentity: GitIdentity;
@@ -3651,7 +3651,7 @@ The git identity to use in workflows.
 
 ---
 
-##### `workflowNodeVersion`<sup>Optional</sup> <a name="workflowNodeVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowNodeVersion"></a>
+##### `workflowNodeVersion`<sup>Optional</sup> <a name="workflowNodeVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowNodeVersion"></a>
 
 ```typescript
 public readonly workflowNodeVersion: string;
@@ -3666,7 +3666,7 @@ Always use this option if your GitHub Actions workflows require a specific to ru
 
 ---
 
-##### `workflowPackageCache`<sup>Optional</sup> <a name="workflowPackageCache" id="mvc-projen.MvcCdkConstructLibraryOptions.property.workflowPackageCache"></a>
+##### `workflowPackageCache`<sup>Optional</sup> <a name="workflowPackageCache" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowPackageCache"></a>
 
 ```typescript
 public readonly workflowPackageCache: boolean;
@@ -3679,7 +3679,7 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `disableTsconfig`<sup>Optional</sup> <a name="disableTsconfig" id="mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfig"></a>
+##### `disableTsconfig`<sup>Optional</sup> <a name="disableTsconfig" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfig"></a>
 
 ```typescript
 public readonly disableTsconfig: boolean;
@@ -3692,7 +3692,7 @@ Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.jso
 
 ---
 
-##### `disableTsconfigDev`<sup>Optional</sup> <a name="disableTsconfigDev" id="mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfigDev"></a>
+##### `disableTsconfigDev`<sup>Optional</sup> <a name="disableTsconfigDev" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.disableTsconfigDev"></a>
 
 ```typescript
 public readonly disableTsconfigDev: boolean;
@@ -3705,7 +3705,7 @@ Do not generate a `tsconfig.dev.json` file.
 
 ---
 
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="mvc-projen.MvcCdkConstructLibraryOptions.property.docgen"></a>
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.docgen"></a>
 
 ```typescript
 public readonly docgen: boolean;
@@ -3718,7 +3718,7 @@ Docgen by Typedoc.
 
 ---
 
-##### `docsDirectory`<sup>Optional</sup> <a name="docsDirectory" id="mvc-projen.MvcCdkConstructLibraryOptions.property.docsDirectory"></a>
+##### `docsDirectory`<sup>Optional</sup> <a name="docsDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.docsDirectory"></a>
 
 ```typescript
 public readonly docsDirectory: string;
@@ -3731,7 +3731,7 @@ Docs directory.
 
 ---
 
-##### `entrypointTypes`<sup>Optional</sup> <a name="entrypointTypes" id="mvc-projen.MvcCdkConstructLibraryOptions.property.entrypointTypes"></a>
+##### `entrypointTypes`<sup>Optional</sup> <a name="entrypointTypes" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.entrypointTypes"></a>
 
 ```typescript
 public readonly entrypointTypes: string;
@@ -3744,7 +3744,7 @@ The .d.ts file that includes the type declarations for this module.
 
 ---
 
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="mvc-projen.MvcCdkConstructLibraryOptions.property.eslint"></a>
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.eslint"></a>
 
 ```typescript
 public readonly eslint: boolean;
@@ -3757,7 +3757,7 @@ Setup eslint.
 
 ---
 
-##### `eslintOptions`<sup>Optional</sup> <a name="eslintOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.eslintOptions"></a>
+##### `eslintOptions`<sup>Optional</sup> <a name="eslintOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.eslintOptions"></a>
 
 ```typescript
 public readonly eslintOptions: EslintOptions;
@@ -3770,7 +3770,7 @@ Eslint options.
 
 ---
 
-##### `libdir`<sup>Optional</sup> <a name="libdir" id="mvc-projen.MvcCdkConstructLibraryOptions.property.libdir"></a>
+##### `libdir`<sup>Optional</sup> <a name="libdir" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.libdir"></a>
 
 ```typescript
 public readonly libdir: string;
@@ -3783,7 +3783,7 @@ Typescript  artifacts output directory.
 
 ---
 
-##### `projenrcTs`<sup>Optional</sup> <a name="projenrcTs" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTs"></a>
+##### `projenrcTs`<sup>Optional</sup> <a name="projenrcTs" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTs"></a>
 
 ```typescript
 public readonly projenrcTs: boolean;
@@ -3796,7 +3796,7 @@ Use TypeScript for your projenrc file (`.projenrc.ts`).
 
 ---
 
-##### `projenrcTsOptions`<sup>Optional</sup> <a name="projenrcTsOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTsOptions"></a>
+##### `projenrcTsOptions`<sup>Optional</sup> <a name="projenrcTsOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcTsOptions"></a>
 
 ```typescript
 public readonly projenrcTsOptions: ProjenrcOptions;
@@ -3808,7 +3808,7 @@ Options for .projenrc.ts.
 
 ---
 
-##### `sampleCode`<sup>Optional</sup> <a name="sampleCode" id="mvc-projen.MvcCdkConstructLibraryOptions.property.sampleCode"></a>
+##### `sampleCode`<sup>Optional</sup> <a name="sampleCode" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.sampleCode"></a>
 
 ```typescript
 public readonly sampleCode: boolean;
@@ -3821,7 +3821,7 @@ Generate one-time sample in `src/` and `test/` if there are no files there.
 
 ---
 
-##### `srcdir`<sup>Optional</sup> <a name="srcdir" id="mvc-projen.MvcCdkConstructLibraryOptions.property.srcdir"></a>
+##### `srcdir`<sup>Optional</sup> <a name="srcdir" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.srcdir"></a>
 
 ```typescript
 public readonly srcdir: string;
@@ -3834,7 +3834,7 @@ Typescript sources directory.
 
 ---
 
-##### `testdir`<sup>Optional</sup> <a name="testdir" id="mvc-projen.MvcCdkConstructLibraryOptions.property.testdir"></a>
+##### `testdir`<sup>Optional</sup> <a name="testdir" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.testdir"></a>
 
 ```typescript
 public readonly testdir: string;
@@ -3852,7 +3852,7 @@ compile the code in-memory.
 
 ---
 
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfig"></a>
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfig"></a>
 
 ```typescript
 public readonly tsconfig: TypescriptConfigOptions;
@@ -3865,7 +3865,7 @@ Custom TSConfig.
 
 ---
 
-##### `tsconfigDev`<sup>Optional</sup> <a name="tsconfigDev" id="mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDev"></a>
+##### `tsconfigDev`<sup>Optional</sup> <a name="tsconfigDev" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDev"></a>
 
 ```typescript
 public readonly tsconfigDev: TypescriptConfigOptions;
@@ -3878,7 +3878,7 @@ Custom tsconfig options for the development tsconfig.json file (used for testing
 
 ---
 
-##### `tsconfigDevFile`<sup>Optional</sup> <a name="tsconfigDevFile" id="mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDevFile"></a>
+##### `tsconfigDevFile`<sup>Optional</sup> <a name="tsconfigDevFile" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsconfigDevFile"></a>
 
 ```typescript
 public readonly tsconfigDevFile: string;
@@ -3891,7 +3891,7 @@ The name of the development tsconfig.json file.
 
 ---
 
-##### `tsJestOptions`<sup>Optional</sup> <a name="tsJestOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.tsJestOptions"></a>
+##### `tsJestOptions`<sup>Optional</sup> <a name="tsJestOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.tsJestOptions"></a>
 
 ```typescript
 public readonly tsJestOptions: TsJestOptions;
@@ -3903,7 +3903,7 @@ Options for ts-jest.
 
 ---
 
-##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.typescriptVersion"></a>
+##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.typescriptVersion"></a>
 
 ```typescript
 public readonly typescriptVersion: string;
@@ -3919,7 +3919,7 @@ same minor, so we recommend using a `~` dependency (e.g. `~1.2.3`).
 
 ---
 
-##### `author`<sup>Required</sup> <a name="author" id="mvc-projen.MvcCdkConstructLibraryOptions.property.author"></a>
+##### `author`<sup>Required</sup> <a name="author" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.author"></a>
 
 ```typescript
 public readonly author: string;
@@ -3932,7 +3932,7 @@ The name of the library author.
 
 ---
 
-##### `authorAddress`<sup>Required</sup> <a name="authorAddress" id="mvc-projen.MvcCdkConstructLibraryOptions.property.authorAddress"></a>
+##### `authorAddress`<sup>Required</sup> <a name="authorAddress" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorAddress"></a>
 
 ```typescript
 public readonly authorAddress: string;
@@ -3945,7 +3945,7 @@ Email or URL of the library author.
 
 ---
 
-##### `repositoryUrl`<sup>Required</sup> <a name="repositoryUrl" id="mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryUrl"></a>
+##### `repositoryUrl`<sup>Required</sup> <a name="repositoryUrl" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.repositoryUrl"></a>
 
 ```typescript
 public readonly repositoryUrl: string;
@@ -3958,7 +3958,7 @@ Git repository URL.
 
 ---
 
-##### `compat`<sup>Optional</sup> <a name="compat" id="mvc-projen.MvcCdkConstructLibraryOptions.property.compat"></a>
+##### `compat`<sup>Optional</sup> <a name="compat" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.compat"></a>
 
 ```typescript
 public readonly compat: boolean;
@@ -3974,7 +3974,7 @@ You can manually run compatibility tests using `yarn compat` if this feature is 
 
 ---
 
-##### `compatIgnore`<sup>Optional</sup> <a name="compatIgnore" id="mvc-projen.MvcCdkConstructLibraryOptions.property.compatIgnore"></a>
+##### `compatIgnore`<sup>Optional</sup> <a name="compatIgnore" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.compatIgnore"></a>
 
 ```typescript
 public readonly compatIgnore: string;
@@ -3987,7 +3987,7 @@ Name of the ignore file for API compatibility tests.
 
 ---
 
-##### `compressAssembly`<sup>Optional</sup> <a name="compressAssembly" id="mvc-projen.MvcCdkConstructLibraryOptions.property.compressAssembly"></a>
+##### `compressAssembly`<sup>Optional</sup> <a name="compressAssembly" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.compressAssembly"></a>
 
 ```typescript
 public readonly compressAssembly: boolean;
@@ -4000,7 +4000,7 @@ Emit a compressed version of the assembly.
 
 ---
 
-##### `docgenFilePath`<sup>Optional</sup> <a name="docgenFilePath" id="mvc-projen.MvcCdkConstructLibraryOptions.property.docgenFilePath"></a>
+##### `docgenFilePath`<sup>Optional</sup> <a name="docgenFilePath" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.docgenFilePath"></a>
 
 ```typescript
 public readonly docgenFilePath: string;
@@ -4013,7 +4013,7 @@ File path for generated docs.
 
 ---
 
-##### ~~`dotnet`~~<sup>Optional</sup> <a name="dotnet" id="mvc-projen.MvcCdkConstructLibraryOptions.property.dotnet"></a>
+##### ~~`dotnet`~~<sup>Optional</sup> <a name="dotnet" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.dotnet"></a>
 
 - *Deprecated:* use `publishToNuget`
 
@@ -4025,7 +4025,7 @@ public readonly dotnet: JsiiDotNetTarget;
 
 ---
 
-##### `excludeTypescript`<sup>Optional</sup> <a name="excludeTypescript" id="mvc-projen.MvcCdkConstructLibraryOptions.property.excludeTypescript"></a>
+##### `excludeTypescript`<sup>Optional</sup> <a name="excludeTypescript" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.excludeTypescript"></a>
 
 ```typescript
 public readonly excludeTypescript: string[];
@@ -4043,7 +4043,7 @@ that cannot be compiled with jsii's compiler settings.
 
 ---
 
-##### `jsiiVersion`<sup>Optional</sup> <a name="jsiiVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiVersion"></a>
+##### `jsiiVersion`<sup>Optional</sup> <a name="jsiiVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.jsiiVersion"></a>
 
 ```typescript
 public readonly jsiiVersion: string;
@@ -4063,7 +4063,7 @@ and should remain on the same minor, so we recommend using a `~` dependency
 
 ---
 
-##### `publishToGo`<sup>Optional</sup> <a name="publishToGo" id="mvc-projen.MvcCdkConstructLibraryOptions.property.publishToGo"></a>
+##### `publishToGo`<sup>Optional</sup> <a name="publishToGo" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToGo"></a>
 
 ```typescript
 public readonly publishToGo: JsiiGoTarget;
@@ -4076,7 +4076,7 @@ Publish Go bindings to a git repository.
 
 ---
 
-##### `publishToMaven`<sup>Optional</sup> <a name="publishToMaven" id="mvc-projen.MvcCdkConstructLibraryOptions.property.publishToMaven"></a>
+##### `publishToMaven`<sup>Optional</sup> <a name="publishToMaven" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToMaven"></a>
 
 ```typescript
 public readonly publishToMaven: JsiiJavaTarget;
@@ -4089,7 +4089,7 @@ Publish to maven.
 
 ---
 
-##### `publishToNuget`<sup>Optional</sup> <a name="publishToNuget" id="mvc-projen.MvcCdkConstructLibraryOptions.property.publishToNuget"></a>
+##### `publishToNuget`<sup>Optional</sup> <a name="publishToNuget" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToNuget"></a>
 
 ```typescript
 public readonly publishToNuget: JsiiDotNetTarget;
@@ -4102,7 +4102,7 @@ Publish to NuGet.
 
 ---
 
-##### `publishToPypi`<sup>Optional</sup> <a name="publishToPypi" id="mvc-projen.MvcCdkConstructLibraryOptions.property.publishToPypi"></a>
+##### `publishToPypi`<sup>Optional</sup> <a name="publishToPypi" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.publishToPypi"></a>
 
 ```typescript
 public readonly publishToPypi: JsiiPythonTarget;
@@ -4115,7 +4115,7 @@ Publish to pypi.
 
 ---
 
-##### ~~`python`~~<sup>Optional</sup> <a name="python" id="mvc-projen.MvcCdkConstructLibraryOptions.property.python"></a>
+##### ~~`python`~~<sup>Optional</sup> <a name="python" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.python"></a>
 
 - *Deprecated:* use `publishToPyPi`
 
@@ -4127,7 +4127,7 @@ public readonly python: JsiiPythonTarget;
 
 ---
 
-##### `rootdir`<sup>Optional</sup> <a name="rootdir" id="mvc-projen.MvcCdkConstructLibraryOptions.property.rootdir"></a>
+##### `rootdir`<sup>Optional</sup> <a name="rootdir" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.rootdir"></a>
 
 ```typescript
 public readonly rootdir: string;
@@ -4138,7 +4138,7 @@ public readonly rootdir: string;
 
 ---
 
-##### `catalog`<sup>Optional</sup> <a name="catalog" id="mvc-projen.MvcCdkConstructLibraryOptions.property.catalog"></a>
+##### `catalog`<sup>Optional</sup> <a name="catalog" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.catalog"></a>
 
 ```typescript
 public readonly catalog: Catalog;
@@ -4162,7 +4162,7 @@ mentioned in the tweet.
 
 ---
 
-##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersion"></a>
+##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersion"></a>
 
 ```typescript
 public readonly cdkVersion: string;
@@ -4175,7 +4175,7 @@ Minimum version of the AWS CDK to depend on.
 
 ---
 
-##### ~~`cdkAssert`~~<sup>Optional</sup> <a name="cdkAssert" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssert"></a>
+##### ~~`cdkAssert`~~<sup>Optional</sup> <a name="cdkAssert" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssert"></a>
 
 - *Deprecated:* The
 
@@ -4192,7 +4192,7 @@ Install the
 
 ---
 
-##### `cdkAssertions`<sup>Optional</sup> <a name="cdkAssertions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssertions"></a>
+##### `cdkAssertions`<sup>Optional</sup> <a name="cdkAssertions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkAssertions"></a>
 
 ```typescript
 public readonly cdkAssertions: boolean;
@@ -4208,7 +4208,7 @@ assertions is already included in 'aws-cdk-lib'
 
 ---
 
-##### `cdkCliVersion`<sup>Optional</sup> <a name="cdkCliVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkCliVersion"></a>
+##### `cdkCliVersion`<sup>Optional</sup> <a name="cdkCliVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkCliVersion"></a>
 
 ```typescript
 public readonly cdkCliVersion: string;
@@ -4226,7 +4226,7 @@ option to restrict it to a specific version or version range.
 
 ---
 
-##### ~~`cdkDependencies`~~<sup>Optional</sup> <a name="cdkDependencies" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependencies"></a>
+##### ~~`cdkDependencies`~~<sup>Optional</sup> <a name="cdkDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependencies"></a>
 
 - *Deprecated:* For CDK 2.x use "deps" instead. (or "peerDeps" if you're building a library)
 
@@ -4240,7 +4240,7 @@ Which AWS CDKv1 modules this project requires.
 
 ---
 
-##### ~~`cdkDependenciesAsDeps`~~<sup>Optional</sup> <a name="cdkDependenciesAsDeps" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependenciesAsDeps"></a>
+##### ~~`cdkDependenciesAsDeps`~~<sup>Optional</sup> <a name="cdkDependenciesAsDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkDependenciesAsDeps"></a>
 
 - *Deprecated:* Not supported in CDK v2.
 
@@ -4262,7 +4262,7 @@ Note: this setting only applies to construct library projects
 
 ---
 
-##### ~~`cdkTestDependencies`~~<sup>Optional</sup> <a name="cdkTestDependencies" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkTestDependencies"></a>
+##### ~~`cdkTestDependencies`~~<sup>Optional</sup> <a name="cdkTestDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkTestDependencies"></a>
 
 - *Deprecated:* For CDK 2.x use 'devDeps' (in node.js projects) or 'testDeps' (in java projects) instead
 
@@ -4276,7 +4276,7 @@ AWS CDK modules required for testing.
 
 ---
 
-##### `cdkVersionPinning`<sup>Optional</sup> <a name="cdkVersionPinning" id="mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersionPinning"></a>
+##### `cdkVersionPinning`<sup>Optional</sup> <a name="cdkVersionPinning" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.cdkVersionPinning"></a>
 
 ```typescript
 public readonly cdkVersionPinning: boolean;
@@ -4291,7 +4291,7 @@ If you use experimental features this will let you define the moment you include
 
 ---
 
-##### `constructsVersion`<sup>Optional</sup> <a name="constructsVersion" id="mvc-projen.MvcCdkConstructLibraryOptions.property.constructsVersion"></a>
+##### `constructsVersion`<sup>Optional</sup> <a name="constructsVersion" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.constructsVersion"></a>
 
 ```typescript
 public readonly constructsVersion: string;
@@ -4304,7 +4304,7 @@ Minimum version of the `constructs` library to depend on.
 
 ---
 
-##### `edgeLambdaAutoDiscover`<sup>Optional</sup> <a name="edgeLambdaAutoDiscover" id="mvc-projen.MvcCdkConstructLibraryOptions.property.edgeLambdaAutoDiscover"></a>
+##### `edgeLambdaAutoDiscover`<sup>Optional</sup> <a name="edgeLambdaAutoDiscover" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.edgeLambdaAutoDiscover"></a>
 
 ```typescript
 public readonly edgeLambdaAutoDiscover: boolean;
@@ -4317,7 +4317,7 @@ Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lam
 
 ---
 
-##### `experimentalIntegRunner`<sup>Optional</sup> <a name="experimentalIntegRunner" id="mvc-projen.MvcCdkConstructLibraryOptions.property.experimentalIntegRunner"></a>
+##### `experimentalIntegRunner`<sup>Optional</sup> <a name="experimentalIntegRunner" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.experimentalIntegRunner"></a>
 
 ```typescript
 public readonly experimentalIntegRunner: boolean;
@@ -4330,7 +4330,7 @@ Enable experimental support for the AWS CDK integ-runner.
 
 ---
 
-##### `integrationTestAutoDiscover`<sup>Optional</sup> <a name="integrationTestAutoDiscover" id="mvc-projen.MvcCdkConstructLibraryOptions.property.integrationTestAutoDiscover"></a>
+##### `integrationTestAutoDiscover`<sup>Optional</sup> <a name="integrationTestAutoDiscover" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.integrationTestAutoDiscover"></a>
 
 ```typescript
 public readonly integrationTestAutoDiscover: boolean;
@@ -4343,7 +4343,7 @@ Automatically discovers and creates integration tests for each `.integ.ts` file 
 
 ---
 
-##### `lambdaAutoDiscover`<sup>Optional</sup> <a name="lambdaAutoDiscover" id="mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaAutoDiscover"></a>
+##### `lambdaAutoDiscover`<sup>Optional</sup> <a name="lambdaAutoDiscover" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaAutoDiscover"></a>
 
 ```typescript
 public readonly lambdaAutoDiscover: boolean;
@@ -4356,7 +4356,7 @@ Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in you
 
 ---
 
-##### `lambdaExtensionAutoDiscover`<sup>Optional</sup> <a name="lambdaExtensionAutoDiscover" id="mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover"></a>
+##### `lambdaExtensionAutoDiscover`<sup>Optional</sup> <a name="lambdaExtensionAutoDiscover" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover"></a>
 
 ```typescript
 public readonly lambdaExtensionAutoDiscover: boolean;
@@ -4369,7 +4369,7 @@ Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` e
 
 ---
 
-##### `lambdaOptions`<sup>Optional</sup> <a name="lambdaOptions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions"></a>
+##### `lambdaOptions`<sup>Optional</sup> <a name="lambdaOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions"></a>
 
 ```typescript
 public readonly lambdaOptions: LambdaFunctionCommonOptions;
@@ -4382,7 +4382,7 @@ Common options for all AWS Lambda functions.
 
 ---
 
-##### `baseAssetsDirectory`<sup>Optional</sup> <a name="baseAssetsDirectory" id="mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory"></a>
+##### `baseAssetsDirectory`<sup>Optional</sup> <a name="baseAssetsDirectory" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory"></a>
 
 ```typescript
 public readonly baseAssetsDirectory: string;
@@ -4395,7 +4395,7 @@ Base directory for the assets.
 
 ---
 
-##### `integTestRegions`<sup>Optional</sup> <a name="integTestRegions" id="mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions"></a>
+##### `integTestRegions`<sup>Optional</sup> <a name="integTestRegions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions"></a>
 
 ```typescript
 public readonly integTestRegions: string[];
