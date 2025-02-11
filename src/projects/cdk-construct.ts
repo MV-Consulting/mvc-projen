@@ -283,7 +283,7 @@ add tools or links which inspired you
 
     this.package.setScript(
       'integ-test',
-      `integ-runner --directory ./integ-tests ${integTestRegions?.map(region => `--parallel-regions ${region}`).join(' ')} --update-on-failed,`,
+      `integ-runner --directory ./integ-tests ${integTestRegions?.map(region => `--parallel-regions ${region}`).join(' ')} --update-on-failed`,
     );
 
     new TextFile(this, '.github/ISSUE_TEMPLATE/bug_report.md', {
