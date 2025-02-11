@@ -32,6 +32,7 @@ const project = new cdk.JsiiProject({
       'dependabot[bot]',
       'github-bot',
       'github-actions[bot]',
+      'mvc-bot',
     ],
     /**
      * The name of the secret that has the GitHub PAT for auto-approving PRs with permissions repo, workflow, write:packages
