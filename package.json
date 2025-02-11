@@ -17,7 +17,9 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:go": "npx projen package:go",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
@@ -129,7 +131,15 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "mvc-projen",
+        "module": "mvc-projen"
+      },
+      "go": {
+        "moduleName": "github.com/MV-Consulting/mvc-projen"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
