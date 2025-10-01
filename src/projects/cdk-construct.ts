@@ -7,8 +7,8 @@ import { DependabotScheduleInterval } from 'projen/lib/github';
 import { JobStep } from 'projen/lib/github/workflows-model';
 
 // Set the minimum node version for AWS CDK and the GitHub actions workflow
-const nodeVersion = '20.x';
-const lambdaNodeVersion = LambdaRuntime.NODEJS_20_X;
+const nodeVersion = '22.x';
+const lambdaNodeVersion = LambdaRuntime.NODEJS_22_X;
 
 /**
  * The options for the construct
@@ -45,7 +45,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       copyrightOwner: 'MV Consulting GmbH',
       copyrightPeriod: '2025',
       license: 'Apache-2.0',
-      jsiiVersion: '~5.7.0',
+      jsiiVersion: '~5.8.0',
       minNodeVersion: nodeVersion,
       workflowNodeVersion: nodeVersion,
       stability: 'experimental',
