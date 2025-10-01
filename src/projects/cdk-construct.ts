@@ -45,7 +45,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       copyrightOwner: 'MV Consulting GmbH',
       copyrightPeriod: '2025',
       license: 'Apache-2.0',
-      jsiiVersion: '~5.7.0',
+      jsiiVersion: '~5.8.0',
       minNodeVersion: nodeVersion,
       workflowNodeVersion: nodeVersion,
       stability: 'experimental',
