@@ -38,6 +38,8 @@ type MvcCdkConstructLibrary interface {
 	// Experimental.
 	AutoMerge() github.AutoMerge
 	// Experimental.
+	Biome() javascript.Biome
+	// Experimental.
 	BuildTask() projen.Task
 	// The PR build GitHub workflow.
 	//
@@ -304,6 +306,9 @@ type MvcCdkConstructLibrary interface {
 	//
 	// Deprecated.
 	AnnotateGenerated(glob *string)
+	// Projen default Typescript compiler options.
+	// Experimental.
+	DefaultTypeScriptCompilerOptions() *javascript.TypeScriptCompilerOptions
 	// Indicates if a script by the name name is defined.
 	// Deprecated: Use `project.tasks.tryFind(name)`
 	HasScript(name *string) *bool
@@ -418,6 +423,16 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) AutoMerge() github.AutoMerge {
 	_jsii_.Get(
 		j,
 		"autoMerge",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MvcCdkConstructLibrary) Biome() javascript.Biome {
+	var returns javascript.Biome
+	_jsii_.Get(
+		j,
+		"biome",
 		&returns,
 	)
 	return returns
@@ -1401,6 +1416,19 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) AnnotateGenerated(glob *string) {
 		"annotateGenerated",
 		[]interface{}{glob},
 	)
+}
+
+func (m *jsiiProxy_MvcCdkConstructLibrary) DefaultTypeScriptCompilerOptions() *javascript.TypeScriptCompilerOptions {
+	var returns *javascript.TypeScriptCompilerOptions
+
+	_jsii_.Invoke(
+		m,
+		"defaultTypeScriptCompilerOptions",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MvcCdkConstructLibrary) HasScript(name *string) *bool {

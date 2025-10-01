@@ -376,6 +376,11 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	NpmTokenSecret *string `field:"optional" json:"npmTokenSecret" yaml:"npmTokenSecret"`
+	// Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+	// Default: - false.
+	//
+	// Experimental.
+	NpmTrustedPublishing *bool `field:"optional" json:"npmTrustedPublishing" yaml:"npmTrustedPublishing"`
 	// The Node Package Manager used to execute scripts.
 	// Default: NodePackageManager.YARN_CLASSIC
 	//
@@ -482,6 +487,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// - Working directory: the project directory.
 	// - `$VERSION`: the current version. Looks like `1.2.3`.
 	// - `$LATEST_TAG`: the most recent tag. Looks like `prefix-v1.2.3`, or may be unset.
+	// - `$SUGGESTED_BUMP`: the suggested bump action based on commits. One of `major|minor|patch|none`.
 	//
 	// The command should print one of the following to `stdout`:
 	//
@@ -545,6 +551,17 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ReleaseBranches *map[string]*release.BranchOptions `field:"optional" json:"releaseBranches" yaml:"releaseBranches"`
+	// The GitHub Actions environment used for the release.
+	//
+	// This can be used to add an explicit approval step to the release
+	// or limit who can initiate a release through environment protection rules.
+	//
+	// When multiple artifacts are released, the environment can be overwritten
+	// on a per artifact basis.
+	// Default: - no environment used, unless set at the artifact level.
+	//
+	// Experimental.
+	ReleaseEnvironment *string `field:"optional" json:"releaseEnvironment" yaml:"releaseEnvironment"`
 	// Automatically release new versions every commit to one of branches in `releaseBranches`.
 	// Default: true.
 	//
@@ -582,6 +599,11 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ReleaseTrigger release.ReleaseTrigger `field:"optional" json:"releaseTrigger" yaml:"releaseTrigger"`
+	// Build environment variables for release workflows.
+	// Default: {}.
+	//
+	// Experimental.
+	ReleaseWorkflowEnv *map[string]*string `field:"optional" json:"releaseWorkflowEnv" yaml:"releaseWorkflowEnv"`
 	// The name of the default release workflow.
 	// Default: "release".
 	//
@@ -627,6 +649,16 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	AutoApproveUpgrades *bool `field:"optional" json:"autoApproveUpgrades" yaml:"autoApproveUpgrades"`
+	// Setup Biome.
+	// Default: false.
+	//
+	// Experimental.
+	Biome *bool `field:"optional" json:"biome" yaml:"biome"`
+	// Biome options.
+	// Default: - default options.
+	//
+	// Experimental.
+	BiomeOptions *javascript.BiomeOptions `field:"optional" json:"biomeOptions" yaml:"biomeOptions"`
 	// Define a GitHub workflow for building PRs.
 	// Default: - true if not a subproject.
 	//
@@ -650,13 +682,13 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	CheckLicenses *javascript.LicenseCheckerOptions `field:"optional" json:"checkLicenses" yaml:"checkLicenses"`
-	// Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v4 A secret is required for private repos. Configured with `@codeCovTokenSecret`.
+	// Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 	// Default: false.
 	//
 	// Experimental.
 	CodeCov *bool `field:"optional" json:"codeCov" yaml:"codeCov"`
-	// Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories.
-	// Default: - if this option is not specified, only public repositories are supported.
+	// Define the secret name for a specified https://codecov.io/ token.
+	// Default: - OIDC auth is used.
 	//
 	// Experimental.
 	CodeCovTokenSecret *string `field:"optional" json:"codeCovTokenSecret" yaml:"codeCovTokenSecret"`
@@ -837,7 +869,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// Experimental.
 	EntrypointTypes *string `field:"optional" json:"entrypointTypes" yaml:"entrypointTypes"`
 	// Setup eslint.
-	// Default: true.
+	// Default: - true, unless biome is enabled.
 	//
 	// Experimental.
 	Eslint *bool `field:"optional" json:"eslint" yaml:"eslint"`
@@ -962,7 +994,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// NOTE: The jsii compiler releases since 5.0.0 are not semantically versioned
 	// and should remain on the same minor, so we recommend using a `~` dependency
 	// (e.g. `~5.0.0`).
-	// Default: "~5.6.0"
+	// Default: "~5.8.0"
 	//
 	// Experimental.
 	JsiiVersion *string `field:"optional" json:"jsiiVersion" yaml:"jsiiVersion"`
