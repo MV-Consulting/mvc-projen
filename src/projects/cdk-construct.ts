@@ -7,8 +7,8 @@ import { DependabotScheduleInterval } from 'projen/lib/github';
 import { JobStep } from 'projen/lib/github/workflows-model';
 
 // Set the minimum node version for AWS CDK and the GitHub actions workflow
-const nodeVersion = '20.x';
-const lambdaNodeVersion = LambdaRuntime.NODEJS_20_X;
+const nodeVersion = '22.x';
+const lambdaNodeVersion = LambdaRuntime.NODEJS_22_X;
 
 /**
  * The options for the construct
