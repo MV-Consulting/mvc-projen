@@ -2,7 +2,7 @@ import { cdk, javascript, ReleasableCommits } from 'projen';
 import { DependabotScheduleInterval } from 'projen/lib/github';
 import { NpmAccess } from 'projen/lib/javascript';
 
-const dependencies = ['projen@0.96.5', 'constructs'];
+const dependencies = ['projen@0.96.5', 'constructs@^10.4.2'];
 
 const project = new cdk.JsiiProject({
   author: 'Manuel Vogel',
@@ -20,6 +20,7 @@ const project = new cdk.JsiiProject({
   devDeps: [
     '@commitlint/cli',
     '@commitlint/config-conventional',
+    'constructs@10.4.2',
     'husky',
   ],
   description: 'Base projen module for MV Consulting projects',
