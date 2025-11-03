@@ -45,7 +45,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       copyrightOwner: 'MV Consulting GmbH',
       copyrightPeriod: '2025',
       license: 'Apache-2.0',
-      jsiiVersion: '~5.8.0',
+      jsiiVersion: '~5.9.0',
       minNodeVersion: nodeVersion,
       workflowNodeVersion: nodeVersion,
       stability: 'experimental',
@@ -241,14 +241,14 @@ add tools or links which inspired you
       this.gitignore.exclude(file);
     }
     this.addDeps(
-      'cdk-nag@^2.35.0',
+      'cdk-nag@^2.37.55',
     );
     this.addDevDeps(
       `@aws-cdk/integ-runner@${this.cdkVersion}-alpha.0`, // NOTE: keep in sync with cdkversion
       `@aws-cdk/integ-tests-alpha@${this.cdkVersion}-alpha.0`,
-      '@commitlint/cli@^19.6.1',
-      '@commitlint/config-conventional@^19.6.0',
-      'awslint@^2.72.1',
+      '@commitlint/cli@^20.1.0',
+      '@commitlint/config-conventional@^20.0.0',
+      `awslint@${this.cdkVersion}-alpha.0`,
       'husky@^9.1.7',
     );
 
