@@ -38,7 +38,7 @@
     },
     {
       "name": "constructs",
-      "version": "10.4.2",
+      "version": "^10.0.0",
       "type": "build"
     },
     {
@@ -82,17 +82,17 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.8.0",
+      "version": "~5.9.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.8.0",
+      "version": "~5.9.0",
       "type": "build"
     },
     {
       "name": "projen",
-      "version": "0.96.5",
+      "version": "0.97.2",
       "type": "build"
     },
     {
@@ -114,7 +114,7 @@
     },
     {
       "name": "projen",
-      "version": "0.96.5",
+      "version": "0.97.2",
       "type": "peer"
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "name": "projen",
-      "version": "0.96.5",
+      "version": "0.97.2",
       "type": "runtime"
     }
   ],

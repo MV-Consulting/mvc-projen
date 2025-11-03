@@ -2,14 +2,19 @@ import { cdk, javascript, ReleasableCommits } from 'projen';
 import { DependabotScheduleInterval } from 'projen/lib/github';
 import { NpmAccess } from 'projen/lib/javascript';
 
-const dependencies = ['projen@0.96.5', 'constructs@^10.4.2'];
+// Find the latest projen version here: https://www.npmjs.com/package/projen
+const projenVersion = '0.97.2';
+const dependencies = [
+  `projen@${projenVersion}`, // DO not move the index 0 to another position!
+  'constructs@^10.4.2',
+];
 
 const project = new cdk.JsiiProject({
   author: 'Manuel Vogel',
   authorAddress: '8409778+mavogel@users.noreply.github.com',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.8.0',
-  projenVersion: '0.96.5', // Find the latest projen version here: https://www.npmjs.com/package/projen
+  jsiiVersion: '~5.9.0',
+  projenVersion: projenVersion,
   name: 'mvc-projen',
   packageName: '@mavogel/mvc-projen',
   packageManager: javascript.NodePackageManager.NPM,
@@ -20,7 +25,6 @@ const project = new cdk.JsiiProject({
   devDeps: [
     '@commitlint/cli',
     '@commitlint/config-conventional',
-    'constructs@10.4.2',
     'husky',
   ],
   description: 'Base projen module for MV Consulting projects',
