@@ -274,7 +274,7 @@ type MvcCdkConstructLibrary interface {
 	AddKeywords(keywords ...*string)
 	// Adds patterns to be ignored by npm.
 	// Experimental.
-	AddPackageIgnore(pattern *string)
+	AddPackageIgnore(_pattern *string)
 	// Defines peer dependencies.
 	//
 	// When adding peer dependencies, a devDependency will also be added on the
@@ -305,7 +305,7 @@ type MvcCdkConstructLibrary interface {
 	// See: https://github.com/github/linguist/blob/master/docs/overrides.md
 	//
 	// Deprecated.
-	AnnotateGenerated(glob *string)
+	AnnotateGenerated(_glob *string)
 	// Projen default Typescript compiler options.
 	// Experimental.
 	DefaultTypeScriptCompilerOptions() *javascript.TypeScriptCompilerOptions
@@ -1332,14 +1332,14 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) AddKeywords(keywords ...*string) {
 	)
 }
 
-func (m *jsiiProxy_MvcCdkConstructLibrary) AddPackageIgnore(pattern *string) {
-	if err := m.validateAddPackageIgnoreParameters(pattern); err != nil {
+func (m *jsiiProxy_MvcCdkConstructLibrary) AddPackageIgnore(_pattern *string) {
+	if err := m.validateAddPackageIgnoreParameters(_pattern); err != nil {
 		panic(err)
 	}
 	_jsii_.InvokeVoid(
 		m,
 		"addPackageIgnore",
-		[]interface{}{pattern},
+		[]interface{}{_pattern},
 	)
 }
 
@@ -1407,14 +1407,14 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) AddTip(message *string) {
 	)
 }
 
-func (m *jsiiProxy_MvcCdkConstructLibrary) AnnotateGenerated(glob *string) {
-	if err := m.validateAnnotateGeneratedParameters(glob); err != nil {
+func (m *jsiiProxy_MvcCdkConstructLibrary) AnnotateGenerated(_glob *string) {
+	if err := m.validateAnnotateGeneratedParameters(_glob); err != nil {
 		panic(err)
 	}
 	_jsii_.InvokeVoid(
 		m,
 		"annotateGenerated",
-		[]interface{}{glob},
+		[]interface{}{_glob},
 	)
 }
 

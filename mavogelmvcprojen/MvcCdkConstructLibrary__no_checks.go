@@ -16,7 +16,7 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) validateAddGitIgnoreParameters(patter
 	return nil
 }
 
-func (m *jsiiProxy_MvcCdkConstructLibrary) validateAddPackageIgnoreParameters(pattern *string) error {
+func (m *jsiiProxy_MvcCdkConstructLibrary) validateAddPackageIgnoreParameters(_pattern *string) error {
 	return nil
 }
 
@@ -32,7 +32,7 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) validateAddTipParameters(message *str
 	return nil
 }
 
-func (m *jsiiProxy_MvcCdkConstructLibrary) validateAnnotateGeneratedParameters(glob *string) error {
+func (m *jsiiProxy_MvcCdkConstructLibrary) validateAnnotateGeneratedParameters(_glob *string) error {
 	return nil
 }
 
