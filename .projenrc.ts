@@ -5,7 +5,7 @@ import { NpmAccess } from 'projen/lib/javascript';
 // Find the latest projen version here: https://www.npmjs.com/package/projen
 const projenVersion = '0.97.2';
 const dependencies = [
-  `projen@${projenVersion}`, // DO not move the index 0 to another position!
+  `projen@^${projenVersion}`, // DO not move the index 0 to another position!
   'constructs@^10.4.2',
 ];
 
