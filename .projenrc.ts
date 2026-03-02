@@ -128,7 +128,7 @@ const project = new cdk.JsiiProject({
   // Python
   publishToPypi: {
     distName: 'mvc-projen',
-    module: 'mvc-projen',
+    module: 'mvc_projen',
   },
   pullRequestTemplateContents: [
     `

@@ -133,7 +133,7 @@
     "targets": {
       "python": {
         "distName": "mvc-projen",
-        "module": "mvc-projen"
+        "module": "mvc_projen"
       },
       "go": {
         "moduleName": "github.com/MV-Consulting/mvc-projen"
