@@ -31,6 +31,7 @@ new MvcCdkConstructLibrary(options: MvcCdkConstructLibraryOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibrary.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
@@ -72,6 +73,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@mavogel/mvc-projen.MvcCdkConstructLibrary.addExcludeFromCleanup"></a>
 
@@ -1618,6 +1640,7 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projectTree">projectTree</a></code> | <code>boolean</code> | Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
@@ -1707,7 +1730,9 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
-| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured). |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
@@ -1892,6 +1917,19 @@ public readonly parent: Project;
 - *Type:* projen.Project
 
 The parent project, if this project is part of a bigger project.
+
+---
+
+##### `projectTree`<sup>Optional</sup> <a name="projectTree" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.projectTree"></a>
+
+```typescript
+public readonly projectTree: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging.
 
 ---
 
@@ -3241,6 +3279,36 @@ A directory which will contain build artifacts.
 
 ---
 
+##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.auditDeps"></a>
+
+```typescript
+public readonly auditDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Run security audit on dependencies.
+
+When enabled, creates an "audit" task that checks for known security vulnerabilities
+in dependencies. By default, runs during every build and checks for "high" severity
+vulnerabilities or above in all dependencies (including dev dependencies).
+
+---
+
+##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.auditDepsOptions"></a>
+
+```typescript
+public readonly auditDepsOptions: AuditOptions;
+```
+
+- *Type:* projen.javascript.AuditOptions
+- *Default:* default options
+
+Security audit options.
+
+---
+
 ##### `autoApproveUpgrades`<sup>Optional</sup> <a name="autoApproveUpgrades" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.autoApproveUpgrades"></a>
 
 ```typescript
@@ -3250,7 +3318,7 @@ public readonly autoApproveUpgrades: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
 
 Throw if set to true but `autoApproveOptions` are not defined.
 
@@ -3436,7 +3504,7 @@ public readonly depsUpgrade: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* `true` for root projects, `false` for subprojects
 
 Use tasks and github workflows to handle dependency upgrades.
 
@@ -4138,7 +4206,7 @@ public readonly jsiiVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "~5.8.0"
+- *Default:* "~5.9.0"
 
 Version of the jsii compiler to use.
 
@@ -4257,7 +4325,7 @@ public readonly cdkVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "2.1.0"
+- *Default:* "2.189.1"
 
 Minimum version of the AWS CDK to depend on.
 
@@ -4386,7 +4454,7 @@ public readonly constructsVersion: string;
 ```
 
 - *Type:* string
-- *Default:* for CDK 1.x the default is "3.2.27", for CDK 2.x the default is "10.0.5".
+- *Default:* for CDK 1.x the default is "3.2.27", for CDK 2.x the default is "10.5.1".
 
 Minimum version of the `constructs` library to depend on.
 
