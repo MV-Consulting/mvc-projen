@@ -112,6 +112,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
 			_jsii_.MemberProperty{JsiiProperty: "vscode", GoGetter: "Vscode"},
 			_jsii_.MemberProperty{JsiiProperty: "watchTask", GoGetter: "WatchTask"},
+			_jsii_.MemberMethod{JsiiMethod: "with", GoMethod: "With"},
 			_jsii_.MemberProperty{JsiiProperty: "workflowBootstrapSteps", GoGetter: "WorkflowBootstrapSteps"},
 			_jsii_.MemberProperty{JsiiProperty: "workflowPackageCache", GoGetter: "WorkflowPackageCache"},
 		},

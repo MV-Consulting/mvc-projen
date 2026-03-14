@@ -48,6 +48,11 @@ type MvcCdkConstructLibraryOptions struct {
 	// The parent project, if this project is part of a bigger project.
 	// Experimental.
 	Parent projen.Project `field:"optional" json:"parent" yaml:"parent"`
+	// Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging.
+	// Default: false.
+	//
+	// Experimental.
+	ProjectTree *bool `field:"optional" json:"projectTree" yaml:"projectTree"`
 	// The shell command to use in order to run the projen CLI.
 	//
 	// Can be used to customize in special environments.
@@ -642,7 +647,21 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ArtifactsDirectory *string `field:"optional" json:"artifactsDirectory" yaml:"artifactsDirectory"`
-	// Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+	// Run security audit on dependencies.
+	//
+	// When enabled, creates an "audit" task that checks for known security vulnerabilities
+	// in dependencies. By default, runs during every build and checks for "high" severity
+	// vulnerabilities or above in all dependencies (including dev dependencies).
+	// Default: false.
+	//
+	// Experimental.
+	AuditDeps *bool `field:"optional" json:"auditDeps" yaml:"auditDeps"`
+	// Security audit options.
+	// Default: - default options.
+	//
+	// Experimental.
+	AuditDepsOptions *javascript.AuditOptions `field:"optional" json:"auditDepsOptions" yaml:"auditDepsOptions"`
+	// Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
 	//
 	// Throw if set to true but `autoApproveOptions` are not defined.
 	// Default: - true.
@@ -717,7 +736,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// Use tasks and github workflows to handle dependency upgrades.
 	//
 	// Cannot be used in conjunction with `dependabot`.
-	// Default: true.
+	// Default: - `true` for root projects, `false` for subprojects.
 	//
 	// Experimental.
 	DepsUpgrade *bool `field:"optional" json:"depsUpgrade" yaml:"depsUpgrade"`
@@ -994,7 +1013,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// NOTE: The jsii compiler releases since 5.0.0 are not semantically versioned
 	// and should remain on the same minor, so we recommend using a `~` dependency
 	// (e.g. `~5.0.0`).
-	// Default: "~5.8.0"
+	// Default: "~5.9.0"
 	//
 	// Experimental.
 	JsiiVersion *string `field:"optional" json:"jsiiVersion" yaml:"jsiiVersion"`
@@ -1041,7 +1060,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// Experimental.
 	Catalog *cdk.Catalog `field:"optional" json:"catalog" yaml:"catalog"`
 	// Minimum version of the AWS CDK to depend on.
-	// Default: "2.1.0"
+	// Default: "2.189.1"
 	//
 	// Experimental.
 	CdkVersion *string `field:"required" json:"cdkVersion" yaml:"cdkVersion"`
@@ -1096,7 +1115,7 @@ type MvcCdkConstructLibraryOptions struct {
 	CdkVersionPinning *bool `field:"optional" json:"cdkVersionPinning" yaml:"cdkVersionPinning"`
 	// Minimum version of the `constructs` library to depend on.
 	// Default: - for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-	// "10.0.5".
+	// "10.5.1".
 	//
 	// Experimental.
 	ConstructsVersion *string `field:"optional" json:"constructsVersion" yaml:"constructsVersion"`
