@@ -10,9 +10,10 @@ import { JobStep } from 'projen/lib/github/workflows-model';
 const nodeVersion = '22.x';
 const lambdaNodeVersion = LambdaRuntime.NODEJS_22_X;
 
-// The last CDK version for which @aws-cdk/integ-runner, @aws-cdk/integ-tests-alpha,
-// and awslint alpha packages were published.
-const LAST_CDK_ALPHA_VERSION = '2.197.4';
+// The last CDK version for which @aws-cdk/integ-runner was published.
+// integ-runner uses plain versions (no -alpha.0 suffix) and stopped publishing after this version.
+// @aws-cdk/integ-tests-alpha and awslint continue to publish and track CDK versions.
+const LAST_INTEG_RUNNER_VERSION = '2.197.4';
 
 /**
  * The options for the construct
@@ -247,18 +248,19 @@ add tools or links which inspired you
     this.addDeps(
       'cdk-nag@^2.37.55',
     );
-    // Cap alpha package versions at LAST_CDK_ALPHA_VERSION since these packages
-    // stopped publishing after that version.
+    // Cap integ-runner at LAST_INTEG_RUNNER_VERSION since it stopped publishing after that version.
+    // integ-runner uses plain versions (no -alpha.0 suffix).
+    // integ-tests-alpha and awslint continue to publish and track CDK versions with -alpha.0 suffix.
     const rawCdkVersion = this.cdkVersion.replace(/[\^~]/, '');
-    const alphaVersion = rawCdkVersion.localeCompare(LAST_CDK_ALPHA_VERSION, undefined, { numeric: true, sensitivity: 'base' }) > 0
-      ? LAST_CDK_ALPHA_VERSION
+    const integRunnerVersion = rawCdkVersion.localeCompare(LAST_INTEG_RUNNER_VERSION, undefined, { numeric: true, sensitivity: 'base' }) > 0
+      ? LAST_INTEG_RUNNER_VERSION
       : rawCdkVersion;
     this.addDevDeps(
-      `@aws-cdk/integ-runner@${alphaVersion}-alpha.0`,
-      `@aws-cdk/integ-tests-alpha@${alphaVersion}-alpha.0`,
+      `@aws-cdk/integ-runner@${integRunnerVersion}`,
+      `@aws-cdk/integ-tests-alpha@${rawCdkVersion}-alpha.0`,
       '@commitlint/cli@^20.1.0',
       '@commitlint/config-conventional@^20.0.0',
-      `awslint@${alphaVersion}-alpha.0`,
+      `awslint@${rawCdkVersion}-alpha.0`,
       'husky@^9.1.7',
     );
 
