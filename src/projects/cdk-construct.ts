@@ -10,6 +10,10 @@ import { JobStep } from 'projen/lib/github/workflows-model';
 const nodeVersion = '22.x';
 const lambdaNodeVersion = LambdaRuntime.NODEJS_22_X;
 
+// The last CDK version for which @aws-cdk/integ-runner, @aws-cdk/integ-tests-alpha,
+// and awslint alpha packages were published.
+const LAST_CDK_ALPHA_VERSION = '2.197.4';
+
 /**
  * The options for the construct
  */
@@ -243,12 +247,18 @@ add tools or links which inspired you
     this.addDeps(
       'cdk-nag@^2.37.55',
     );
+    // Cap alpha package versions at LAST_CDK_ALPHA_VERSION since these packages
+    // stopped publishing after that version.
+    const rawCdkVersion = this.cdkVersion.replace(/[\^~]/, '');
+    const alphaVersion = rawCdkVersion.localeCompare(LAST_CDK_ALPHA_VERSION, undefined, { numeric: true, sensitivity: 'base' }) > 0
+      ? LAST_CDK_ALPHA_VERSION
+      : rawCdkVersion;
     this.addDevDeps(
-      `@aws-cdk/integ-runner@${this.cdkVersion}-alpha.0`, // NOTE: keep in sync with cdkversion
-      `@aws-cdk/integ-tests-alpha@${this.cdkVersion}-alpha.0`,
+      `@aws-cdk/integ-runner@${alphaVersion}-alpha.0`,
+      `@aws-cdk/integ-tests-alpha@${alphaVersion}-alpha.0`,
       '@commitlint/cli@^20.1.0',
       '@commitlint/config-conventional@^20.0.0',
-      `awslint@${this.cdkVersion}-alpha.0`,
+      `awslint@${alphaVersion}-alpha.0`,
       'husky@^9.1.7',
     );
 
