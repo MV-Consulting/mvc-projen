@@ -3,10 +3,10 @@ import { DependabotScheduleInterval } from 'projen/lib/github';
 import { NpmAccess } from 'projen/lib/javascript';
 
 // Find the latest projen version here: https://www.npmjs.com/package/projen
-const projenVersion = '0.97.2';
+const projenVersion = '0.99.19';
 const dependencies = [
   `projen@^${projenVersion}`, // DO not move the index 0 to another position!
-  'constructs@^10.4.2',
+  'constructs@^10.5.1',
 ];
 
 const project = new cdk.JsiiProject({
