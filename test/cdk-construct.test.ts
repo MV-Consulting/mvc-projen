@@ -48,3 +48,29 @@ describe('configurations', () => {
     expect(snap['package.json'].scripts.awslint).toEqual('awslint');
   });
 });
+
+describe('alpha package version capping', () => {
+  test('uses cdkVersion for alpha packages when below the last published version', () => {
+    const project = new MvcCdkConstructLibrary({
+      ...minimalMvcCdkConstructLibraryOptions,
+      cdkVersion: '2.177.0',
+    });
+    const snap = synthSnapshot(project);
+    const devDeps = snap['package.json'].devDependencies;
+    expect(devDeps['@aws-cdk/integ-runner']).toEqual('2.177.0-alpha.0');
+    expect(devDeps['@aws-cdk/integ-tests-alpha']).toEqual('2.177.0-alpha.0');
+    expect(devDeps.awslint).toEqual('2.177.0-alpha.0');
+  });
+
+  test('caps alpha packages at 2.197.4 when cdkVersion exceeds it', () => {
+    const project = new MvcCdkConstructLibrary({
+      ...minimalMvcCdkConstructLibraryOptions,
+      cdkVersion: '2.200.0',
+    });
+    const snap = synthSnapshot(project);
+    const devDeps = snap['package.json'].devDependencies;
+    expect(devDeps['@aws-cdk/integ-runner']).toEqual('2.197.4-alpha.0');
+    expect(devDeps['@aws-cdk/integ-tests-alpha']).toEqual('2.197.4-alpha.0');
+    expect(devDeps.awslint).toEqual('2.197.4-alpha.0');
+  });
+});
