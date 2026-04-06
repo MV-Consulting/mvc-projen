@@ -1179,7 +1179,7 @@ type MvcCdkConstructLibraryOptions struct {
 	// Experimental.
 	SingletonLambdaAutoDiscover *bool `field:"optional" json:"singletonLambdaAutoDiscover" yaml:"singletonLambdaAutoDiscover"`
 	// Base directory for the assets.
-	// Default: ${cwd()}/node_modules/mvc-projen/assets.
+	// Default: ${process.cwd()}/node_modules/mvc-projen/assets
 	//
 	BaseAssetsDirectory *string `field:"optional" json:"baseAssetsDirectory" yaml:"baseAssetsDirectory"`
 	// The regions to run the integ tests in.
