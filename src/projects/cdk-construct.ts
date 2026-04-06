@@ -7,8 +7,8 @@ import { DependabotScheduleInterval } from 'projen/lib/github';
 import { JobStep } from 'projen/lib/github/workflows-model';
 
 // Set the minimum node version for AWS CDK and the GitHub actions workflow
-const nodeVersion = '22.x';
-const lambdaNodeVersion = LambdaRuntime.NODEJS_22_X;
+const nodeVersion = '24.x';
+const lambdaNodeVersion = LambdaRuntime.NODEJS_24_X;
 
 // The last CDK version for which @aws-cdk/integ-runner was published.
 // integ-runner uses plain versions (no -alpha.0 suffix) and stopped publishing after this version.

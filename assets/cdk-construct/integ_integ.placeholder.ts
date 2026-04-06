@@ -36,7 +36,7 @@ const integ = new IntegTest(app, 'IntegSetupPlaceholder', {
 const loginHandler = new NodejsFunction(stackUnderTest, 'test-handler', {
   functionName: PhysicalName.GENERATE_IF_NEEDED,
   entry: path.join(__dirname, 'functions', 'test-handler.ts'),
-  runtime: lambda.Runtime.NODEJS_20_X,
+  runtime: lambda.Runtime.NODEJS_24_X,
   logRetention: 1,
   timeout: Duration.seconds(30),
   bundling: {
