@@ -1663,6 +1663,7 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.staleOptions">staleOptions</a></code> | <code>projen.github.StaleOptions</code> | Auto-close stale issues and pull requests. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.addPackageManagerToDevEngines">addPackageManagerToDevEngines</a></code> | <code>boolean</code> | Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
@@ -1675,9 +1676,11 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Build dependencies for this module. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devEngines">devEngines</a></code> | <code>projen.javascript.DevEngines</code> | Configure the `devEngines` field in `package.json`. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.homepage">homepage</a></code> | <code>string</code> | Package's Homepage / Website. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
@@ -1821,6 +1824,7 @@ const mvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = { ... }
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaAutoDiscover">lambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in your source tree. If this is disabled, you either need to explicitly call `aws_lambda.Function.autoDiscover()` or define a `new aws_lambda.Function()` for each handler. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
+| <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.singletonLambdaAutoDiscover">singletonLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.baseAssetsDirectory">baseAssetsDirectory</a></code> | <code>string</code> | Base directory for the assets. |
 | <code><a href="#@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.integTestRegions">integTestRegions</a></code> | <code>string[]</code> | The regions to run the integ tests in. |
 
@@ -2253,6 +2257,19 @@ Enabled by default for root projects. Disabled for non-root projects.
 
 ---
 
+##### `addPackageManagerToDevEngines`<sup>Optional</sup> <a name="addPackageManagerToDevEngines" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.addPackageManagerToDevEngines"></a>
+
+```typescript
+public readonly addPackageManagerToDevEngines: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`.
+
+---
+
 ##### `allowLibraryDependencies`<sup>Optional</sup> <a name="allowLibraryDependencies" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.allowLibraryDependencies"></a>
 
 ```typescript
@@ -2421,6 +2438,24 @@ This is required if publishing packages to, or installing scoped packages from A
 
 ---
 
+##### `deleteOrphanedLockFiles`<sup>Optional</sup> <a name="deleteOrphanedLockFiles" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.deleteOrphanedLockFiles"></a>
+
+```typescript
+public readonly deleteOrphanedLockFiles: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Automatically delete lockfiles from package managers that are not the active one.
+
+Only triggered when the lockfile for the configured package
+manager already exists.
+
+This is useful when migrating between package managers to avoid conflicts.
+
+---
+
 ##### `deps`<sup>Optional</sup> <a name="deps" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.deps"></a>
 
 ```typescript
@@ -2493,6 +2528,24 @@ this will be what you `package.json` will eventually include.
 [ 'typescript', '@types/express' ]
 ```
 
+
+##### `devEngines`<sup>Optional</sup> <a name="devEngines" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.devEngines"></a>
+
+```typescript
+public readonly devEngines: DevEngines;
+```
+
+- *Type:* projen.javascript.DevEngines
+
+Configure the `devEngines` field in `package.json`.
+
+The `devEngines.packageManager` field is automatically populated based on
+the resolved `packageManager` value. Any fields provided here are merged
+with the auto-populated `packageManager` entry.
+
+> [https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devengines](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devengines)
+
+---
 
 ##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.entrypoint"></a>
 
@@ -2702,7 +2755,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN_CLASSIC
+- *Default:* Detected from the calling process or `YARN_CLASSIC` if detection fails.
 
 The Node Package Manager used to execute scripts.
 
@@ -4535,6 +4588,19 @@ public readonly lambdaOptions: LambdaFunctionCommonOptions;
 - *Default:* default options
 
 Common options for all AWS Lambda functions.
+
+---
+
+##### `singletonLambdaAutoDiscover`<sup>Optional</sup> <a name="singletonLambdaAutoDiscover" id="@mavogel/mvc-projen.MvcCdkConstructLibraryOptions.property.singletonLambdaAutoDiscover"></a>
+
+```typescript
+public readonly singletonLambdaAutoDiscover: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project.
 
 ---
 
