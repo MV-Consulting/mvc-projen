@@ -1,4 +1,3 @@
-import { cwd } from 'process';
 import { synthSnapshot } from 'projen/lib/util/synth';
 import { MvcCdkConstructLibrary, MvcCdkConstructLibraryOptions } from '../src';
 
@@ -10,7 +9,7 @@ const minimalMvcCdkConstructLibraryOptions: MvcCdkConstructLibraryOptions = {
   defaultReleaseBranch: 'main',
   repositoryUrl: 'https://github.com/MV-Consulting/test-project.git',
   // for tests
-  baseAssetsDirectory: `${cwd()}/assets`,
+  baseAssetsDirectory: `${process.cwd()}/assets`,
 };
 
 describe('cdkVersion is >= 2.0.0', () => {
@@ -64,16 +63,16 @@ describe('alpha package version capping', () => {
     expect(devDeps.awslint).toEqual('2.177.0-alpha.0');
   });
 
-  test('caps integ-runner at 2.197.4 when cdkVersion exceeds it, but integ-tests-alpha and awslint track cdkVersion', () => {
+  test('caps integ-runner at last published version when cdkVersion exceeds it, and normalizes alpha versions to .0 patch', () => {
     const project = new MvcCdkConstructLibrary({
       ...minimalMvcCdkConstructLibraryOptions,
       cdkVersion: '2.200.0',
     });
     const snap = synthSnapshot(project);
     const devDeps = snap['package.json'].devDependencies;
-    // integ-runner is capped at 2.197.4 (last published version, no alpha suffix)
-    expect(devDeps['@aws-cdk/integ-runner']).toEqual('2.197.4');
-    // integ-tests-alpha and awslint continue to publish and track cdkVersion
+    // integ-runner is capped at 2.197.12 (last published version, no alpha suffix)
+    expect(devDeps['@aws-cdk/integ-runner']).toEqual('2.197.12');
+    // integ-tests-alpha and awslint only publish at .0 patch versions
     expect(devDeps['@aws-cdk/integ-tests-alpha']).toEqual('2.200.0-alpha.0');
     expect(devDeps.awslint).toEqual('2.200.0-alpha.0');
   });

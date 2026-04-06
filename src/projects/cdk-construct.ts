@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { cwd } from 'process';
+
 import { Component, javascript, ReleasableCommits, TextFile, YamlFile } from 'projen';
 import { AwsCdkConstructLibrary, AwsCdkConstructLibraryOptions, LambdaRuntime } from 'projen/lib/awscdk';
 import { DependabotScheduleInterval } from 'projen/lib/github';
@@ -13,7 +13,7 @@ const lambdaNodeVersion = LambdaRuntime.NODEJS_22_X;
 // The last CDK version for which @aws-cdk/integ-runner was published.
 // integ-runner uses plain versions (no -alpha.0 suffix) and stopped publishing after this version.
 // @aws-cdk/integ-tests-alpha and awslint continue to publish and track CDK versions.
-const LAST_INTEG_RUNNER_VERSION = '2.197.4';
+const LAST_INTEG_RUNNER_VERSION = '2.197.12';
 
 /**
  * The options for the construct
@@ -22,7 +22,7 @@ export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOpt
   /**
    * Base directory for the assets
    *
-   * @default ${cwd()}/node_modules/mvc-projen/assets
+   * @default ${process.cwd()}/node_modules/mvc-projen/assets
    */
   readonly baseAssetsDirectory?: string;
 
@@ -42,7 +42,7 @@ export interface MvcCdkConstructLibraryOptions extends AwsCdkConstructLibraryOpt
 export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
 
   constructor(options: MvcCdkConstructLibraryOptions) {
-    const baseAssetsDirectory = options.baseAssetsDirectory ?? `${cwd()}/node_modules/@mavogel/mvc-projen/assets`;
+    const baseAssetsDirectory = options.baseAssetsDirectory ?? `${process.cwd()}/node_modules/@mavogel/mvc-projen/assets`;
     const integTestRegions = options.integTestRegions ?? ['eu-west-1', 'eu-west-2'];
 
     super({
@@ -133,7 +133,9 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       // experimentalIntegRunner: true,
       // manual integ test setup
       tsconfigDev: {
-        compilerOptions: {},
+        compilerOptions: {
+          types: ['node', 'jest'],
+        },
         include: ['integ-tests/**/*.ts'],
       },
       pullRequestTemplateContents: [fs.readFileSync(`${baseAssetsDirectory}/common/github_pull_request.md`).toString()],
@@ -237,6 +239,10 @@ add tools or links which inspired you
       ...options,
     });
 
+    // TypeScript 6 no longer auto-discovers @types/* packages
+    this.tsconfigDev.file.addOverride('compilerOptions.types', ['node', 'jest']);
+    this.tsconfig?.file.addOverride('compilerOptions.types', ['node']);
+
     // gitignore
     const filesPatternToGitignore = [
       'tmp',
@@ -250,17 +256,20 @@ add tools or links which inspired you
     );
     // Cap integ-runner at LAST_INTEG_RUNNER_VERSION since it stopped publishing after that version.
     // integ-runner uses plain versions (no -alpha.0 suffix).
-    // integ-tests-alpha and awslint continue to publish and track CDK versions with -alpha.0 suffix.
+    // integ-tests-alpha and awslint only publish at minor versions (e.g. 2.197.0-alpha.0, not 2.197.4-alpha.0).
     const rawCdkVersion = this.cdkVersion.replace(/[\^~]/, '');
     const integRunnerVersion = rawCdkVersion.localeCompare(LAST_INTEG_RUNNER_VERSION, undefined, { numeric: true, sensitivity: 'base' }) > 0
       ? LAST_INTEG_RUNNER_VERSION
       : rawCdkVersion;
+    // Alpha packages only publish at .0 patch versions — normalize to minor version
+    const [major, minor] = rawCdkVersion.split('.');
+    const alphaVersion = `${major}.${minor}.0`;
     this.addDevDeps(
       `@aws-cdk/integ-runner@${integRunnerVersion}`,
-      `@aws-cdk/integ-tests-alpha@${rawCdkVersion}-alpha.0`,
+      `@aws-cdk/integ-tests-alpha@${alphaVersion}-alpha.0`,
       '@commitlint/cli@^20.1.0',
       '@commitlint/config-conventional@^20.0.0',
-      `awslint@${rawCdkVersion}-alpha.0`,
+      `awslint@${alphaVersion}-alpha.0`,
       'husky@^9.1.7',
     );
 

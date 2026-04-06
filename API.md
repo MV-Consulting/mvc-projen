@@ -4611,7 +4611,7 @@ public readonly baseAssetsDirectory: string;
 ```
 
 - *Type:* string
-- *Default:* ${cwd()}/node_modules/mvc-projen/assets
+- *Default:* ${process.cwd()}/node_modules/mvc-projen/assets
 
 Base directory for the assets.
 
