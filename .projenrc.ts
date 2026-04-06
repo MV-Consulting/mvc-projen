@@ -157,5 +157,9 @@ const project = new cdk.JsiiProject({
   ],
 });
 
+// TypeScript 6 no longer auto-discovers @types/* packages
+project.tsconfigDev.file.addOverride('compilerOptions.types', ['jest', 'node']);
+project.tsconfig?.file.addOverride('compilerOptions.types', ['node']);
+
 project.package.setScript('prepare', 'husky');
 project.synth();
