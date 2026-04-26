@@ -243,6 +243,14 @@ add tools or links which inspired you
     this.tsconfigDev.file.addOverride('compilerOptions.types', ['node', 'jest']);
     this.tsconfig?.file.addOverride('compilerOptions.types', ['node']);
 
+    // projen's AutoMerge component hardcodes `delete_head_branch: {}` in the
+    // mergify rule with no option to disable it. Strip it so Mergify does not
+    // delete head branches on merge (renovate/dependabot manage their own).
+    // see https://github.com/MV-Consulting/cdk-vscode-server/pull/112
+    this.tryFindObjectFile('.mergify.yml')?.addDeletionOverride(
+      'pull_request_rules.0.actions.delete_head_branch',
+    );
+
     // gitignore
     const filesPatternToGitignore = [
       'tmp',
