@@ -53,5 +53,6 @@ junit.xml
 !/projenrc/tsconfig.json
 .jsii
 !/API.md
+!/.nvmrc
 !/.github/workflows/upgrade-projen.yml
 !/.projenrc.ts

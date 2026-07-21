@@ -11,6 +11,7 @@
     ".github/workflows/upgrade-projen.yml",
     ".gitignore",
     ".mergify.yml",
+    ".nvmrc",
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",

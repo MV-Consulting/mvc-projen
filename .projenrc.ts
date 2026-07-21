@@ -1,4 +1,4 @@
-import { cdk, javascript, ReleasableCommits } from 'projen';
+import { cdk, javascript, ReleasableCommits, TextFile } from 'projen';
 import { DependabotScheduleInterval, workflows } from 'projen/lib/github';
 import { NpmAccess } from 'projen/lib/javascript';
 
@@ -169,6 +169,11 @@ project.tryFindObjectFile('.mergify.yml')?.addDeletionOverride(
 // TypeScript 6 no longer auto-discovers @types/* packages
 project.tsconfigDev.file.addOverride('compilerOptions.types', ['jest', 'node']);
 project.tsconfig?.file.addOverride('compilerOptions.types', ['node']);
+
+// Pin the local dev Node version to one jsii actually supports, so `npx projen`/
+// `npm run build` stop warning about untested Node releases (see jsii's supported
+// list: ^24.0.0, ^22.0.0, ^20.0.0 [deprecated]).
+new TextFile(project, '.nvmrc', { lines: ['24'] });
 
 // `projenVersion` above is a hardcoded literal, so it's excluded from the
 // Dependabot group (see `dependabotOptions.groups.default.excludePatterns`):
