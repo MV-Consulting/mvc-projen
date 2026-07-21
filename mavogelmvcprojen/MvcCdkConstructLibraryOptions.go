@@ -128,34 +128,11 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	Gitpod *bool `field:"optional" json:"gitpod" yaml:"gitpod"`
-	// Whether mergify should be enabled on this repository or not.
-	// Default: true.
-	//
-	// Deprecated: use `githubOptions.mergify` instead
-	Mergify *bool `field:"optional" json:"mergify" yaml:"mergify"`
-	// Options for mergify.
-	// Default: - default options.
-	//
-	// Deprecated: use `githubOptions.mergifyOptions` instead
-	MergifyOptions *github.MergifyOptions `field:"optional" json:"mergifyOptions" yaml:"mergifyOptions"`
-	// Which type of project this is (library/app).
-	// Default: ProjectType.UNKNOWN
-	//
-	// Deprecated: no longer supported at the base project level.
-	ProjectType projen.ProjectType `field:"optional" json:"projectType" yaml:"projectType"`
 	// Choose a method of providing GitHub API access for projen workflows.
 	// Default: - use a personal access token named PROJEN_GITHUB_TOKEN.
 	//
 	// Experimental.
 	ProjenCredentials github.GithubCredentials `field:"optional" json:"projenCredentials" yaml:"projenCredentials"`
-	// The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows.
-	//
-	// This token needs to have the `repo`, `workflows`
-	// and `packages` scope.
-	// Default: "PROJEN_GITHUB_TOKEN".
-	//
-	// Deprecated: use `projenCredentials`.
-	ProjenTokenSecret *string `field:"optional" json:"projenTokenSecret" yaml:"projenTokenSecret"`
 	// The README setup.
 	//
 	// Example:
@@ -199,6 +176,36 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	AllowLibraryDependencies *bool `field:"optional" json:"allowLibraryDependencies" yaml:"allowLibraryDependencies"`
+	// List of dependency (package) names that are allowed to run lifecycle install scripts (`preinstall`, `install`, `postinstall`, `prepare`) during dependency installation.
+	//
+	// These scripts can execute arbitrary code, making them a common
+	// supply-chain attack vector. Package managers are moving toward
+	// blocking them by default and requiring an explicit allowlist.
+	// Configuring `allowScripts` sets up that allowlist so scripts only run
+	// for the packages you have explicitly reviewed and trust.
+	//
+	// Support for this setting depends on the configured `packageManager`:
+	//
+	// - `NPM`: written to the native `allowScripts` field in `package.json`
+	//   (requires npm >= 11.16; see https://docs.npmjs.com/cli/v11/commands/npm-approve-scripts).
+	// - `BUN`: written to the native `trustedDependencies` field in
+	//   `package.json` (see https://bun.com/docs/pm/lifecycle).
+	// - `PNPM`: written to the `onlyBuiltDependencies` setting in
+	//   `pnpm-workspace.yaml` (see https://pnpm.io/settings#onlybuiltdependencies).
+	// - `YARN2`, `YARN_BERRY`: written to the native
+	//   `dependenciesMeta.<pkg>.built` allowlist in `package.json`, combined
+	//   with `enableScripts: false` in `.yarnrc.yml` (see
+	//   https://yarnpkg.com/features/security#postinstalls). If you set
+	//   `yarnBerryOptions.yarnRcOptions.enableScripts` explicitly, that value
+	//   is respected instead of being overridden.
+	// - `YARN`, `YARN_CLASSIC`: not supported. Yarn Classic has no native
+	//   mechanism to allowlist install scripts for specific dependencies.
+	//   Setting this option with one of these package managers throws an
+	//   error at synthesis time.
+	// Default: - all install scripts are allowed to run (package manager default).
+	//
+	// Experimental.
+	AllowScripts *[]*string `field:"optional" json:"allowScripts" yaml:"allowScripts"`
 	// Author's e-mail.
 	// Experimental.
 	AuthorEmail *string `field:"optional" json:"authorEmail" yaml:"authorEmail"`
@@ -236,11 +243,11 @@ type MvcCdkConstructLibraryOptions struct {
 	// your `package.json`.
 	//
 	// The recommendation is to only specify the module name here (e.g.
-	// `express`). This will behave similar to `yarn add` or `npm install` in the
+	// `express`). This will behave similar to `pnpm add` or `npm install` in the
 	// sense that it will add the module as a dependency to your `package.json`
 	// file with the latest version (`^`). You can specify semver requirements in
-	// the same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and
-	// this will be what you `package.json` will eventually include.
+	// the same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and
+	// this will be what your `package.json` will eventually include.
 	// Experimental.
 	BundledDeps *[]*string `field:"optional" json:"bundledDeps" yaml:"bundledDeps"`
 	// The version of Bun to use if using Bun as a package manager.
@@ -268,11 +275,11 @@ type MvcCdkConstructLibraryOptions struct {
 	// Runtime dependencies of this module.
 	//
 	// The recommendation is to only specify the module name here (e.g.
-	// `express`). This will behave similar to `yarn add` or `npm install` in the
+	// `express`). This will behave similar to `pnpm add` or `npm install` in the
 	// sense that it will add the module as a dependency to your `package.json`
 	// file with the latest version (`^`). You can specify semver requirements in
-	// the same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and
-	// this will be what you `package.json` will eventually include.
+	// the same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and
+	// this will be what your `package.json` will eventually include.
 	//
 	// Example:
 	//   [ 'express', 'lodash', 'foo@^2' ]
@@ -294,11 +301,11 @@ type MvcCdkConstructLibraryOptions struct {
 	// module is consumed.
 	//
 	// The recommendation is to only specify the module name here (e.g.
-	// `express`). This will behave similar to `yarn add` or `npm install` in the
+	// `express`). This will behave similar to `pnpm add` or `npm install` in the
 	// sense that it will add the module as a dependency to your `package.json`
 	// file with the latest version (`^`). You can specify semver requirements in
-	// the same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and
-	// this will be what you `package.json` will eventually include.
+	// the same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and
+	// this will be what your `package.json` will eventually include.
 	//
 	// Example:
 	//   [ 'typescript', '@types/express' ]
@@ -388,11 +395,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	NpmProvenance *bool `field:"optional" json:"npmProvenance" yaml:"npmProvenance"`
-	// The host name of the npm registry to publish to.
-	//
-	// Cannot be set together with `npmRegistryUrl`.
-	// Deprecated: use `npmRegistryUrl` instead.
-	NpmRegistry *string `field:"optional" json:"npmRegistry" yaml:"npmRegistry"`
 	// The base URL of the npm package registry.
 	//
 	// Must be a URL (e.g. start with "https://" or "http://")
@@ -442,8 +444,13 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	PeerDeps *[]*string `field:"optional" json:"peerDeps" yaml:"peerDeps"`
+	// Options for pnpm.
+	// Default: - all default options.
+	//
+	// Experimental.
+	PnpmOptions *javascript.PnpmOptions `field:"optional" json:"pnpmOptions" yaml:"pnpmOptions"`
 	// The version of PNPM to use if using PNPM as a package manager.
-	// Default: "9".
+	// Default: "10.33.0"
 	//
 	// Experimental.
 	PnpmVersion *string `field:"optional" json:"pnpmVersion" yaml:"pnpmVersion"`
@@ -460,15 +467,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ScopedPackagesOptions *[]*javascript.ScopedPackagesOptions `field:"optional" json:"scopedPackagesOptions" yaml:"scopedPackagesOptions"`
-	// npm scripts to include.
-	//
-	// If a script has the same name as a standard script,
-	// the standard script will be overwritten.
-	// Also adds the script as a task.
-	// Default: {}.
-	//
-	// Deprecated: use `project.addTask()` or `package.setScript()`
-	Scripts *map[string]*string `field:"optional" json:"scripts" yaml:"scripts"`
 	// Package's Stability.
 	// Experimental.
 	Stability *string `field:"optional" json:"stability" yaml:"stability"`
@@ -591,11 +589,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ReleaseEnvironment *string `field:"optional" json:"releaseEnvironment" yaml:"releaseEnvironment"`
-	// Automatically release new versions every commit to one of branches in `releaseBranches`.
-	// Default: true.
-	//
-	// Deprecated: Use `releaseTrigger: ReleaseTrigger.continuous()` instead
-	ReleaseEveryCommit *bool `field:"optional" json:"releaseEveryCommit" yaml:"releaseEveryCommit"`
 	// Create a github issue on every failed publishing task.
 	// Default: false.
 	//
@@ -608,11 +601,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ReleaseFailureIssueLabel *string `field:"optional" json:"releaseFailureIssueLabel" yaml:"releaseFailureIssueLabel"`
-	// CRON schedule to trigger new releases.
-	// Default: - no scheduled releases.
-	//
-	// Deprecated: Use `releaseTrigger: ReleaseTrigger.scheduled()` instead
-	ReleaseSchedule *string `field:"optional" json:"releaseSchedule" yaml:"releaseSchedule"`
 	// Automatically add the given prefix to release tags. Useful if you are releasing on multiple branches with overlapping version numbers.
 	//
 	// Note: this prefix is used to detect the latest tagged version
@@ -661,11 +649,6 @@ type MvcCdkConstructLibraryOptions struct {
 	// Github Runner Group selection options.
 	// Experimental.
 	WorkflowRunsOnGroup *projen.GroupRunnerOptions `field:"optional" json:"workflowRunsOnGroup" yaml:"workflowRunsOnGroup"`
-	// The name of the main release branch.
-	// Default: "main".
-	//
-	// Experimental.
-	DefaultReleaseBranch *string `field:"required" json:"defaultReleaseBranch" yaml:"defaultReleaseBranch"`
 	// A directory which will contain build artifacts.
 	// Default: "dist".
 	//
@@ -710,11 +693,6 @@ type MvcCdkConstructLibraryOptions struct {
 	// Options for PR build workflow.
 	// Experimental.
 	BuildWorkflowOptions *javascript.BuildWorkflowOptions `field:"optional" json:"buildWorkflowOptions" yaml:"buildWorkflowOptions"`
-	// Build workflow triggers.
-	// Default: "{ pullRequest: {}, workflowDispatch: {} }".
-	//
-	// Deprecated: - Use `buildWorkflowOptions.workflowTriggers`
-	BuildWorkflowTriggers *workflows.Triggers `field:"optional" json:"buildWorkflowTriggers" yaml:"buildWorkflowTriggers"`
 	// Options for `Bundler`.
 	// Experimental.
 	BundlerOptions *javascript.BundlerOptions `field:"optional" json:"bundlerOptions" yaml:"bundlerOptions"`
@@ -745,6 +723,11 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	CopyrightPeriod *string `field:"optional" json:"copyrightPeriod" yaml:"copyrightPeriod"`
+	// The name of the main release branch.
+	// Default: "main".
+	//
+	// Experimental.
+	DefaultReleaseBranch *string `field:"optional" json:"defaultReleaseBranch" yaml:"defaultReleaseBranch"`
 	// Use dependabot to handle dependency upgrades.
 	//
 	// Cannot be used in conjunction with `depsUpgrade`.
@@ -782,20 +765,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	JestOptions *javascript.JestOptions `field:"optional" json:"jestOptions" yaml:"jestOptions"`
-	// Automatically update files modified during builds to pull-request branches.
-	//
-	// This means
-	// that any files synthesized by projen or e.g. test snapshots will always be up-to-date
-	// before a PR is merged.
-	//
-	// Implies that PR builds do not have anti-tamper checks.
-	// Default: true.
-	//
-	// Deprecated: - Use `buildWorkflowOptions.mutableBuild`
-	MutableBuild *bool `field:"optional" json:"mutableBuild" yaml:"mutableBuild"`
-	// Additional entries to .npmignore.
-	// Deprecated: - use `project.addPackageIgnore`
-	Npmignore *[]*string `field:"optional" json:"npmignore" yaml:"npmignore"`
 	// Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs.
 	// Default: true.
 	//
@@ -859,11 +828,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	ReleaseToNpm *bool `field:"optional" json:"releaseToNpm" yaml:"releaseToNpm"`
-	// DEPRECATED: renamed to `release`.
-	// Default: - true if not a subproject.
-	//
-	// Deprecated: see `release`.
-	ReleaseWorkflow *bool `field:"optional" json:"releaseWorkflow" yaml:"releaseWorkflow"`
 	// Workflow steps to use in order to bootstrap this repo.
 	// Default: "yarn install --frozen-lockfile && yarn projen".
 	//
@@ -891,7 +855,7 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	DisableTsconfig *bool `field:"optional" json:"disableTsconfig" yaml:"disableTsconfig"`
-	// Do not generate a `tsconfig.dev.json` file.
+	// Do not generate a development tsconfig file.
 	// Default: false.
 	//
 	// Experimental.
@@ -934,6 +898,14 @@ type MvcCdkConstructLibraryOptions struct {
 	// Options for .projenrc.ts.
 	// Experimental.
 	ProjenrcTsOptions *typescript.ProjenrcOptions `field:"optional" json:"projenrcTsOptions" yaml:"projenrcTsOptions"`
+	// The TypeScript runner to use for executing TypeScript files.
+	//
+	// This is a project-level setting that components (e.g. projenrc) will
+	// use as their default runner.
+	// Default: TypeScriptRunner.tsNode()
+	//
+	// Experimental.
+	Runner typescript.TypeScriptRunner `field:"optional" json:"runner" yaml:"runner"`
 	// Generate one-time sample in `src/` and `test/` if there are no files there.
 	// Default: true.
 	//
@@ -964,8 +936,12 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	TsconfigDev *javascript.TypescriptConfigOptions `field:"optional" json:"tsconfigDev" yaml:"tsconfigDev"`
-	// The name of the development tsconfig.json file.
-	// Default: "tsconfig.dev.json"
+	// The name (and path) of the development tsconfig file.
+	//
+	// By default this lives inside the test directory (e.g. `test/tsconfig.json`)
+	// so that the TypeScript language service resolves it as the nearest config
+	// for test files.
+	// Default: - "{testdir}/tsconfig.json"
 	//
 	// Experimental.
 	TsconfigDevFile *string `field:"optional" json:"tsconfigDevFile" yaml:"tsconfigDevFile"`
@@ -1018,8 +994,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	DocgenFilePath *string `field:"optional" json:"docgenFilePath" yaml:"docgenFilePath"`
-	// Deprecated: use `publishToNuget`.
-	Dotnet *cdk.JsiiDotNetTarget `field:"optional" json:"dotnet" yaml:"dotnet"`
 	// Accepts a list of glob patterns.
 	//
 	// Files matching any of those patterns will be excluded from the TypeScript compiler input.
@@ -1061,12 +1035,20 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	PublishToPypi *cdk.JsiiPythonTarget `field:"optional" json:"publishToPypi" yaml:"publishToPypi"`
-	// Deprecated: use `publishToPyPi`.
-	Python *cdk.JsiiPythonTarget `field:"optional" json:"python" yaml:"python"`
 	// Default: "."
 	//
 	// Experimental.
 	Rootdir *string `field:"optional" json:"rootdir" yaml:"rootdir"`
+	// Level of tsconfig validation jsii should perform on the user-provided tsconfig.
+	//
+	// Only relevant when the project synthesizes its own tsconfig
+	// (i.e. `disableTsconfig` is not set on the TypeScriptProject).
+	// See: https://aws.github.io/jsii/user-guides/lib-author/configuration/#validatetsconfig
+	//
+	// Default: ValidateTsconfig.STRICT
+	//
+	// Experimental.
+	ValidateTsconfig cdk.ValidateTsconfig `field:"optional" json:"validateTsconfig" yaml:"validateTsconfig"`
 	// Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:.
 	//
 	// https://awscdk.io/packages/[@SCOPE/]PACKAGE@VERSION
@@ -1088,21 +1070,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	CdkVersion *string `field:"required" json:"cdkVersion" yaml:"cdkVersion"`
-	// Warning: NodeJS only.
-	//
-	// Install the.
-	// Default: - will be included by default for AWS CDK >= 1.0.0 < 2.0.0
-	//
-	// Deprecated: The.
-	CdkAssert *bool `field:"optional" json:"cdkAssert" yaml:"cdkAssert"`
-	// Install the assertions library?
-	//
-	// Only needed for CDK 1.x. If using CDK 2.x then
-	// assertions is already included in 'aws-cdk-lib'.
-	// Default: - will be included by default for AWS CDK >= 1.111.0 < 2.0.0
-	//
-	// Experimental.
-	CdkAssertions *bool `field:"optional" json:"cdkAssertions" yaml:"cdkAssertions"`
 	// Version range of the AWS CDK CLI to depend on.
 	//
 	// Can be either a specific version, or an NPM version range.
@@ -1113,24 +1080,6 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	CdkCliVersion *string `field:"optional" json:"cdkCliVersion" yaml:"cdkCliVersion"`
-	// Which AWS CDKv1 modules this project requires.
-	// Deprecated: For CDK 2.x use "deps" instead. (or "peerDeps" if you're building a library)
-	CdkDependencies *[]*string `field:"optional" json:"cdkDependencies" yaml:"cdkDependencies"`
-	// If this is enabled (default), all modules declared in `cdkDependencies` will be also added as normal `dependencies` (as well as `peerDependencies`).
-	//
-	// This is to ensure that downstream consumers actually have your CDK dependencies installed
-	// when using npm < 7 or yarn, where peer dependencies are not automatically installed.
-	// If this is disabled, `cdkDependencies` will be added to `devDependencies` to ensure
-	// they are present during development.
-	//
-	// Note: this setting only applies to construct library projects.
-	// Default: true.
-	//
-	// Deprecated: Not supported in CDK v2.
-	CdkDependenciesAsDeps *bool `field:"optional" json:"cdkDependenciesAsDeps" yaml:"cdkDependenciesAsDeps"`
-	// AWS CDK modules required for testing.
-	// Deprecated: For CDK 2.x use 'devDeps' (in node.js projects) or 'testDeps' (in java projects) instead
-	CdkTestDependencies *[]*string `field:"optional" json:"cdkTestDependencies" yaml:"cdkTestDependencies"`
 	// Use pinned version instead of caret version for CDK.
 	//
 	// You can use this to prevent mixed versions for your CDK dependencies and to prevent auto-updates.

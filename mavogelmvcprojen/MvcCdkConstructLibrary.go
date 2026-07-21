@@ -13,14 +13,13 @@ import (
 	"github.com/projen/projen-go/projen/github/workflows"
 	"github.com/projen/projen-go/projen/javascript"
 	"github.com/projen/projen-go/projen/release"
+	"github.com/projen/projen-go/projen/typescript"
 	"github.com/projen/projen-go/projen/vscode"
 )
 
 // TypeScript library.
 type MvcCdkConstructLibrary interface {
 	awscdk.AwsCdkConstructLibrary
-	// Deprecated: use `package.allowLibraryDependencies`
-	AllowLibraryDependencies() *bool
 	// The build output directory.
 	//
 	// An npm tarball will be created under the `js`
@@ -85,8 +84,6 @@ type MvcCdkConstructLibrary interface {
 	// Whether or not the project is being ejected.
 	// Experimental.
 	Ejected() *bool
-	// Deprecated: use `package.entrypoint`
-	Entrypoint() *string
 	// Experimental.
 	Eslint() javascript.Eslint
 	// All files in this project.
@@ -113,7 +110,7 @@ type MvcCdkConstructLibrary interface {
 	// It
 	// includes the original set of options passed to the CLI and also the JSII
 	// FQN of the project type.
-	// Experimental.
+	// Deprecated: use the `initProject` argument passed to `Component.projectCreation()` instead.
 	InitProject() *projen.InitProject
 	// The Jest configuration (if enabled).
 	// Experimental.
@@ -124,8 +121,6 @@ type MvcCdkConstructLibrary interface {
 	// Logging utilities.
 	// Experimental.
 	Logger() projen.Logger
-	// Deprecated: use `package.addField(x, y)`
-	Manifest() interface{}
 	// Maximum node version supported by this package.
 	//
 	// The value indicates the package is incompatible with newer versions.
@@ -155,9 +150,6 @@ type MvcCdkConstructLibrary interface {
 	// API for managing the node package.
 	// Experimental.
 	Package() javascript.NodePackage
-	// The package manager to use.
-	// Deprecated: use `package.packageManager`
-	PackageManager() javascript.NodePackageManager
 	// Experimental.
 	PackageTask() projen.Task
 	// A parent project.
@@ -174,23 +166,18 @@ type MvcCdkConstructLibrary interface {
 	// Manages the build process of the project.
 	// Experimental.
 	ProjectBuild() projen.ProjectBuild
-	// Deprecated.
-	ProjectType() projen.ProjectType
 	// The command to use in order to run the projen CLI.
 	// Experimental.
 	ProjenCommand() *string
-	// Package publisher.
-	//
-	// This will be `undefined` if the project does not have a
-	// release workflow.
-	// Deprecated: use `release.publisher`.
-	Publisher() release.Publisher
 	// Release management.
 	// Experimental.
 	Release() release.Release
 	// The root project.
 	// Experimental.
 	Root() projen.Project
+	// The TypeScript runner used for executing TypeScript files.
+	// Experimental.
+	Runner() typescript.TypeScriptRunner
 	// The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
 	// Experimental.
 	RunScriptCommand() *string
@@ -218,8 +205,6 @@ type MvcCdkConstructLibrary interface {
 	// The upgrade workflow.
 	// Experimental.
 	UpgradeWorkflow() javascript.UpgradeDependencies
-	// Deprecated: use `cdkVersion`.
-	Version() *string
 	// Access all VSCode components.
 	//
 	// This will be `undefined` for subprojects.
@@ -240,17 +225,6 @@ type MvcCdkConstructLibrary interface {
 	// `bundledDependencies` section of your `package.json`.
 	// Experimental.
 	AddBundledDeps(deps ...*string)
-	// Adds dependencies to AWS CDK modules.
-	//
-	// Since this is a library project, dependencies will be added as peer dependencies.
-	// Deprecated: Not supported in v2. For v1, use `project.cdkDeps.addV1Dependencies()`
-	AddCdkDependencies(deps ...*string)
-	// Adds AWS CDK modules as dev dependencies.
-	// Deprecated: Not supported in v2. For v1, use `project.cdkDeps.addV1DevDependencies()`
-	AddCdkTestDependencies(deps ...*string)
-	// DEPRECATED.
-	// Deprecated: use `project.compileTask.exec()`
-	AddCompileCommand(commands ...*string)
 	// Defines normal dependencies.
 	// Experimental.
 	AddDeps(deps ...*string)
@@ -291,12 +265,6 @@ type MvcCdkConstructLibrary interface {
 	// a task with this name.
 	// Experimental.
 	AddTask(name *string, props *projen.TaskOptions) projen.Task
-	// DEPRECATED.
-	// Deprecated: use `project.testTask.exec()`
-	AddTestCommand(commands ...*string)
-	// Prints a "tip" message during synthesis.
-	// Deprecated: - use `project.logger.info(message)` to show messages during synthesis
-	AddTip(message *string)
 	// Marks the provided file(s) as being generated.
 	//
 	// This is achieved using the
@@ -309,9 +277,6 @@ type MvcCdkConstructLibrary interface {
 	// Projen default Typescript compiler options.
 	// Experimental.
 	DefaultTypeScriptCompilerOptions() *javascript.TypeScriptCompilerOptions
-	// Indicates if a script by the name name is defined.
-	// Deprecated: Use `project.tasks.tryFind(name)`
-	HasScript(name *string) *bool
 	// Called after all components are synthesized.
 	//
 	// Order is *not* guaranteed.
@@ -336,7 +301,7 @@ type MvcCdkConstructLibrary interface {
 	// Returns the shell command to execute in order to run a task.
 	//
 	// This will
-	// typically be `npx projen TASK`.
+	// typically be `pnpm projen TASK`.
 	// Experimental.
 	RunTaskCommand(task projen.Task) *string
 	// Replaces the contents of an npm package.json script.
@@ -348,8 +313,10 @@ type MvcCdkConstructLibrary interface {
 	// 2. Delete all generated files
 	// 3. Synthesize all subprojects
 	// 4. Synthesize all components of this project
-	// 5. Call "postSynthesize()" for all components of this project
-	// 6. Call "this.postSynthesize()"
+	// 5. Call "projectCreation()" for all components, only if the project is being created for the first time
+	// 6. Call "postSynthesize()" for all components of this project
+	// 7. Call "this.postSynthesize()"
+	// 8. Call "postProjectCreation()" for all components, only if the project is being created for the first time
 	// Experimental.
 	Synth()
 	// Returns a string representation of this construct.
@@ -359,9 +326,6 @@ type MvcCdkConstructLibrary interface {
 	// Returns: a `FileBase` or undefined if there is no file in that path.
 	// Experimental.
 	TryFindFile(filePath *string) projen.FileBase
-	// Finds a json file by name.
-	// Deprecated: use `tryFindObjectFile`.
-	TryFindJsonFile(filePath *string) projen.JsonFile
 	// Finds an object file (like JsonFile, YamlFile, etc.) by name.
 	// Experimental.
 	TryFindObjectFile(filePath *string) projen.ObjectFile
@@ -385,16 +349,6 @@ type MvcCdkConstructLibrary interface {
 // The jsii proxy struct for MvcCdkConstructLibrary
 type jsiiProxy_MvcCdkConstructLibrary struct {
 	internal.Type__awscdkAwsCdkConstructLibrary
-}
-
-func (j *jsiiProxy_MvcCdkConstructLibrary) AllowLibraryDependencies() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"allowLibraryDependencies",
-		&returns,
-	)
-	return returns
 }
 
 func (j *jsiiProxy_MvcCdkConstructLibrary) ArtifactsDirectory() *string {
@@ -597,16 +551,6 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) Ejected() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_MvcCdkConstructLibrary) Entrypoint() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"entrypoint",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_MvcCdkConstructLibrary) Eslint() javascript.Eslint {
 	var returns javascript.Eslint
 	_jsii_.Get(
@@ -707,16 +651,6 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) Logger() projen.Logger {
 	return returns
 }
 
-func (j *jsiiProxy_MvcCdkConstructLibrary) Manifest() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"manifest",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_MvcCdkConstructLibrary) MaxNodeVersion() *string {
 	var returns *string
 	_jsii_.Get(
@@ -807,16 +741,6 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) Package() javascript.NodePackage {
 	return returns
 }
 
-func (j *jsiiProxy_MvcCdkConstructLibrary) PackageManager() javascript.NodePackageManager {
-	var returns javascript.NodePackageManager
-	_jsii_.Get(
-		j,
-		"packageManager",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_MvcCdkConstructLibrary) PackageTask() projen.Task {
 	var returns projen.Task
 	_jsii_.Get(
@@ -877,31 +801,11 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) ProjectBuild() projen.ProjectBuild {
 	return returns
 }
 
-func (j *jsiiProxy_MvcCdkConstructLibrary) ProjectType() projen.ProjectType {
-	var returns projen.ProjectType
-	_jsii_.Get(
-		j,
-		"projectType",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_MvcCdkConstructLibrary) ProjenCommand() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"projenCommand",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_MvcCdkConstructLibrary) Publisher() release.Publisher {
-	var returns release.Publisher
-	_jsii_.Get(
-		j,
-		"publisher",
 		&returns,
 	)
 	return returns
@@ -922,6 +826,16 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) Root() projen.Project {
 	_jsii_.Get(
 		j,
 		"root",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MvcCdkConstructLibrary) Runner() typescript.TypeScriptRunner {
+	var returns typescript.TypeScriptRunner
+	_jsii_.Get(
+		j,
+		"runner",
 		&returns,
 	)
 	return returns
@@ -1022,16 +936,6 @@ func (j *jsiiProxy_MvcCdkConstructLibrary) UpgradeWorkflow() javascript.UpgradeD
 	_jsii_.Get(
 		j,
 		"upgradeWorkflow",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_MvcCdkConstructLibrary) Version() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"version",
 		&returns,
 	)
 	return returns
@@ -1228,45 +1132,6 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) AddBundledDeps(deps ...*string) {
 	)
 }
 
-func (m *jsiiProxy_MvcCdkConstructLibrary) AddCdkDependencies(deps ...*string) {
-	args := []interface{}{}
-	for _, a := range deps {
-		args = append(args, a)
-	}
-
-	_jsii_.InvokeVoid(
-		m,
-		"addCdkDependencies",
-		args,
-	)
-}
-
-func (m *jsiiProxy_MvcCdkConstructLibrary) AddCdkTestDependencies(deps ...*string) {
-	args := []interface{}{}
-	for _, a := range deps {
-		args = append(args, a)
-	}
-
-	_jsii_.InvokeVoid(
-		m,
-		"addCdkTestDependencies",
-		args,
-	)
-}
-
-func (m *jsiiProxy_MvcCdkConstructLibrary) AddCompileCommand(commands ...*string) {
-	args := []interface{}{}
-	for _, a := range commands {
-		args = append(args, a)
-	}
-
-	_jsii_.InvokeVoid(
-		m,
-		"addCompileCommand",
-		args,
-	)
-}
-
 func (m *jsiiProxy_MvcCdkConstructLibrary) AddDeps(deps ...*string) {
 	args := []interface{}{}
 	for _, a := range deps {
@@ -1392,30 +1257,6 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) AddTask(name *string, props *projen.T
 	return returns
 }
 
-func (m *jsiiProxy_MvcCdkConstructLibrary) AddTestCommand(commands ...*string) {
-	args := []interface{}{}
-	for _, a := range commands {
-		args = append(args, a)
-	}
-
-	_jsii_.InvokeVoid(
-		m,
-		"addTestCommand",
-		args,
-	)
-}
-
-func (m *jsiiProxy_MvcCdkConstructLibrary) AddTip(message *string) {
-	if err := m.validateAddTipParameters(message); err != nil {
-		panic(err)
-	}
-	_jsii_.InvokeVoid(
-		m,
-		"addTip",
-		[]interface{}{message},
-	)
-}
-
 func (m *jsiiProxy_MvcCdkConstructLibrary) AnnotateGenerated(_glob *string) {
 	if err := m.validateAnnotateGeneratedParameters(_glob); err != nil {
 		panic(err)
@@ -1434,22 +1275,6 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) DefaultTypeScriptCompilerOptions() *j
 		m,
 		"defaultTypeScriptCompilerOptions",
 		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
-func (m *jsiiProxy_MvcCdkConstructLibrary) HasScript(name *string) *bool {
-	if err := m.validateHasScriptParameters(name); err != nil {
-		panic(err)
-	}
-	var returns *bool
-
-	_jsii_.Invoke(
-		m,
-		"hasScript",
-		[]interface{}{name},
 		&returns,
 	)
 
@@ -1572,22 +1397,6 @@ func (m *jsiiProxy_MvcCdkConstructLibrary) TryFindFile(filePath *string) projen.
 	_jsii_.Invoke(
 		m,
 		"tryFindFile",
-		[]interface{}{filePath},
-		&returns,
-	)
-
-	return returns
-}
-
-func (m *jsiiProxy_MvcCdkConstructLibrary) TryFindJsonFile(filePath *string) projen.JsonFile {
-	if err := m.validateTryFindJsonFileParameters(filePath); err != nil {
-		panic(err)
-	}
-	var returns projen.JsonFile
-
-	_jsii_.Invoke(
-		m,
-		"tryFindJsonFile",
 		[]interface{}{filePath},
 		&returns,
 	)
