@@ -10,10 +10,14 @@ import { JobStep } from 'projen/lib/github/workflows-model';
 const nodeVersion = '24.x';
 const lambdaNodeVersion = LambdaRuntime.NODEJS_24_X;
 
-// The last CDK version for which @aws-cdk/integ-runner was published.
-// integ-runner uses plain versions (no -alpha.0 suffix) and stopped publishing after this version.
+// The last @aws-cdk/integ-runner version verified against npm (checked 2026-07-21).
+// integ-runner uses plain versions (no -alpha.0 suffix) and has historically lagged
+// or stopped tracking aws-cdk-lib's version for stretches of time.
 // @aws-cdk/integ-tests-alpha and awslint continue to publish and track CDK versions.
-const LAST_INTEG_RUNNER_VERSION = '2.197.12';
+// SHORTCUT: hardcoded cap requires manual re-verification -- run
+// `npm view @aws-cdk/integ-runner versions --json` and bump this if aws-cdk-lib
+// has released newer versions than this one.
+const LAST_INTEG_RUNNER_VERSION = '2.203.0';
 
 /**
  * The options for the construct
@@ -48,9 +52,9 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
     super({
       authorOrganization: true,
       copyrightOwner: 'MV Consulting GmbH',
-      copyrightPeriod: '2025',
       license: 'Apache-2.0',
-      jsiiVersion: '~5.9.0',
+      jsiiVersion: '~6.0.0',
+      typescriptVersion: '^6.0.2',
       minNodeVersion: nodeVersion,
       workflowNodeVersion: nodeVersion,
       stability: 'experimental',
@@ -174,7 +178,7 @@ The following steps get you started:
 
 1. Create a new \`awscdk-app\` via
 \`\`\`bash
-npx projen new awscdk-app-ts --cdkVersion=2.177.0 --package-manager=npm
+npx projen new awscdk-app-ts --cdkVersion=2.261.0 --package-manager=npm
 \`\`\`
 3. Add \`@mavogel/${options.name}\` as a dependency to your project in the \`.projenrc.ts\` file
 4. Run \`npx projen\` to install it
@@ -260,7 +264,8 @@ add tools or links which inspired you
       this.gitignore.exclude(file);
     }
     this.addDeps(
-      'cdk-nag@^2.37.55',
+      // cdk-nag v3 requires aws-cdk-lib >= 2.257.0 (see cdk-nag MIGRATION.md)
+      'cdk-nag@^3.0.1',
     );
     // Cap integ-runner at LAST_INTEG_RUNNER_VERSION since it stopped publishing after that version.
     // integ-runner uses plain versions (no -alpha.0 suffix).

@@ -1,9 +1,9 @@
-import { cdk, javascript, ReleasableCommits } from 'projen';
-import { DependabotScheduleInterval } from 'projen/lib/github';
+import { cdk, javascript, ReleasableCommits, TextFile } from 'projen';
+import { DependabotScheduleInterval, workflows } from 'projen/lib/github';
 import { NpmAccess } from 'projen/lib/javascript';
 
 // Find the latest projen version here: https://www.npmjs.com/package/projen
-const projenVersion = '0.99.34';
+const projenVersion = '0.101.17';
 const dependencies = [
   `projen@^${projenVersion}`, // DO not move the index 0 to another position!
   'constructs@^10.5.1',
@@ -13,7 +13,8 @@ const project = new cdk.JsiiProject({
   author: 'Manuel Vogel',
   authorAddress: '8409778+mavogel@users.noreply.github.com',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.9.0',
+  jsiiVersion: '~6.0.0',
+  typescriptVersion: '^6.0.2',
   projenVersion: projenVersion,
   name: 'mvc-projen',
   packageName: '@mavogel/mvc-projen',
@@ -168,6 +169,90 @@ project.tryFindObjectFile('.mergify.yml')?.addDeletionOverride(
 // TypeScript 6 no longer auto-discovers @types/* packages
 project.tsconfigDev.file.addOverride('compilerOptions.types', ['jest', 'node']);
 project.tsconfig?.file.addOverride('compilerOptions.types', ['node']);
+
+// Pin the local dev Node version to one jsii actually supports, so `npx projen`/
+// `npm run build` stop warning about untested Node releases (see jsii's supported
+// list: ^24.0.0, ^22.0.0, ^20.0.0 [deprecated]).
+new TextFile(project, '.nvmrc', { lines: ['24'] });
+
+// `projenVersion` above is a hardcoded literal, so it's excluded from the
+// Dependabot group (see `dependabotOptions.groups.default.excludePatterns`):
+// a Dependabot-only bump of `package.json`'s `projen` entry would just get
+// reverted by the self-mutation check in build.yml on the next `npx projen`
+// run, since that literal is the source of truth. This workflow bumps the
+// literal itself, re-synths, verifies the build, and opens a PR.
+const upgradeProjen = project.github?.addWorkflow('upgrade-projen');
+upgradeProjen?.on({
+  schedule: [{ cron: '0 6 * * 1' }],
+  workflowDispatch: {},
+});
+upgradeProjen?.addJob('upgrade', {
+  runsOn: ['ubuntu-latest'],
+  permissions: {
+    contents: workflows.JobPermission.WRITE,
+    pullRequests: workflows.JobPermission.WRITE,
+  },
+  steps: [
+    {
+      name: 'Checkout',
+      uses: 'actions/checkout@v6',
+      with: { token: '${{ secrets.PROJEN_GITHUB_TOKEN }}' },
+    },
+    {
+      name: 'Setup Node',
+      uses: 'actions/setup-node@v6',
+      with: { 'node-version': 'lts/*', 'package-manager-cache': false },
+    },
+    {
+      name: 'Install dependencies',
+      run: 'npm ci',
+    },
+    {
+      name: 'Check for a newer projen version',
+      id: 'check',
+      run: [
+        'current=$(node -p "require(\'./package.json\').devDependencies.projen")',
+        'latest=$(npm view projen version)',
+        'echo "current=$current" >> "$GITHUB_OUTPUT"',
+        'echo "latest=$latest" >> "$GITHUB_OUTPUT"',
+      ].join('\n'),
+    },
+    {
+      name: 'Bump projenVersion and re-synth',
+      if: '${{ steps.check.outputs.current != steps.check.outputs.latest }}',
+      env: { NEW_VERSION: '${{ steps.check.outputs.latest }}' },
+      run: [
+        'sed -i "s/const projenVersion = \'.*\';/const projenVersion = \'${NEW_VERSION}\';/" .projenrc.ts',
+        'npx projen',
+      ].join('\n'),
+    },
+    {
+      name: 'Build',
+      if: '${{ steps.check.outputs.current != steps.check.outputs.latest }}',
+      run: 'npm run build',
+    },
+    {
+      name: 'Open pull request',
+      if: '${{ steps.check.outputs.current != steps.check.outputs.latest }}',
+      env: {
+        GH_TOKEN: '${{ secrets.PROJEN_GITHUB_TOKEN }}',
+        GH_REPO: '${{ github.repository }}',
+        NEW_VERSION: '${{ steps.check.outputs.latest }}',
+        OLD_VERSION: '${{ steps.check.outputs.current }}',
+      },
+      run: [
+        'git config user.name "github-actions[bot]"',
+        'git config user.email "github-actions[bot]@users.noreply.github.com"',
+        'BRANCH="chore/upgrade-projen-${NEW_VERSION}"',
+        'git checkout -b "$BRANCH"',
+        'git add -A',
+        'git commit -m "chore: upgrade projen to ${NEW_VERSION}"',
+        'git push origin "$BRANCH" --force',
+        'gh pr create --title "chore: upgrade projen to ${NEW_VERSION}" --body "Automated projen self-upgrade from ${OLD_VERSION} to ${NEW_VERSION}." --label dependencies --label auto-approve --head "$BRANCH" || echo "PR already exists for $BRANCH"',
+      ].join('\n'),
+    },
+  ],
+});
 
 project.package.setScript('prepare', 'husky');
 project.synth();

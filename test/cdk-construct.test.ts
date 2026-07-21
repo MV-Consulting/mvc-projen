@@ -45,6 +45,9 @@ describe('configurations', () => {
     ).not.toEqual(-1);
     expect(snap['package.json'].scripts.prepare).toEqual('husky');
     expect(snap['package.json'].scripts.awslint).toEqual('awslint');
+    // pinned so generated projects don't drift onto a ts-node-incompatible
+    // TypeScript major (see mvc-projen-toolchain-maintenance.md)
+    expect(snap['package.json'].devDependencies.typescript).toEqual('^6.0.2');
   });
 });
 
@@ -63,17 +66,17 @@ describe('alpha package version capping', () => {
     expect(devDeps.awslint).toEqual('2.177.0-alpha.0');
   });
 
-  test('caps integ-runner at last published version when cdkVersion exceeds it, and normalizes alpha versions to .0 patch', () => {
+  test('caps integ-runner at last verified version when cdkVersion exceeds it, and normalizes alpha versions to .0 patch', () => {
     const project = new MvcCdkConstructLibrary({
       ...minimalMvcCdkConstructLibraryOptions,
-      cdkVersion: '2.200.0',
+      cdkVersion: '2.210.0',
     });
     const snap = synthSnapshot(project);
     const devDeps = snap['package.json'].devDependencies;
-    // integ-runner is capped at 2.197.12 (last published version, no alpha suffix)
-    expect(devDeps['@aws-cdk/integ-runner']).toEqual('2.197.12');
+    // integ-runner is capped at 2.203.0 (last verified version, no alpha suffix)
+    expect(devDeps['@aws-cdk/integ-runner']).toEqual('2.203.0');
     // integ-tests-alpha and awslint only publish at .0 patch versions
-    expect(devDeps['@aws-cdk/integ-tests-alpha']).toEqual('2.200.0-alpha.0');
-    expect(devDeps.awslint).toEqual('2.200.0-alpha.0');
+    expect(devDeps['@aws-cdk/integ-tests-alpha']).toEqual('2.210.0-alpha.0');
+    expect(devDeps.awslint).toEqual('2.210.0-alpha.0');
   });
 });
