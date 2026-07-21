@@ -13,7 +13,7 @@ const project = new cdk.JsiiProject({
   author: 'Manuel Vogel',
   authorAddress: '8409778+mavogel@users.noreply.github.com',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.9.0',
+  jsiiVersion: '~6.0.0',
   typescriptVersion: '^6.0.2',
   projenVersion: projenVersion,
   name: 'mvc-projen',
