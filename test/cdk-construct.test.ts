@@ -45,6 +45,9 @@ describe('configurations', () => {
     ).not.toEqual(-1);
     expect(snap['package.json'].scripts.prepare).toEqual('husky');
     expect(snap['package.json'].scripts.awslint).toEqual('awslint');
+    // pinned so generated projects don't drift onto a ts-node-incompatible
+    // TypeScript major (see mvc-projen-toolchain-maintenance.md)
+    expect(snap['package.json'].devDependencies.typescript).toEqual('^6.0.2');
   });
 });
 

@@ -51,6 +51,7 @@ export class MvcCdkConstructLibrary extends AwsCdkConstructLibrary {
       copyrightPeriod: '2025',
       license: 'Apache-2.0',
       jsiiVersion: '~5.9.0',
+      typescriptVersion: '^6.0.2',
       minNodeVersion: nodeVersion,
       workflowNodeVersion: nodeVersion,
       stability: 'experimental',
