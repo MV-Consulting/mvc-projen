@@ -3,7 +3,7 @@ import { DependabotScheduleInterval } from 'projen/lib/github';
 import { NpmAccess } from 'projen/lib/javascript';
 
 // Find the latest projen version here: https://www.npmjs.com/package/projen
-const projenVersion = '0.99.34';
+const projenVersion = '0.101.17';
 const dependencies = [
   `projen@^${projenVersion}`, // DO not move the index 0 to another position!
   'constructs@^10.5.1',
@@ -14,6 +14,7 @@ const project = new cdk.JsiiProject({
   authorAddress: '8409778+mavogel@users.noreply.github.com',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.9.0',
+  typescriptVersion: '^6.0.2',
   projenVersion: projenVersion,
   name: 'mvc-projen',
   packageName: '@mavogel/mvc-projen',
