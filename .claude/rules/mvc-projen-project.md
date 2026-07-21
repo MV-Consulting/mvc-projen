@@ -51,7 +51,7 @@ Scaffold a new project from this module:
 
 ```bash
 mkdir my-new-construct && cd my-new-construct
-npx projen new --from @mavogel/mvc-projen@~0 --cdkVersion=2.177.0 --package-manager=npm
+npx projen new --from @mavogel/mvc-projen@~0 --cdkVersion=2.261.0 --package-manager=npm
 ```
 
 ## Architecture Notes — Key Design Patterns
@@ -70,7 +70,7 @@ Current as of `src/projects/cdk-construct.ts`:
 - **Package manager:** npm · **Auto-approve:** dependabot + bot accounts via `PROJEN_GITHUB_TOKEN` secret
 - **Dependabot:** weekly, groups everything except `aws-cdk*` and `projen` (both excluded — `aws-cdk*` is manually managed, `projen` needs the toolchain workflow, see `mvc-projen-toolchain-maintenance.md`)
 - **Integration tests:** `eu-west-1` + `eu-west-2` by default, override via `integTestRegions`
-- **Extra deps injected:** `cdk-nag`, and version-capped `@aws-cdk/integ-runner` / `@aws-cdk/integ-tests-alpha` / `awslint` pinned to match the consumer's `cdkVersion` (integ-runner stops publishing after `2.197.12` — see the `LAST_INTEG_RUNNER_VERSION` comment in `cdk-construct.ts` if that cap needs bumping)
+- **Extra deps injected:** `cdk-nag@^3.0.1` (requires `aws-cdk-lib >= 2.257.0` — cdk-nag v3 uses CDK's native `Validations`/`IPolicyValidationPlugin` framework instead of `Aspects`, see `cdk-nag`'s `MIGRATION.md`), and version-capped `@aws-cdk/integ-runner` / `@aws-cdk/integ-tests-alpha` / `awslint` pinned to match the consumer's `cdkVersion` (`LAST_INTEG_RUNNER_VERSION` in `cdk-construct.ts` is a manually-verified cap, currently `2.203.0` — re-check `npm view @aws-cdk/integ-runner versions` periodically)
 
 ## Testing
 

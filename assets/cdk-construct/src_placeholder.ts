@@ -1,6 +1,5 @@
-import { Aspects, CfnOutput, IAspect, Tags } from 'aws-cdk-lib';
+import { Aspects, CfnOutput, IAspect, Tags, Validations } from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
-import { NagSuppressions } from 'cdk-nag';
 import { Construct, IConstruct } from 'constructs';
 import { CrdExample } from './crd-example/crd-example';
 
@@ -56,16 +55,10 @@ export class Placeholder extends Construct {
       enableDnsHostnames: true,
       enableDnsSupport: true,
     });
-    NagSuppressions.addResourceSuppressions(
-      [vpc],
-      [
-        {
-          id: 'AwsSolutions-VPC7',
-          reason: 'For this tmp vpc we do not need flow logs',
-        },
-      ],
-      true,
-    );
+    Validations.of(vpc).acknowledge({
+      id: 'AwsSolutions-VPC7',
+      reason: 'For this tmp vpc we do not need flow logs',
+    });
 
     // crd example
     // Have a custom resource to pass the secret data on? -> yes because not resolvable on compile time

@@ -178,7 +178,7 @@ The following steps get you started:
 
 1. Create a new \`awscdk-app\` via
 \`\`\`bash
-npx projen new awscdk-app-ts --cdkVersion=2.177.0 --package-manager=npm
+npx projen new awscdk-app-ts --cdkVersion=2.261.0 --package-manager=npm
 \`\`\`
 3. Add \`@mavogel/${options.name}\` as a dependency to your project in the \`.projenrc.ts\` file
 4. Run \`npx projen\` to install it
@@ -264,7 +264,8 @@ add tools or links which inspired you
       this.gitignore.exclude(file);
     }
     this.addDeps(
-      'cdk-nag@^2.37.55',
+      // cdk-nag v3 requires aws-cdk-lib >= 2.257.0 (see cdk-nag MIGRATION.md)
+      'cdk-nag@^3.0.1',
     );
     // Cap integ-runner at LAST_INTEG_RUNNER_VERSION since it stopped publishing after that version.
     // integ-runner uses plain versions (no -alpha.0 suffix).

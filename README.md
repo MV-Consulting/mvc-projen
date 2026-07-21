@@ -29,7 +29,7 @@ mkdir my-new-construct &&  cd my-new-construct
 # 2. set up the project using the projen new command
 npx projen new \
     --from @mavogel/mvc-projen@~0 \
-    --cdkVersion=2.177.0 \
+    --cdkVersion=2.261.0 \
     --package-manager=npm
 ```
 
