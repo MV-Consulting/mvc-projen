@@ -220,7 +220,13 @@ upgradeProjen?.addJob('upgrade', {
     {
       name: 'Bump projenVersion and re-synth',
       if: '${{ steps.check.outputs.current != steps.check.outputs.latest }}',
-      env: { NEW_VERSION: '${{ steps.check.outputs.latest }}' },
+      env: {
+        NEW_VERSION: '${{ steps.check.outputs.latest }}',
+        // projen picks `npm ci` over `npm install` when CI is set, but the
+        // lock file is still out of sync with the just-bumped projen
+        // version at this point - only `npm install` can update it.
+        CI: 'false',
+      },
       run: [
         'sed -i "s/const projenVersion = \'.*\';/const projenVersion = \'${NEW_VERSION}\';/" .projenrc.ts',
         'npx projen',
