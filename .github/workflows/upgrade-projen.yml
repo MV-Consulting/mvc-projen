@@ -34,6 +34,7 @@ jobs:
         if: ${{ steps.check.outputs.current != steps.check.outputs.latest }}
         env:
           NEW_VERSION: ${{ steps.check.outputs.latest }}
+          CI: "false"
         run: |-
           sed -i "s/const projenVersion = '.*';/const projenVersion = '${NEW_VERSION}';/" .projenrc.ts
           npx projen
