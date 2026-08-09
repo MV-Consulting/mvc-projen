@@ -31,6 +31,7 @@ const project = new cdk.JsiiProject({
   description: 'Base projen module for MV Consulting projects',
   npmAccess:
     NpmAccess.PUBLIC /* The npm access level to use when releasing this module. */,
+  npmTrustedPublishing: true /* Publish to npmjs.com via OIDC trusted publishing instead of NPM_TOKEN. */,
   keywords: ['aws', 'cdk', 'construct', 'projen'],
   autoApproveOptions: {
     allowedUsernames: [
