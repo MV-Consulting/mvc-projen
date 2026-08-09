@@ -262,6 +262,26 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	CodeArtifactOptions *javascript.CodeArtifactOptions `field:"optional" json:"codeArtifactOptions" yaml:"codeArtifactOptions"`
+	// Add a `dedupe` task that deduplicates project dependencies.
+	//
+	// Deduplication prevents multiple versions of the same package from being
+	// installed, if a single version can satisfy all requested version ranges.
+	// This prevents version proliferation and reduces the size of the dependency
+	// tree.
+	//
+	// The behavior depends on the package manager:
+	// - npm: runs `npm dedupe` after every mutating install.
+	// - pnpm: runs `pnpm dedupe` after every mutating install.
+	// - Yarn Berry: runs `yarn dedupe` after every mutating install. If
+	//   `yarnBerryOptions.dedupePackages` is set, only the listed packages are
+	//   deduplicated.
+	// - Yarn Classic: `yarn install` already deduplicates, so the task only
+	//   prints an informational message.
+	// - Bun: not supported, enabling this option throws an error.
+	// Default: - false, unless `yarnBerryOptions.dedupePackages` is set
+	//
+	// Experimental.
+	DedupeDeps *bool `field:"optional" json:"dedupeDeps" yaml:"dedupeDeps"`
 	// Automatically delete lockfiles from package managers that are not the active one.
 	//
 	// Only triggered when the lockfile for the configured package
@@ -714,11 +734,19 @@ type MvcCdkConstructLibraryOptions struct {
 	// Experimental.
 	CodeCovTokenSecret *string `field:"optional" json:"codeCovTokenSecret" yaml:"codeCovTokenSecret"`
 	// License copyright owner.
+	//
+	// This value is only used if the selected license text contains the
+	// `$copyright_owner` placeholder. For example, it has no effect on the
+	// MPL-2.0 license text.
 	// Default: - defaults to the value of authorName or "" if `authorName` is undefined.
 	//
 	// Experimental.
 	CopyrightOwner *string `field:"optional" json:"copyrightOwner" yaml:"copyrightOwner"`
 	// The copyright years to put in the LICENSE file.
+	//
+	// This value is only used if the selected license text contains the
+	// `$copyright_period` placeholder. For example, it has no effect on the
+	// MPL-2.0 license text.
 	// Default: - current year.
 	//
 	// Experimental.
