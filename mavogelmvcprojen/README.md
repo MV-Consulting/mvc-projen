@@ -1,8 +1,8 @@
-![Source](https://img.shields.io/github/stars/MV-Consulting/mvc-projen?logo=github&label=GitHub%20Stars)
-[![Build Status](https://github.com/MV-Consulting/mvc-projen/actions/workflows/build.yml/badge.svg)](https://github.com/MV-Consulting/mvc-projen/actions/workflows/build.yml)
+![Source](https://img.shields.io/github/stars/mavogel/mvc-projen?logo=github&label=GitHub%20Stars)
+[![Build Status](https://github.com/mavogel/mvc-projen/actions/workflows/build.yml/badge.svg)](https://github.com/mavogel/mvc-projen/actions/workflows/build.yml)
 [![ESLint Code Formatting](https://img.shields.io/badge/code_style-eslint-brightgreen.svg)](https://eslint.org)
-[![Latest release](https://img.shields.io/github/release/MV-Consulting/mvc-projen.svg)](https://github.com/MV-Consulting/mvc-projen/releases)
-![GitHub](https://img.shields.io/github/license/MV-Consulting/mvc-projen)
+[![Latest release](https://img.shields.io/github/release/mavogel/mvc-projen.svg)](https://github.com/mavogel/mvc-projen/releases)
+![GitHub](https://img.shields.io/github/license/mavogel/mvc-projen)
 [![npm](https://img.shields.io/npm/dt/@mavogel/mvc-projen?label=npm&color=orange)](https://www.npmjs.com/package/@mavogel/mvc-projen)
 [![typescript](https://img.shields.io/badge/jsii-typescript-blueviolet.svg)](https://www.npmjs.com/package/@mavogel/mvc-projen)
 
