@@ -20,7 +20,7 @@ const project = new cdk.JsiiProject({
   packageName: '@mavogel/mvc-projen',
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/MV-Consulting/mvc-projen',
+  repositoryUrl: 'https://github.com/mavogel/mvc-projen',
   deps: dependencies,
   peerDeps: dependencies,
   devDeps: [
@@ -109,7 +109,7 @@ const project = new cdk.JsiiProject({
   // see details for each: https://github.com/cdklabs/publib
   // Go
   publishToGo: {
-    moduleName: 'github.com/MV-Consulting/mvc-projen',
+    moduleName: 'github.com/mavogel/mvc-projen',
     githubTokenSecret: 'PROJEN_GITHUB_TOKEN',
   },
   // see https://github.com/cdklabs/publib/issues/1305
@@ -161,7 +161,7 @@ const project = new cdk.JsiiProject({
 // projen's AutoMerge component hardcodes `delete_head_branch: {}` in the
 // mergify rule with no option to disable it. Strip it from the generated
 // .mergify.yml so Mergify does not delete head branches on merge.
-// see https://github.com/MV-Consulting/mvc-projen/pull/58
+// see https://github.com/mavogel/mvc-projen/pull/58
 project.tryFindObjectFile('.mergify.yml')?.addDeletionOverride(
   'pull_request_rules.0.actions.delete_head_branch',
 );

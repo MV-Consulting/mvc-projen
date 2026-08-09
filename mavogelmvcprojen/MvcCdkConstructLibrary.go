@@ -2,10 +2,10 @@ package mavogelmvcprojen
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/MV-Consulting/mvc-projen/mavogelmvcprojen/jsii"
+	_init_ "github.com/mavogel/mvc-projen/mavogelmvcprojen/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/MV-Consulting/mvc-projen/mavogelmvcprojen/internal"
+	"github.com/mavogel/mvc-projen/mavogelmvcprojen/internal"
 	"github.com/projen/projen-go/projen"
 	"github.com/projen/projen-go/projen/awscdk"
 	"github.com/projen/projen-go/projen/build"

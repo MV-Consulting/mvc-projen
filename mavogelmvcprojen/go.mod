@@ -1,4 +1,4 @@
-module github.com/MV-Consulting/mvc-projen/mavogelmvcprojen
+module github.com/mavogel/mvc-projen/mavogelmvcprojen
 
 go 1.25
 

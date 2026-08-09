@@ -3,7 +3,7 @@
   "description": "Base projen module for MV Consulting projects",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MV-Consulting/mvc-projen"
+    "url": "https://github.com/mavogel/mvc-projen"
   },
   "scripts": {
     "build": "projen build",
@@ -143,7 +143,7 @@
         "module": "mvc_projen"
       },
       "go": {
-        "moduleName": "github.com/MV-Consulting/mvc-projen"
+        "moduleName": "github.com/mavogel/mvc-projen"
       }
     },
     "tsconfig": "tsconfig.json",
