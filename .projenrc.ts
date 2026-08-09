@@ -260,5 +260,22 @@ upgradeProjen?.addJob('upgrade', {
   ],
 });
 
+// publishToGo pushes a "chore(release): vX" commit straight to `main` to
+// publish the go submodule, which re-triggers this same `on: push` release
+// workflow. On that second run, `bump`'s CHANGES_SINCE_LAST_RELEASE guard
+// correctly no-ops (HEAD is already a release commit) but never writes
+// dist/releasetag.txt, so the hardcoded `cat dist/releasetag.txt` in
+// "Check if version has already been tagged" fails the whole job even
+// though there is nothing to release. Skip the job outright when the
+// triggering commit is itself a release commit.
+const releaseWorkflow = project.github?.tryFindWorkflow('release');
+const releaseJob = releaseWorkflow?.getJob('release');
+if (releaseWorkflow && releaseJob && 'steps' in releaseJob) {
+  releaseWorkflow.updateJob('release', {
+    ...releaseJob,
+    if: "!startsWith(github.event.head_commit.message, 'chore(release):')",
+  });
+}
+
 project.package.setScript('prepare', 'husky');
 project.synth();
