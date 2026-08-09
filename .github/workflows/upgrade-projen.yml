@@ -13,15 +13,18 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
+        id: checkout
         uses: actions/checkout@v6
         with:
           token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
       - name: Setup Node
+        id: setup_node
         uses: actions/setup-node@v6
         with:
           node-version: lts/*
           package-manager-cache: false
       - name: Install dependencies
+        id: install_dependencies
         run: npm ci
       - name: Check for a newer projen version
         id: check
@@ -31,6 +34,7 @@ jobs:
           echo "current=$current" >> "$GITHUB_OUTPUT"
           echo "latest=$latest" >> "$GITHUB_OUTPUT"
       - name: Bump projenVersion and re-synth
+        id: bump_projenversion_and_re-synth
         if: ${{ steps.check.outputs.current != steps.check.outputs.latest }}
         env:
           NEW_VERSION: ${{ steps.check.outputs.latest }}
@@ -39,9 +43,11 @@ jobs:
           sed -i "s/const projenVersion = '.*';/const projenVersion = '${NEW_VERSION}';/" .projenrc.ts
           npx projen
       - name: Build
+        id: build
         if: ${{ steps.check.outputs.current != steps.check.outputs.latest }}
         run: npm run build
       - name: Open pull request
+        id: open_pull_request
         if: ${{ steps.check.outputs.current != steps.check.outputs.latest }}
         env:
           GH_TOKEN: ${{ secrets.PROJEN_GITHUB_TOKEN }}
