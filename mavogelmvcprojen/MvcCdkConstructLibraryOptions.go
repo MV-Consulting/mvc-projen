@@ -55,6 +55,10 @@ type MvcCdkConstructLibraryOptions struct {
 	ProjectTree *bool `field:"optional" json:"projectTree" yaml:"projectTree"`
 	// The shell command to use in order to run the projen CLI.
 	//
+	// Inserted verbatim into task steps, workflows and IDE configuration, and run
+	// by each of their shells - locally, in CI and in dev containers. Keep it a
+	// plain unquoted command, since shell syntax in it executes in all of them.
+	//
 	// Can be used to customize in special environments.
 	// Default: "npx projen".
 	//
@@ -502,6 +506,14 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	BumpPackage *string `field:"optional" json:"bumpPackage" yaml:"bumpPackage"`
+	// Whether GitHub should explicitly mark the release from the default branch as the latest release.
+	//
+	// Set to `true` to mark the release as latest, or `false` to explicitly not
+	// mark it as latest.
+	// Default: - GitHub determines the latest release based on date and semantic version.
+	//
+	// Experimental.
+	GithubReleaseLatest *bool `field:"optional" json:"githubReleaseLatest" yaml:"githubReleaseLatest"`
 	// Version requirement of `publib` which is used to publish modules to npm.
 	// Default: "latest".
 	//
@@ -664,10 +676,10 @@ type MvcCdkConstructLibraryOptions struct {
 	// Github Runner selection labels.
 	// Default: ["ubuntu-latest"].
 	//
-	// Experimental.
+	// Deprecated: use `githubOptions.workflowRunsOn` on the project, or `runsOn` on `ReleaseOptions`
 	WorkflowRunsOn *[]*string `field:"optional" json:"workflowRunsOn" yaml:"workflowRunsOn"`
 	// Github Runner Group selection options.
-	// Experimental.
+	// Deprecated: use `githubOptions.workflowRunsOnGroup` on the project, or `runsOnGroup` on `ReleaseOptions`
 	WorkflowRunsOnGroup *projen.GroupRunnerOptions `field:"optional" json:"workflowRunsOnGroup" yaml:"workflowRunsOnGroup"`
 	// A directory which will contain build artifacts.
 	// Default: "dist".
@@ -723,7 +735,10 @@ type MvcCdkConstructLibraryOptions struct {
 	//
 	// Experimental.
 	CheckLicenses *javascript.LicenseCheckerOptions `field:"optional" json:"checkLicenses" yaml:"checkLicenses"`
-	// Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+	// Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/.
+	//
+	// Uses codecov/codecov-action. By default, OIDC auth is used.
+	// Alternatively a token can be provided via `codeCovTokenSecret`.
 	// Default: false.
 	//
 	// Experimental.
@@ -976,6 +991,13 @@ type MvcCdkConstructLibraryOptions struct {
 	// Options for ts-jest.
 	// Experimental.
 	TsJestOptions *typescript.TsJestOptions `field:"optional" json:"tsJestOptions" yaml:"tsJestOptions"`
+	// Type-check the test suite as part of the `test` task.
+	//
+	// Adds a `tsc --noEmit` step against the development tsconfig.
+	// Default: false.
+	//
+	// Experimental.
+	TypecheckTests *bool `field:"optional" json:"typecheckTests" yaml:"typecheckTests"`
 	// TypeScript version to use.
 	//
 	// NOTE: Typescript is not semantically versioned and should remain on the
